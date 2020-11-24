@@ -1,0 +1,250 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Level3_Component" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="IntTimeoutL" Type="InArgument(x:Int32)" />
+    <x:Property Name="IntTimeoutS" Type="InArgument(x:Int32)" />
+    <x:Property Name="IntTimeoutM" Type="InArgument(x:Int32)" />
+    <x:Property Name="StrExceptionMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_boolSuccess" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1157,2128</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.FTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.XPS.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.JSON.Activities</x:String>
+      <x:String>UiPath.REST.Activities</x:String>
+      <x:String>UiPath.SOAP.Activities</x:String>
+      <x:String>UiPath.XML.Activities</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="NAZEV: L3_SAP_odkliknoutSchranku&#xA;POPIS: Tato komponenta se pouziva behem prihlaseni do aplikace SAP. Pokud se behem prihlaseni zobrazi hlaska, ze jsou nove prichozi zpravy, tato komponenta hlasku odklikne.&#xA;NADRAZENA UROVEN: L2_" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="919,1923" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="L3_SAP_odkliknoutSchranku" Name="strComponentName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strComponentName + &quot;: Start&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,1497" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="839,1270" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="boolSchranka" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ImageFound DisplayName="Image Exists 'saplogon.exe Imformace'" Found="[boolSchranka]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="ImageFound_1">
+            <ui:ImageFound.Image>
+              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" TargetImageBase64="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" />
+            </ui:ImageFound.Image>
+            <ui:ImageFound.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Imformace o došlých dokumentech' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+            </ui:ImageFound.Target>
+          </ui:ImageFound>
+          <If Condition="[boolSchranka=true]" sap:VirtualizedContainerService.HintSize="797,477" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'GuiButton  btn[12]'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8e0fec95bffc9910d210197314bec463" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Imformace o došlých dokumentech' /&gt;&lt;sap id='tbar[0]/btn[0]' /&gt;" WaitForReady="INTERACTIVE" />
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="SAP - okno odklik dialogu schranky pri prihlaseni potvrzeno" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="SAP - okno odklik dialogu schranky prihlaseni preskoceno" />
+              </Sequence>
+            </If.Else>
+          </If>
+          <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Max okno" sap:VirtualizedContainerService.HintSize="797,222" sap2010:WorkflowViewState.IdRef="WindowScope_1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP*' /&gt;">
+            <ui:WindowScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
+                </Sequence>
+              </ActivityAction>
+            </ui:WindowScope.Body>
+          </ui:WindowScope>
+          <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[strComponentName + &quot;: Success&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[strComponentName + &quot; failed: &quot; + exception.Message]" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[StrExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[strComponentName + " failed: " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[strComponentName + &quot;: End&quot;]" />
+  </Sequence>
+</Activity>

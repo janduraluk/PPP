@@ -1,0 +1,21 @@
+{
+	"strRootFolder": "C:\\DATA\\proces_VystavbaAobnovaDistribucniSite2_prod\\",
+	"intTimeoutS": 1000,
+	"intTimeoutM": 2000,
+	"intTimeoutL": 3000,
+	"intMaxRetries": 2,
+	"strUserName": "QYCEZdRPA001",
+	"strSapNazevProstredi": "R4T (SSO)",
+	"intHodnotaCrcKriterium": 50000,
+	"strEmailSpravceRPA": "vaclav.rasner@cezdistribuce.cz,zbynek.tomecek@cezdistribuce.cz",
+	"strErrorFrontaTechnik1": "Nenalezen Technik PD. Kontaktován Správce Pøípravy.",
+	"strErrorFrontaTechnik2": "Nenalezen Technik Realizace. Kontaktován Správce Realizace.",
+	"intMaxPocetDniNaNavrhOBJ": 21,
+	"douKoefSchvaleniNavhuObj": 1,
+	"douKoefToleranceOBJ": 1.1,
+	"strSRMLink": "https://pttws.cezdata.corp:44320/irj/portal",
+	"strSapPathTo": "C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\saplogon.exe", 
+	"intCountdownDaysMinus": 10,
+	"intCountdownDaysPlus": 40,
+	"intLumpSum": 5500
+}

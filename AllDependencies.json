@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5.2": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "": [],
+    ".NETFramework,Version=v4.5.2": []
+  },
+  "packageFolders": {
+    "C:\\Users\\TECHROBOT4\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "SynDZ",
+      "projectName": "SynDZ",
+      "projectPath": "C:\\Users\\TECHROBOT4\\Documents\\UiPath\\SynDZ",
+      "packagesPath": "C:\\Users\\TECHROBOT4\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TECHROBOT4\\Documents\\UiPath\\SynDZ"
+    },
+    "frameworks": {
+      "net452": {}
+    }
+  }
+}
