@@ -16,7 +16,7 @@
     "UiPath.Python.Activities": "[1.1.6863.33404]",
     "UiPath.System.Activities": "[18.3.6897.22524]",
     "UiPath.Terminal.Activities": "[1.2.6863.33681]",
-    "UiPath.UIAutomation.Activities": "[18.3.6897.22543]",
+    "UiPath.UIAutomation.Activities": "[20.10.6]",
     "UiPath.WebAPI.Activities": "[1.2.6863.33980]",
     "UiPath.Word.Activities": "[1.2.6863.34260]"
   },
