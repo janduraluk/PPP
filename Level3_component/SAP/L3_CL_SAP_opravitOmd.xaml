@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1013,3819</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1131,4018</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: SAP_opravitOmd&#xA;DESCRIPTION: zmena dat v OM distribuce, odectova jednotka, fakta (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,3614" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: SAP_opravitOmd&#xA;DESCRIPTION: zmena dat v OM distribuce, odectova jednotka, fakta (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,3813" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strComponentName">
         <Variable.Default>
@@ -126,7 +126,7 @@
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
       <Variable x:TypeArguments="x:String" Name="strCisloOdberMistaDistr" />
       <Variable x:TypeArguments="x:String" Name="strOznaceniSmluvnihoUctu" />
-      <Variable x:TypeArguments="x:String" Name="strCisloZop" />
+      <Variable x:TypeArguments="x:String" Name="strDatumPrihlaseni" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -168,15 +168,15 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="558,2653" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="558,2852" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="520,2426" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="520,2625" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="478,2103" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="478,2302" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -206,10 +206,10 @@
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[strCisloZop]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String">[strDatumPrihlaseni]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">4121602598</InArgument>
+                  <InArgument x:TypeArguments="x:String">27.11.2020</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
@@ -239,10 +239,10 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[strCisloZop]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strDatumPrihlaseni]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Object">[in_DictionaryValues("cisloZop").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Object">[in_DictionaryValues("datumPrihlaseni").ToString]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
@@ -284,9 +284,27 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Druh'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[&quot;[k(del)]&quot;&amp;strOznaceniSmluvnihoUctu]">
+            <ucas:ClickPictureOnScreen ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Picture on Screen 'Button  Vložení čas.int.'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="ClickPictureOnScreen_1" KeyModifiers="None">
+              <ucas:ClickPictureOnScreen.PictureOffsetX>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ucas:ClickPictureOnScreen.PictureOffsetX>
+              <ucas:ClickPictureOnScreen.PictureOffsetY>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ucas:ClickPictureOnScreen.PictureOffsetY>
+              <ucas:ClickPictureOnScreen.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="285cf9f7-d777-43a6-8ff5-53b8935b788d" InformativeScreenshot="150d82b34d004a71173b624ad408e907" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna odběrného místa:*' /&gt;&lt;sap id='usr/btn%#AUTOTEXT005' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:ClickPictureOnScreen.Target>
+            </ucas:ClickPictureOnScreen>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Doplňkové'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[&quot;[k(del)]&quot;&amp;strDatumPrihlaseni]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3d02ba55-f296-4ebb-8a61-07625eeb20e0" InformativeScreenshot="a8d5c13f6c9c59ca11559cd8e15ab993" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Umístění přístroje: 3799805' /&gt;&lt;sap id='usr/txtEGPLD-PLTXT' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06432378-3c90-412b-a256-d4be25a0bb5d" InformativeScreenshot="d949a301e99ff5a37747848181a9b956" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Vložení časového intervalu' idx='*' /&gt;&lt;sap id='usr/ctxtISU_TIMESL-ABGRENZTAG' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -296,9 +314,9 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Doplňkové'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[&quot;[k(del)]&quot;&amp;strCisloZop]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Druh'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="[&quot;[k(del)]&quot;&amp;strOznaceniSmluvnihoUctu]">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="06432378-3c90-412b-a256-d4be25a0bb5d" InformativeScreenshot="b50c944d271dbf3fc02ae1a981182880" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Umístění přístroje: 3799805' /&gt;&lt;sap id='usr/subSUB1:SAPLXES65:0100/ctxtEGPLD-ZZCISLOZADOSTI' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3d02ba55-f296-4ebb-8a61-07625eeb20e0" InformativeScreenshot="a8d5c13f6c9c59ca11559cd8e15ab993" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Umístění přístroje: 3799805' /&gt;&lt;sap id='usr/txtEGPLD-PLTXT' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
