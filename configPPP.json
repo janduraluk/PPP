@@ -5,11 +5,11 @@
 	"intTimeoutL": 3000,
 	"intMaxRetries": 2,
 	"strDruhZpravySOP": "NZ",
-	"strStatuszpravy": "03",
-	"strPlatnostdo": "31.12.9999",
+	"strStatusZpravy": "03",
+	"strPlatnostDo": "31.12.9999",
 	"strPocetGeneratoru": "1",
 	"strStatusKontaktu": "Uzavøený-Vyøešený",
-	"strTypsmluvnihouctu": "A1",
+	"strTypSmluvnihoUctu": "A1",
 	"strSkupUcOkruhu": "1200",
 	"strZpusobDosPlat": "D",
 	"strZpusOdeslPl": "S",
@@ -17,8 +17,8 @@
 	"strSdruzFakturace": "3",
 	"strCyklusZaloh": "00",
 	"strDrMistSpot": "4011",
-	"strZpusobprovozuVZ": "dle §28 energetického zákona ",
-	"strTypmereni": "B",
+	"strZpusobProvozuVZ": "dle §28 energetického zákona ",
+	"strTypMereni": "B",
 	"strOperand": "SAZ.A.VAR.",
 	"strTrida": "5",
 	"strAkce": "6",
@@ -26,6 +26,6 @@
 	"strSmer": "Interní",
 	"strVychoziEmail": "qpbcsemail35",
 	"strUpravaTerminu": "14 - Vyžádáno klientem",
-	"strPoleMikrozdroj": "X",
+	"strPoleMikrozdroj": "X"
 
 }
