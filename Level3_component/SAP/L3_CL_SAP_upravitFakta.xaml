@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>676,4608</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>676,6360</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,7 +116,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: SAP_upravitFakta &#xA;DESCRIPTION: Upraveni operandu ve faktech (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,4443" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: SAP_upravitFakta &#xA;DESCRIPTION: Upraveni operandu ve faktech (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,6195" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt;SAP_UpravitFakta" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -164,15 +164,15 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="558,3482" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="558,5234" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="520,3255" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="520,5007" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="478,2932" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="478,4684" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -419,7 +419,7 @@
             </ui:SendHotkey>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'teams.exe  CtrlVirtualC...'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="28.11.2020">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1c5f848e-c6c4-41dd-a8d5-2b150dfc64fb" InformativeScreenshot="2edbc7c837f56d12e541ac969f8dc91d" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Údržba hodnot operandu: USERDEF Hodnota definovaná uživatelem' idx='*' /&gt;&lt;sap colTooltip='Platí od' id='usr/tblSAPLE20CUSERDEF_TC' tableRow='*' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1c5f848e-c6c4-41dd-a8d5-2b150dfc64fb" InformativeScreenshot="862a5b344d16d1954ad88207cd081eef" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Údržba hodnot operandu: USERDEF Hodnota definovaná uživatelem' idx='*' /&gt;&lt;sap colTooltip='Platí od' id='usr/tblSAPLE20CUSERDEF_TC' tableRow='24' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -431,7 +431,7 @@
             </ui:TypeInto>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Hodnota 3'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="B">
               <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7795fdb2-17bf-41a0-821c-feda236c903d" InformativeScreenshot="109f2d08687244bf78fb4434464af464" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Údržba hodnot operandu: USERDEF Hodnota definovaná uživatelem' idx='*' /&gt;&lt;sap colTooltip='Hodnota 3' id='usr/tblSAPLE20CUSERDEF_TC' tableRow='*' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7795fdb2-17bf-41a0-821c-feda236c903d" InformativeScreenshot="109f2d08687244bf78fb4434464af464" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Údržba hodnot operandu: USERDEF Hodnota definovaná uživatelem' idx='*' /&gt;&lt;sap colTooltip='Hodnota 3' id='usr/tblSAPLE20CUSERDEF_TC' tableRow='24' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -441,6 +441,138 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="dd499d74-87cc-43d3-89f7-d9132130d279">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="f5" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7732d715-9183-4cf2-871a-78e2e311a1e0">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="f6" KeyModifiers="Shift" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9df4d2dc-6eb7-41b6-bb3e-adf4f99edec3">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Operand'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="SAZ.A.VAR.">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="55b8948b-10d6-483c-b693-d141c6d191db" InformativeScreenshot="7d3ee7f1dee7500849b3146abd22dc4a" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Založení operandu' idx='*' /&gt;&lt;sap id='usr/ctxtRE20B-OPERAND' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Navrhované'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[&quot;[k(del)]&quot;&amp;&quot;28.11.2020&quot;]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a38051a-7199-43f8-852d-3b5ad5476ae4" InformativeScreenshot="ef95bc46ee78dce7841373fdfb2e1544" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Založení operandu' idx='*' /&gt;&lt;sap id='usr/ctxtRE20B-SUGDATE' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c055c339-eb0f-4bcf-ae02-20e79ba8e312">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="f5" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7de0aefe-403f-46c7-b62a-5557205ef8c9">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="f3" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="6e7464a6-3043-4030-8456-cdc35dde410b">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="s" KeyModifiers="Ctrl">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="dba0a9d1-c1c9-4d2d-ac7e-bc958561b4b6">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_9" Key="f3" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="f21c74cf-746e-480b-a1ff-b25e337347db">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_10" Key="f3" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="9e71aa97-4b7c-447c-a00b-af0a7aeee109">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
           </Sequence>
           <Assign sap:VirtualizedContainerService.HintSize="478,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
