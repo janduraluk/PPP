@@ -117,16 +117,11 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: SAP_zalozitKOnaSND &#xA;DESCRIPTION: zalozeni a odeslani kontaktu na SND k uprave&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,5357" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strComponentName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;L3&gt;SAP_zalozitKOnaSND </Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="&lt;L3&gt;SAP_zalozitKOnaSND " Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
       <Variable x:TypeArguments="x:String" Name="strCisloOP" />
       <Variable x:TypeArguments="x:String" Name="strResitelKontaktu" />
@@ -276,7 +271,7 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <Sequence sap:VirtualizedContainerService.HintSize="436,581" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence sap:VirtualizedContainerService.HintSize="436,2592" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -318,230 +313,230 @@
                   </ui:Target>
                 </ui:SendHotkey.Target>
               </ui:SendHotkey>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Řešitel'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[&quot;[k(del)]&quot;&amp;strResitelKontaktu]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="93376d63-6959-4556-b762-9212cf634729" InformativeScreenshot="ff28c9ff967e719a91ad9a97df9dda1f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-ZZWORKER' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Třída'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[in_strTrida]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd758d80-fa9b-4307-881f-decf30946cd2" InformativeScreenshot="87377fd888dcade28592f0fbc73921d8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-CCLASS' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Kontakt'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[in_strAkce]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17a88047-5923-429f-afbc-f032d649baf9" InformativeScreenshot="1fd905d791ef61a7e803014de91b22e6" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-ACTIVITY' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Druh služby'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[in_strDruhSluzby]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e0cbfc65-9c06-42c0-bb60-0299cb00896e" InformativeScreenshot="640ee8705b2ae3540ac09252b9182b69" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-ZZDRUH_SLUZBY' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'ComboBox  Druh kontaktu'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_2" Item="Interní ve Skupině">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                    <x:String>Telefon</x:String>
+                    <x:String>Email</x:String>
+                    <x:String>Internet (portál)</x:String>
+                    <x:String>Smluvní partner</x:String>
+                    <x:String>Interní ve Skupině</x:String>
+                    <x:String>Cizí obchodník</x:String>
+                    <x:String>Neurčeno</x:String>
+                    <x:String>Osobní kontakt</x:String>
+                    <x:String>Korespondence(dopis)</x:String>
+                    <x:String>Fax</x:String>
+                    <x:String>IVR</x:String>
+                    <x:String>Distribuční portál</x:String>
+                    <x:String>SMS</x:String>
+                    <x:String>OTE</x:String>
+                    <x:String>WebChat</x:String>
+                    <x:String>Service Desk</x:String>
+                    <x:String>Nabídka</x:String>
+                    <x:String>Kampaň</x:String>
+                    <x:String>Externí partner</x:String>
+                    <x:String>ESB komunikace</x:String>
+                    <x:String>DŘS</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b04e093-cb2b-4471-937c-579e358c0313" InformativeScreenshot="5e4e66d6ec8c5a600f980c85cce95503" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/cmbBCONTD-CTYPE' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+              </ucas:SelectMenuItem>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'CTextField Třída'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_3" Item="Otevřený - Přidělený">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="32">
+                    <x:String>Automatické zpracování</x:String>
+                    <x:String>Bezpředmětný</x:String>
+                    <x:String>Čekající na obchodníka</x:String>
+                    <x:String>Čekající na zákazníka</x:String>
+                    <x:String>K dořešení</x:String>
+                    <x:String>K realizaci (interní)</x:String>
+                    <x:String>Náhrada - k odeslání</x:String>
+                    <x:String>Náhrada - odpověď odeslána</x:String>
+                    <x:String>Náhrada - předán k šetření</x:String>
+                    <x:String>Náhrada - šetření provedeno</x:String>
+                    <x:String>Náhrada - uhrazena</x:String>
+                    <x:String>Náhrada - vymáhání</x:String>
+                    <x:String>Neprovedený pracovní příkaz</x:String>
+                    <x:String>Odeslána zpráva na OTE</x:String>
+                    <x:String>Otevřený - Nepřidělený</x:String>
+                    <x:String>Otevřený - Přidělený</x:String>
+                    <x:String>Předat ke zpracování</x:String>
+                    <x:String>Uzavřený - Nevyřešený</x:String>
+                    <x:String>Uzavřený - Vyřešený</x:String>
+                    <x:String>Ve zpracování</x:String>
+                    <x:String>Vrácen pracovní příkaz</x:String>
+                    <x:String>Vrácen pracovní příkaz - přezkoušení</x:String>
+                    <x:String>Vrácen pracovní příkaz - závada</x:String>
+                    <x:String>Zadán pracovní příkaz</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ec7f081-3c96-410a-9b03-c2d71aebd8b6" InformativeScreenshot="1717de7951e528315b3e05f5848af886" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/cmbBCONTD-ZSTAV' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+              </ucas:SelectMenuItem>
+              <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'ComboBox Směr'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_4" Item="Interní">
+                <ucas:SelectMenuItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="8">
+                    <x:String>Interní</x:String>
+                    <x:String>Obchodníkovi</x:String>
+                    <x:String>Od obchodníka</x:String>
+                    <x:String>Od spolupracujícího partnera</x:String>
+                    <x:String>Od zákazníka</x:String>
+                    <x:String>Spolupracujícímu partnerovi</x:String>
+                    <x:String>Třetí strana</x:String>
+                    <x:String>Zákazníkovi</x:String>
+                  </scg:List>
+                </ucas:SelectMenuItem.Items>
+                <ucas:SelectMenuItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8dc7aff9-2951-4f11-bc43-cf838773b393" InformativeScreenshot="ef9f814dd94bb07e7bed60d599a1a107" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/cmbBCONTD-F_COMING' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ucas:SelectMenuItem.Target>
+              </ucas:SelectMenuItem>
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Způsob'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[strPoznamka]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49f527e5-f415-4dde-93cf-f16f56dfa9d8" InformativeScreenshot="09233c201021ec6a37058dd3289a0947" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/cntlZCONTROL_CONTAINER/shellcont/shell' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="s" KeyModifiers="Ctrl">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="58cbd785-3313-47f0-aac8-6639e646b1d3">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
+              <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe Uložení'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:ClickImage.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:ClickImage.CursorPosition>
+                <ui:ClickImage.Image>
+                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAYAAABbq/AzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKZSURBVGhD7Za/axRBFMfnXwgiWIdchGyZJmUgTUKqQK60kQhH9ORaxR/bW8gJh6KIYLmNIIQUwYCtrUsgcpgIwQiKRSB4QszX9+Z29mbmZlfhLntTzMCH2bdv5s3t+843RPzav4+XT1poNG5hY6MR8ADWgjURnUe3IYQAjzB7NjdvNuQDel+As5OAD5AWLJAURyrVOwJ+vgv4AGtBY+Cc38fuhYHqIS1M55x+An68DfgAa0Ejd875yQfg2+vqeb+G6OoaUlfOd/i308Wuv3DkRoC1MJxz/v0NcNSunt0VRLMrSF25Mv5r3x3Es1cQ77pyo8K1SZhnrtxoSC1oDJxz/Ao4fFg9O4uIaotIXbmR2URcu4x4x5XzF9bCdE6V4rAgfLhCF8fIlTRWiZrN8aq9h4VR7zLyc/ScdoZRaw5JYe3B2ou4VFILGhNwTr8x9U4WGx9p5TpzpnA6ah/P1Dj3HrdzEmp21NocXm/XKqtt/O7xMjnnyA+mW6nHhR9cR73IPWqtvceIXeJwTe18/YzSWlZs58bI5Jxju0H/yCGnWE7SUfvKGugSh/N8Kw38E8d0ztenQLd18Wwv0EctIHXF/CxqSFSuu0q3+hLibRVrqH1l9brXSBx7P9fUz9AorWXFdm6MSC1oDJxz8ADYv1EBS9ScKcRb/ThtTkHMzCOVuXXEM+SUdra2Pa3lLLbmEXFOzfb7LE6WtXrau6i5rsXTSPj5H7WM2M6NEdbCcM6fysQhuOnyzwk1iRoz1IAsJ0TWNBeqOWUNVLGql7/vXwL1G8TyUvHeotjOjRGpBY3cOZWKEyiFtZCXJnfO5yCOL0gtaOTOOevecy4MVA9rYTjndO8ueh+vBzyAteAhnj+mf9/4gQQKs0+zwF8sciWrvhmyogAAAABJRU5ErkJggg==" />
+                </ui:ClickImage.Image>
+                <ui:ClickImage.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36fa4e6e-2498-4914-9c3a-8205c2f50b58" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Uložení poznámky' idx='*' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:ClickImage.Target>
+              </ui:ClickImage>
+              <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe Uložení'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                <ui:ClickImage.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:ClickImage.CursorPosition>
+                <ui:ClickImage.Image>
+                  <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAATCAYAAABiMHgQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHDSURBVFhH7ZdPSwJBGMbnK0j4BUQ95NGLR8GL4dU9dgmCMAyvSdTeO3mQjkHHvQSBeJC+QNcWoZAykAyKDoJgYD7NTOus+6e6yTs0wo913mfdw/x4Bpe1Tw/AGIP4mCudK6vv78kFZk/AfGKgAHchxUhTsxHwfm2gAHfhN+ZjHH+TYf1wF35jpvfA25WBAtyFasxicgO8XBgIIFyoxixeL4FRSxMOYWf5P5fsFtzYXG+EC78x43NgeKIHvSJymSRyLAm7F5NrjnDhN0YjMW6DS2nU4FSYvKpMCivC5nP5LhAWJ3I5j8kIocTo1ZgabN4WuameCHeZeRtvtb11exNM5eJ3P2W00LMxARkrkiJZaB3OhhYsoq3RsjHiGPs+inzUcfabmEhDQg0iRLAxz2fAoEGcbb6ZG7C7K7NugW9+AW74e1zGMnCW2aDCGxN6FhGEC78xj8fA3S5tOnnk0nm4gXmJb3ACdicmD6yrsNO8IS0va6XAIs+igXChGvOpgRi3ngArlyJzp8yPs3r1DzHeWh2BKTjLOTGEC9UYHcT8F5QY2ZgHI4YKwoVqzHxwFHuTYf0IF6ox034Ts9sdAwGm/Sa+ALY6xdgFqZKDAAAAAElFTkSuQmCC" />
+                </ui:ClickImage.Image>
+                <ui:ClickImage.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3410e99-0039-45af-8796-3e7c4a8fcf98" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Uložení kontaktu' idx='*' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:ClickImage.Target>
+              </ui:ClickImage>
             </Sequence>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Řešitel'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" Text="[&quot;[k(del)]&quot;&amp;strResitelKontaktu]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="93376d63-6959-4556-b762-9212cf634729" InformativeScreenshot="ff28c9ff967e719a91ad9a97df9dda1f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-ZZWORKER' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Třída'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" Text="[in_strTrida]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd758d80-fa9b-4307-881f-decf30946cd2" InformativeScreenshot="87377fd888dcade28592f0fbc73921d8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-CCLASS' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Kontakt'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_9" Text="[in_strAkce]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="17a88047-5923-429f-afbc-f032d649baf9" InformativeScreenshot="1fd905d791ef61a7e803014de91b22e6" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-ACTIVITY' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Druh služby'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_10" Text="[in_strDruhSluzby]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e0cbfc65-9c06-42c0-bb60-0299cb00896e" InformativeScreenshot="640ee8705b2ae3540ac09252b9182b69" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/ctxtBCONTD-ZZDRUH_SLUZBY' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'ComboBox  Druh kontaktu'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_2" Item="Interní ve Skupině">
-              <ucas:SelectMenuItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="32">
-                  <x:String>Telefon</x:String>
-                  <x:String>Email</x:String>
-                  <x:String>Internet (portál)</x:String>
-                  <x:String>Smluvní partner</x:String>
-                  <x:String>Interní ve Skupině</x:String>
-                  <x:String>Cizí obchodník</x:String>
-                  <x:String>Neurčeno</x:String>
-                  <x:String>Osobní kontakt</x:String>
-                  <x:String>Korespondence(dopis)</x:String>
-                  <x:String>Fax</x:String>
-                  <x:String>IVR</x:String>
-                  <x:String>Distribuční portál</x:String>
-                  <x:String>SMS</x:String>
-                  <x:String>OTE</x:String>
-                  <x:String>WebChat</x:String>
-                  <x:String>Service Desk</x:String>
-                  <x:String>Nabídka</x:String>
-                  <x:String>Kampaň</x:String>
-                  <x:String>Externí partner</x:String>
-                  <x:String>ESB komunikace</x:String>
-                  <x:String>DŘS</x:String>
-                </scg:List>
-              </ucas:SelectMenuItem.Items>
-              <ucas:SelectMenuItem.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b04e093-cb2b-4471-937c-579e358c0313" InformativeScreenshot="5e4e66d6ec8c5a600f980c85cce95503" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/cmbBCONTD-CTYPE' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ucas:SelectMenuItem.Target>
-            </ucas:SelectMenuItem>
-            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'CTextField Třída'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_3" Item="Otevřený - Přidělený">
-              <ucas:SelectMenuItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="32">
-                  <x:String>Automatické zpracování</x:String>
-                  <x:String>Bezpředmětný</x:String>
-                  <x:String>Čekající na obchodníka</x:String>
-                  <x:String>Čekající na zákazníka</x:String>
-                  <x:String>K dořešení</x:String>
-                  <x:String>K realizaci (interní)</x:String>
-                  <x:String>Náhrada - k odeslání</x:String>
-                  <x:String>Náhrada - odpověď odeslána</x:String>
-                  <x:String>Náhrada - předán k šetření</x:String>
-                  <x:String>Náhrada - šetření provedeno</x:String>
-                  <x:String>Náhrada - uhrazena</x:String>
-                  <x:String>Náhrada - vymáhání</x:String>
-                  <x:String>Neprovedený pracovní příkaz</x:String>
-                  <x:String>Odeslána zpráva na OTE</x:String>
-                  <x:String>Otevřený - Nepřidělený</x:String>
-                  <x:String>Otevřený - Přidělený</x:String>
-                  <x:String>Předat ke zpracování</x:String>
-                  <x:String>Uzavřený - Nevyřešený</x:String>
-                  <x:String>Uzavřený - Vyřešený</x:String>
-                  <x:String>Ve zpracování</x:String>
-                  <x:String>Vrácen pracovní příkaz</x:String>
-                  <x:String>Vrácen pracovní příkaz - přezkoušení</x:String>
-                  <x:String>Vrácen pracovní příkaz - závada</x:String>
-                  <x:String>Zadán pracovní příkaz</x:String>
-                </scg:List>
-              </ucas:SelectMenuItem.Items>
-              <ucas:SelectMenuItem.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8ec7f081-3c96-410a-9b03-c2d71aebd8b6" InformativeScreenshot="1717de7951e528315b3e05f5848af886" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/cmbBCONTD-ZSTAV' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ucas:SelectMenuItem.Target>
-            </ucas:SelectMenuItem>
-            <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'ComboBox Směr'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="SelectMenuItem_4" Item="Interní">
-              <ucas:SelectMenuItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="8">
-                  <x:String>Interní</x:String>
-                  <x:String>Obchodníkovi</x:String>
-                  <x:String>Od obchodníka</x:String>
-                  <x:String>Od spolupracujícího partnera</x:String>
-                  <x:String>Od zákazníka</x:String>
-                  <x:String>Spolupracujícímu partnerovi</x:String>
-                  <x:String>Třetí strana</x:String>
-                  <x:String>Zákazníkovi</x:String>
-                </scg:List>
-              </ucas:SelectMenuItem.Items>
-              <ucas:SelectMenuItem.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8dc7aff9-2951-4f11-bc43-cf838773b393" InformativeScreenshot="ef9f814dd94bb07e7bed60d599a1a107" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_CA/ssubSUBSR_TSTRIP:SAPLBPT1:9900/cmbBCONTD-F_COMING' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ucas:SelectMenuItem.Target>
-            </ucas:SelectMenuItem>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Způsob'" sap:VirtualizedContainerService.HintSize="436,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[strPoznamka]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="49f527e5-f415-4dde-93cf-f16f56dfa9d8" InformativeScreenshot="09233c201021ec6a37058dd3289a0947" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Založení Kontakt' /&gt;&lt;sap id='usr/cntlZCONTROL_CONTAINER/shellcont/shell' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="s" KeyModifiers="Ctrl">
-              <ui:SendHotkey.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="58cbd785-3313-47f0-aac8-6639e646b1d3">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:SendHotkey.Target>
-            </ui:SendHotkey>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe Uložení'" sap:VirtualizedContainerService.HintSize="436,154" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:ClickImage.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:ClickImage.CursorPosition>
-              <ui:ClickImage.Image>
-                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGcAAAAVCAYAAABbq/AzAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKZSURBVGhD7Za/axRBFMfnXwgiWIdchGyZJmUgTUKqQK60kQhH9ORaxR/bW8gJh6KIYLmNIIQUwYCtrUsgcpgIwQiKRSB4QszX9+Z29mbmZlfhLntTzMCH2bdv5s3t+843RPzav4+XT1poNG5hY6MR8ADWgjURnUe3IYQAjzB7NjdvNuQDel+As5OAD5AWLJAURyrVOwJ+vgv4AGtBY+Cc38fuhYHqIS1M55x+An68DfgAa0Ejd875yQfg2+vqeb+G6OoaUlfOd/i308Wuv3DkRoC1MJxz/v0NcNSunt0VRLMrSF25Mv5r3x3Es1cQ77pyo8K1SZhnrtxoSC1oDJxz/Ao4fFg9O4uIaotIXbmR2URcu4x4x5XzF9bCdE6V4rAgfLhCF8fIlTRWiZrN8aq9h4VR7zLyc/ScdoZRaw5JYe3B2ou4VFILGhNwTr8x9U4WGx9p5TpzpnA6ah/P1Dj3HrdzEmp21NocXm/XKqtt/O7xMjnnyA+mW6nHhR9cR73IPWqtvceIXeJwTe18/YzSWlZs58bI5Jxju0H/yCGnWE7SUfvKGugSh/N8Kw38E8d0ztenQLd18Wwv0EctIHXF/CxqSFSuu0q3+hLibRVrqH1l9brXSBx7P9fUz9AorWXFdm6MSC1oDJxz8ADYv1EBS9ScKcRb/ThtTkHMzCOVuXXEM+SUdra2Pa3lLLbmEXFOzfb7LE6WtXrau6i5rsXTSPj5H7WM2M6NEdbCcM6fysQhuOnyzwk1iRoz1IAsJ0TWNBeqOWUNVLGql7/vXwL1G8TyUvHeotjOjRGpBY3cOZWKEyiFtZCXJnfO5yCOL0gtaOTOOevecy4MVA9rYTjndO8ueh+vBzyAteAhnj+mf9/4gQQKs0+zwF8sciWrvhmyogAAAABJRU5ErkJggg==" />
-              </ui:ClickImage.Image>
-              <ui:ClickImage.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="36fa4e6e-2498-4914-9c3a-8205c2f50b58" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Uložení poznámky' idx='*' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:ClickImage.Target>
-            </ui:ClickImage>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe Uložení'" sap:VirtualizedContainerService.HintSize="436,154" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:ClickImage.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:ClickImage.CursorPosition>
-              <ui:ClickImage.Image>
-                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGYAAAATCAYAAABiMHgQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHDSURBVFhH7ZdPSwJBGMbnK0j4BUQ95NGLR8GL4dU9dgmCMAyvSdTeO3mQjkHHvQSBeJC+QNcWoZAykAyKDoJgYD7NTOus+6e6yTs0wo913mfdw/x4Bpe1Tw/AGIP4mCudK6vv78kFZk/AfGKgAHchxUhTsxHwfm2gAHfhN+ZjHH+TYf1wF35jpvfA25WBAtyFasxicgO8XBgIIFyoxixeL4FRSxMOYWf5P5fsFtzYXG+EC78x43NgeKIHvSJymSRyLAm7F5NrjnDhN0YjMW6DS2nU4FSYvKpMCivC5nP5LhAWJ3I5j8kIocTo1ZgabN4WuameCHeZeRtvtb11exNM5eJ3P2W00LMxARkrkiJZaB3OhhYsoq3RsjHiGPs+inzUcfabmEhDQg0iRLAxz2fAoEGcbb6ZG7C7K7NugW9+AW74e1zGMnCW2aDCGxN6FhGEC78xj8fA3S5tOnnk0nm4gXmJb3ACdicmD6yrsNO8IS0va6XAIs+igXChGvOpgRi3ngArlyJzp8yPs3r1DzHeWh2BKTjLOTGEC9UYHcT8F5QY2ZgHI4YKwoVqzHxwFHuTYf0IF6ox034Ts9sdAwGm/Sa+ALY6xdgFqZKDAAAAAElFTkSuQmCC" />
-              </ui:ClickImage.Image>
-              <ui:ClickImage.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3410e99-0039-45af-8796-3e7c4a8fcf98" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Uložení kontaktu' idx='*' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:ClickImage.Target>
-            </ui:ClickImage>
           </Sequence>
           <Assign sap:VirtualizedContainerService.HintSize="478,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
