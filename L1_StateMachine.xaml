@@ -897,7 +897,7 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
                                       <Transition.To>
-                                        <State x:Name="__ReferenceID6" DisplayName="Proces-1" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_16">
+                                        <State x:Name="__ReferenceID6" DisplayName="proces1-zalozitTkd" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_16">
                                           <State.Entry>
                                             <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_65">
                                               <sap:WorkflowViewStateService.ViewState>
@@ -927,7 +927,7 @@
                                                   </InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="workflow - Prace blok 1 + 2" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-1.xaml">
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_proces1-zalozitTkd" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-1.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
                                                   <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
@@ -975,7 +975,7 @@
                                               </sap:WorkflowViewStateService.ViewState>
                                               <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
                                               <Transition.To>
-                                                <State x:Name="__ReferenceID10" DisplayName="Proces-2" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_22">
+                                                <State x:Name="__ReferenceID10" DisplayName="proces2-zalozitSu" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_22">
                                                   <State.Entry>
                                                     <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_111">
                                                       <sap:WorkflowViewStateService.ViewState>
@@ -1005,7 +1005,7 @@
                                                           </InArgument>
                                                         </Assign.Value>
                                                       </Assign>
-                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_zpracovatBlok3" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-2.xaml">
+                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_proces2-zalozitSu" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-2.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
                                                           <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
                                                           <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
@@ -1053,7 +1053,7 @@
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
                                                       <Transition.To>
-                                                        <State x:Name="__ReferenceID9" DisplayName="Proces-3" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_21">
+                                                        <State x:Name="__ReferenceID9" DisplayName="proces3-opravaTkd" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_21">
                                                           <State.Entry>
                                                             <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_110">
                                                               <sap:WorkflowViewStateService.ViewState>
@@ -1083,7 +1083,7 @@
                                                                   </InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
-                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_zpracovatBlok4" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-3.xaml">
+                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_proces3-opravaTkd" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-3.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
                                                                   <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
                                                                   <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
