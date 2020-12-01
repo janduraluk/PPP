@@ -2761,15 +2761,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hladilpet\\.nuget\\packages\\": {}
+    "C:\\Users\\hlava\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "CEZd_proces_ppp",
       "projectName": "CEZd_proces_ppp",
-      "projectPath": "C:\\Users\\hladilpet\\Documents\\UiPath\\PPP\\.local",
-      "packagesPath": "C:\\Users\\hladilpet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hladilpet\\Documents\\UiPath\\PPP\\.local"
+      "projectPath": "C:\\Users\\hlava\\Documents\\UiPath\\PPP\\.local",
+      "packagesPath": "C:\\Users\\hlava\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hlava\\Documents\\UiPath\\PPP\\.local"
     },
     "frameworks": {
       "net461": {

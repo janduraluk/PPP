@@ -1,6 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Level1_StateMachine" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1160,1559" sap2010:WorkflowViewState.IdRef="State_Machine_V2_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="46">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -28,7 +28,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -63,9 +63,45 @@
   </TextExpression.ReferencesForImplementation>
   <TryCatch sap2010:Annotation.AnnotationText="NAZEV PROCESU: Proces PPP&#xA;OZNACENI PROCESU: RPA4&#xA;VERZE: 1.0.0" DisplayName="&lt;Level 1&gt; State machine" sap:VirtualizedContainerService.HintSize="810,1394" sap2010:WorkflowViewState.IdRef="TryCatch_1">
     <TryCatch.Variables>
-      <Variable x:TypeArguments="x:Int32" Name="intCountdownDaysMinus" />
-      <Variable x:TypeArguments="x:Int32" Name="intLumpSum" />
-      <Variable x:TypeArguments="x:Int32" Name="intCountdownDaysPlus" />
+      <Variable x:TypeArguments="x:String" Name="strExecutionStatus" />
+      <Variable x:TypeArguments="x:String" Name="strExecutionMessage" />
+      <Variable x:TypeArguments="x:Int32" Name="intNumRetries" />
+      <Variable x:TypeArguments="x:Int32" Name="intTimeoutS" />
+      <Variable x:TypeArguments="x:Int32" Name="intTimeoutM" />
+      <Variable x:TypeArguments="x:Int32" Name="intTimeoutL" />
+      <Variable x:TypeArguments="x:Int32" Name="intMaxRetries" />
+      <Variable x:TypeArguments="x:Int32" Name="intCounter" />
+      <Variable x:TypeArguments="x:String" Name="strRootFolder" />
+      <Variable x:TypeArguments="x:String" Name="strUserName" />
+      <Variable x:TypeArguments="x:String" Name="strEmailAdminRpa" />
+      <Variable x:TypeArguments="x:String" Name="strAppEnvironmentName" />
+      <Variable x:TypeArguments="x:String" Name="strProcessCode" />
+      <Variable x:TypeArguments="x:String" Name="strDruhSluzby" />
+      <Variable x:TypeArguments="x:String" Name="strZpusobProvozuVZ" />
+      <Variable x:TypeArguments="x:String" Name="strTypSmluvnihoUctu" />
+      <Variable x:TypeArguments="x:String" Name="strPlatnostDo" />
+      <Variable x:TypeArguments="x:String" Name="strStatusZpravy" />
+      <Variable x:TypeArguments="x:String" Name="strPoleMikrozdroj" />
+      <Variable x:TypeArguments="x:String" Name="strUpravaTerminu" />
+      <Variable x:TypeArguments="x:String" Name="strSmer" />
+      <Variable x:TypeArguments="x:String" Name="strVychoziEmail" />
+      <Variable x:TypeArguments="x:String" Name="strDruhkontaktu" />
+      <Variable x:TypeArguments="x:String" Name="strAkce" />
+      <Variable x:TypeArguments="x:String" Name="strTrida" />
+      <Variable x:TypeArguments="x:String" Name="strOperand" />
+      <Variable x:TypeArguments="x:String" Name="strDrMistSpot" />
+      <Variable x:TypeArguments="x:String" Name="strCyklusZaloh" />
+      <Variable x:TypeArguments="x:String" Name="strSdruzFakturace" />
+      <Variable x:TypeArguments="x:String" Name="strAtribNalezUctu" />
+      <Variable x:TypeArguments="x:String" Name="strZpusOdeslPl" />
+      <Variable x:TypeArguments="x:String" Name="strStatusKontaktu" />
+      <Variable x:TypeArguments="x:String" Name="strZpusobDosPlat" />
+      <Variable x:TypeArguments="x:String" Name="strPocetGeneratoru" />
+      <Variable x:TypeArguments="x:String" Name="strDruhZpravySOP" />
+      <Variable x:TypeArguments="x:String" Name="strExceptionMessage" />
+      <Variable x:TypeArguments="x:String" Name="strSkupUcOkruhu" />
+      <Variable x:TypeArguments="x:String" Name="strTypMereni" />
+      <Variable x:TypeArguments="x:String" Name="strSapPathTo" />
     </TryCatch.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -87,17 +123,14 @@
         </sap:WorkflowViewStateService.ViewState>
         <State x:Name="__ReferenceID0" DisplayName="Nacist vstupy" sap:VirtualizedContainerService.HintSize="189,92" sap2010:WorkflowViewState.IdRef="State_1">
           <State.Entry>
-            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="376,574" sap2010:WorkflowViewState.IdRef="Sequence_4">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="strSapPathTo" />
-              </Sequence.Variables>
+            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="376,572" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="&lt;L1&gt; START - Nacist vstupy" />
+              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="&lt;L1&gt; START - Nacist vstupy" />
               <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_28">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strExecutionMessage]</OutArgument>
@@ -120,27 +153,114 @@
               </Assign>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_nacistVstupy" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Level2_workflow\L2_nacistVstupy.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intTimeoutS">[IntTimeoutS]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intTimeoutM">[IntTimeoutM]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intTimeoutL">[IntTimeoutL]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intMaxRetries">[intMaxRetries]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strRootFolder">[strRootFolder]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strSapNazevProstredi">[strSapNazevProstredi]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intHodnotaCrcKriterium">[intCRCcriterium]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strEmailSpravceRPA">[strEmailSpravceRPA]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strErrorFrontaTechnik1">[strErrorFrontaTechnik1]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strErrorFrontaTechnik2">[strErrorFrontaTechnik2]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strUserName">[strRPAuzivatelLogin]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strSRMLink">[strSRMLink]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intMaxPocetDniNaNavrhOBJ">[intMaxPocetDniNaNavrhOBJ]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Double" x:Key="arg_douKoefSchvaleniNavhuObj">[doubleKoefSchvaleniNavhuObj]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Double" x:Key="arg_douKoefToleranceOBJ">[dobleKoefToleranceOBJ]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:String" x:Key="arg_strSapPathTo">[strSapPathTo]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intCountdownDaysMinus">[intCountdownDaysMinus]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intLumpSum">[intLumpSum]</InOutArgument>
-                  <InOutArgument x:TypeArguments="x:Int32" x:Key="arg_intCountdownDaysPlus">[intCountdownDaysPlus]</InOutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strTypMereni">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strTypMereni" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strSkupUcOkruhu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSkupUcOkruhu" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExceptionMessage" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strDruhZpravySOP">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDruhZpravySOP" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strPocetGeneratoru">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPocetGeneratoru" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strStatusKontaktu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strStatusKontaktu" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strZpusobDosPlat">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strZpusobDosPlat" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strZpusOdeslPl">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strZpusOdeslPl" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strAtribNalezUctu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strAtribNalezUctu" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strSdruzFakturace">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSdruzFakturace" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strCyklusZaloh">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strCyklusZaloh" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strDrMistSpot">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDrMistSpot" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strOperand">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strOperand" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strTrida">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strTrida" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strAkce">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strAkce" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strDruhkontaktu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDruhkontaktu" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strSmer">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strSmer" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strVychoziEmail">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strVychoziEmail" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strUpravaTerminu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strUpravaTerminu" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strPoleMikrozdroj">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPoleMikrozdroj" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strRootFolder">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_intTimeoutS">
+                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="IntTimeoutS" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_intTimeoutM">
+                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="IntTimeoutM" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_intTimeoutL">
+                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="IntTimeoutL" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_intMaxRetries">
+                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="intMaxRetries" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strStatusZpravy">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strStatusZpravy" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strPlatnostDo">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPlatnostDo" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strTypSmluvnihoUctu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strTypSmluvnihoUctu" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strZpusobProvozuVZ">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strZpusobProvozuVZ" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strDruhSluzby">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strDruhSluzby" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strProcessCode">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strUserName">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strUserName" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strAppEnvironmentName">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strEmailAdminRpa">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -224,24 +344,12 @@
                       <ui:LogMessage sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="&lt;L1&gt; START - Ukoncit proces" />
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="VSTUPY: &#xA;IntTimeoutS = intTimeoutS&#xA;IntTimeoutM = intTImeoutM&#xA;IntTimeoutL = intTimeoutL&#xA;StrRootFolder = strRootFolder&#xA;&#xA;VYSTUPY: &#xA;StrFailureMessage = strExecutionMessage&#xA;StrExecutionStatus = strExecutionStatus" DisplayName="L2_ukoncitAplikace" sap:VirtualizedContainerService.HintSize="334,234" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Level2_workflow\L2_ukoncitAplikace.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
-                          </OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTImeoutM" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
-                          </InArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strEmailSpravceRPA" />
-                          </InOutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[intTimeoutS]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[intTImeoutM]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[intTimeoutL]</InArgument>
+                          <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">[strEmailSpravceRPA]</InOutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -403,61 +511,27 @@
                               </Assign>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke L2_ukoncitAplikace workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" UnSafe="False" WorkflowFileName="Level2_workflow\L2_ukoncitAplikace.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
-                                  </OutArgument>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
-                                  </OutArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutS" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutM" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutL" />
-                                  </InArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strEmailSpravceRPA" />
-                                  </InOutArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">[strEmailSpravceRPA]</InOutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_handler workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Level2_workflow\L2_handler.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
-                                  </OutArgument>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
-                                  </OutArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutS" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutM" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutL" />
-                                  </InArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strProjectId">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strProjectId" />
-                                  </InOutArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strRootFolder" />
-                                  </InOutArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strEmailSpravceRPA" />
-                                  </InOutArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="ARG_intMaxRetries">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intMaxRetries" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="ARG_intNumRetries">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intNumRetries" />
-                                  </InArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorEmailText">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strErrorEmailText" />
-                                  </InOutArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strProjectId">[strProjectId]</InOutArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">[strRootFolder]</InOutArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">[strEmailSpravceRPA]</InOutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="ARG_intMaxRetries">[intMaxRetries]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="ARG_intNumRetries">[intNumRetries]</InArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorEmailText">[strErrorEmailText]</InOutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
@@ -568,7 +642,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
                       <Transition.To>
-                        <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="cyklus - posledniradek&#xD;&#xA;overeni zda vstupni soubor existuje&#xD;&#xA;zaloha/duplikat" DisplayName="Nacist data" sap:VirtualizedContainerService.HintSize="189,161" sap2010:WorkflowViewState.IdRef="State_19">
+                        <State x:Name="__ReferenceID7" sap2010:Annotation.AnnotationText="cyklus - posledniradek&#xA;overeni zda vstupni soubor existuje&#xA;zaloha/duplikat" DisplayName="Nacist data" sap:VirtualizedContainerService.HintSize="189,161" sap2010:WorkflowViewState.IdRef="State_19">
                           <State.Entry>
                             <Sequence sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="376,414" sap2010:WorkflowViewState.IdRef="Sequence_103">
                               <sap:WorkflowViewStateService.ViewState>
@@ -1376,47 +1450,6 @@
         <x:Reference>__ReferenceID8</x:Reference>
         <x:Reference>__ReferenceID9</x:Reference>
         <x:Reference>__ReferenceID10</x:Reference>
-        <StateMachine.Variables>
-          <Variable x:TypeArguments="x:String" Name="strExecutionStatus" />
-          <Variable x:TypeArguments="x:String" Name="strExecutionMessage" />
-          <Variable x:TypeArguments="x:Int32" Name="intNumRetries" />
-          <Variable x:TypeArguments="x:Int32" Name="IntTimeoutS" />
-          <Variable x:TypeArguments="x:Int32" Name="IntTimeoutM" />
-          <Variable x:TypeArguments="x:Int32" Name="IntTimeoutL" />
-          <Variable x:TypeArguments="x:Int32" Name="intMaxRetries" />
-          <Variable x:TypeArguments="x:Int32" Name="IntCounter" />
-          <Variable x:TypeArguments="x:String" Name="strProjectId" />
-          <Variable x:TypeArguments="x:String" Name="strCRCProjektu" />
-          <Variable x:TypeArguments="x:String" Name="strStatus" />
-          <Variable x:TypeArguments="x:String" Name="strSapNazevProstredi" />
-          <Variable x:TypeArguments="x:String" Name="strRootFolder" />
-          <Variable x:TypeArguments="x:String" Name="strStavZpracovani" />
-          <Variable x:TypeArguments="ui:GenericValue" Default="[now]" Name="genTS" />
-          <Variable x:TypeArguments="x:Int32" Name="intCRCcriterium" />
-          <Variable x:TypeArguments="x:Int32" Name="intCRCProjektu" />
-          <Variable x:TypeArguments="x:String" Name="strDatumRealizace" />
-          <Variable x:TypeArguments="x:Double" Name="doubleCisloNK" />
-          <Variable x:TypeArguments="x:String" Name="strCisloNK" />
-          <Variable x:TypeArguments="x:Double" Name="doubleCisloHlaseni" />
-          <Variable x:TypeArguments="x:String" Name="strTechnikPD" />
-          <Variable x:TypeArguments="x:String" Name="strCisloHlaseni" />
-          <Variable x:TypeArguments="s:DateTime" Name="dateKOMI" />
-          <Variable x:TypeArguments="x:String" Name="strErrorFronta" />
-          <Variable x:TypeArguments="x:String" Name="strEmailSpravceRPA" />
-          <Variable x:TypeArguments="x:String" Name="strErrorEmailText" />
-          <Variable x:TypeArguments="x:String" Name="strErrorFrontaTechnik1" />
-          <Variable x:TypeArguments="x:String" Name="strErrorFrontaTechnik2" />
-          <Variable x:TypeArguments="x:String" Name="strRPAuzivatelLogin" />
-          <Variable x:TypeArguments="x:Int32" Name="intExecutionMessageCounter" />
-          <Variable x:TypeArguments="x:String" Default="posledni error hlaseni DEFAULT" Name="strExecutionMessageHolder" />
-          <Variable x:TypeArguments="s:DateTime" Name="dateZacatekZpracovani" />
-          <Variable x:TypeArguments="x:Int32" Name="intMaxPocetDniNaNavrhOBJ" />
-          <Variable x:TypeArguments="x:String" Name="strUserName" />
-          <Variable x:TypeArguments="x:String" Name="strSRMLink" />
-          <Variable x:TypeArguments="x:Double" Name="doubleKoefSchvaleniNavhuObj" />
-          <Variable x:TypeArguments="x:Double" Name="dobleKoefToleranceOBJ" />
-          <Variable x:TypeArguments="x:String" Name="strCisloOBJ" />
-        </StateMachine.Variables>
       </StateMachine>
     </TryCatch.Try>
     <TryCatch.Catches>
