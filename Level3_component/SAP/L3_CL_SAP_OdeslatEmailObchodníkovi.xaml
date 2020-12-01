@@ -520,22 +520,9 @@ www.cezdistribuce.cz/dodavatel</InArgument>
                 </ui:Target>
               </ui:ClickImage.Target>
             </ui:ClickImage>
-            <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe  Nový email'" sap:VirtualizedContainerService.HintSize="436,154" sap2010:WorkflowViewState.IdRef="ClickImage_5" KeyModifiers="None" MouseButton="BTN_MIDDLE">
-              <ui:ClickImage.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:ClickImage.CursorPosition>
-              <ui:ClickImage.Image>
-                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD4AAAATCAYAAADI876sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGjSURBVFhH7dYtbsMwFAdwX2FgeCcoiHqC0dGAtSC3CAwpHQ4tDRjMAYo2qWwDI1NVXrgDbHrrc/3s5+Q58aJmqpSCv5r6q/75I6p62x9girnCeXbPS3h9uBsU7CuNeWkR4Qj4fLyFn5cb+P5YRgXbYh/sK415aQnCCRKD521Hg29WMEtWUEt1AxKGv99H4Xkb7OPBcbJKgbLJoGS/86f0wreQJ3PIN1JdO93wHnwTLcMdti7moIbu2r/DA3gJjemCy9/pNPiTLhfupMyKrYWXuHi2j6nTaFem07PAcXAMhwbQmHj4abLp2tStMzdZ/ryvIGdwD6PHowUbace/npQFE5rKeNsuuN7FReXqPEgFKSE8uIkE97DnhjeB+Mmem/g2PHD8Wjh+Ak7P1E+XMbh+V9hxx4ALsFYabbp23Eurju04a2dfiATHBfOuy7nhMWgKaxsN93b4GHYC6iJzACzH62Hg+uXGrwtbLLxKdryeBOHRaIrBx8OP0fV0ZFk7vauNcgOv9ckwdUkGKd9lPp5ZRO/3WET4ZP+rTyFX+NQyUfgBfgH1FdNtfJ5QcAAAAABJRU5ErkJggg==" />
-              </ui:ClickImage.Image>
-              <ui:ClickImage.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2f94047d-7fd5-43f9-a9e9-dd4e889e6e55" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Nový email' /&gt;">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'UserArea  usr'" sap:VirtualizedContainerService.HintSize="436,154" sap2010:WorkflowViewState.IdRef="SendHotkey_17" Key="f5" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f6db3812-d48f-498f-9a19-4dcfec67baf2" InformativeScreenshot="fc007fe7f530fe95bba6af059df1048b" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Nový email' /&gt;&lt;sap id='usr' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -543,8 +530,8 @@ www.cezdistribuce.cz/dodavatel</InArgument>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
-              </ui:ClickImage.Target>
-            </ui:ClickImage>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
           </Sequence>
           <Assign sap:VirtualizedContainerService.HintSize="478,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
