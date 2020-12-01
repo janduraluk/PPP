@@ -39,11 +39,12 @@
     <x:Property Name="out_strTypSmluvnihoUctu" Type="OutArgument(x:String)" />
     <x:Property Name="out_strZpusobProvozuVZ" Type="OutArgument(x:String)" />
     <x:Property Name="out_strTypMereni" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strDruhSluzby" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1201,5332</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1010,5447</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -152,7 +153,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_ConfigDataJson&#xA;DESCRIPTION: vytěži defaultni hodnoty pro sap formuláře z Json konfigu ConfigPPP.json.&#xA;PARENT LEVEL: ?&#xA;KEYWORDS:&#xA;out_strRootFolder&#xA;out_intTimeoutS&#xA;out_intTimeoutM&#xA;out_intTimeoutL&#xA;out_intMaxRetries&#xA;out_strDruhZpravySOP&#xA;out_strStatuszpravy&#xA;out_strPlatnostdo&#xA;out_strPocetGeneratoru&#xA;out_strStatusKontaktu&#xA;out_strTypsmluvnihouctu&#xA;out_strSkupUcOkruhu&#xA;out_strZpusobDosPlat&#xA;out_strZpusOdeslPl&#xA;out_strAtribNalezUctu&#xA;out_strSdruzFakturace&#xA;out_strCyklusZaloh&#xA;out_strDrMistSpot&#xA;out_strZpusobprovozuVZ&#xA;out_strTypmereni&#xA;out_strOperand&#xA;out_strTrida&#xA;out_strAkce&#xA;out_strDruhkontaktu&#xA;out_strSmer&#xA;out_strVychoziEmail&#xA;out_strUpravaTerminu&#xA;out_strPoleMikrozdroj&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="558,5167" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_ConfigDataJson&#xA;DESCRIPTION: vytěži defaultni hodnoty pro sap formuláře z Json konfigu ConfigPPP.json.&#xA;PARENT LEVEL: ?&#xA;KEYWORDS:&#xA;out_strRootFolder&#xA;out_intTimeoutS&#xA;out_intTimeoutM&#xA;out_intTimeoutL&#xA;out_intMaxRetries&#xA;out_strDruhZpravySOP&#xA;out_strStatuszpravy&#xA;out_strPlatnostdo&#xA;out_strPocetGeneratoru&#xA;out_strStatusKontaktu&#xA;out_strTypsmluvnihouctu&#xA;out_strSkupUcOkruhu&#xA;out_strZpusobDosPlat&#xA;out_strZpusOdeslPl&#xA;out_strAtribNalezUctu&#xA;out_strSdruzFakturace&#xA;out_strCyklusZaloh&#xA;out_strDrMistSpot&#xA;out_strZpusobprovozuVZ&#xA;out_strTypmereni&#xA;out_strOperand&#xA;out_strTrida&#xA;out_strAkce&#xA;out_strDruhkontaktu&#xA;out_strSmer&#xA;out_strVychoziEmail&#xA;out_strUpravaTerminu&#xA;out_strPoleMikrozdroj&#xD;&#xA;out_strDruhSluzby&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="558,5282" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; L3_ConfigDataJson" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -198,15 +199,15 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="516,3771" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="516,3871" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="478,3544" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="478,3644" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="436,2952" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="436,3052" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -437,6 +438,14 @@
                 <InArgument x:TypeArguments="x:String">[jConfig("strPoleMikrozdroj").ToString]</InArgument>
               </Assign.Value>
             </Assign>
+            <Assign DisplayName="out_strDruhSluzby" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_34">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_strDruhSluzby]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[jConfig("strDruhSluzby").ToString]</InArgument>
+              </Assign.Value>
+            </Assign>
           </Sequence>
           <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,229" sap2010:WorkflowViewState.IdRef="CommentOut_6">
             <ui:CommentOut.Body>
@@ -473,7 +482,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
