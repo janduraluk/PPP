@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1013,3779</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1262,3779</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,16 +114,11 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: SAP_vyplnitUmisteniPristroje&#xA;DESCRIPTION: Doplneni a zmena umisteni pristroje - zadost (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,3614" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strComponentName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">&lt;L3&gt;SAP_vyplnitUmisteniPristroje</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="&lt;L3&gt;SAP_vyplnitUmisteniPristroje" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
       <Variable x:TypeArguments="x:String" Name="strUmisteniPristroje" />
       <Variable x:TypeArguments="x:String" Name="strOznaceniSmluvnihoUctu" />
@@ -249,9 +244,9 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="ES66">
+            <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="CallTransaction_2" Transaction="ES66">
               <ucas:CallTransaction.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c8a41a6e-2077-4f9f-ad2b-76077874807d" InformativeScreenshot="9341ae09916d474aa481ac7e0601d3e4" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="943f282e-4e89-4008-a309-ef4c2d36f404" InformativeScreenshot="46391e8ef10d8ad56955535a80e2f4df" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -*' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
