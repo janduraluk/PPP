@@ -102,6 +102,8 @@
       <Variable x:TypeArguments="x:String" Name="strSkupUcOkruhu" />
       <Variable x:TypeArguments="x:String" Name="strTypMereni" />
       <Variable x:TypeArguments="x:String" Name="strSapPathTo" />
+      <Variable x:TypeArguments="x:String" Name="strErrorEmailText" />
+      <Variable x:TypeArguments="x:String" Name="strRobotAutor" />
     </TryCatch.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -153,11 +155,17 @@
               </Assign>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_nacistVstupy" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Level2_workflow\L2_nacistVstupy.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                  </InArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strUpravaTerminu">
+                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strUpravaTerminu" />
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_strTypMereni">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strTypMereni" />
@@ -212,9 +220,6 @@
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_strVychoziEmail">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strVychoziEmail" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="out_strUpravaTerminu">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strUpravaTerminu" />
                   </OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_strPoleMikrozdroj">
                     <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPoleMikrozdroj" />
@@ -433,15 +438,42 @@
                       </Assign>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_spustitAplikace+NavigovatStart" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Level2_workflow\L2_spustitAplikace+NavigovatStart.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[intTimeoutS]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[intTImeoutM]</InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[intTimeoutL]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="arg_strSapNazevProstredi">[strSapNazevProstredi]</InArgument>
-                          <OutArgument x:TypeArguments="x:String" x:Key="arg_strErrorEmailText">[strErrorEmailText]</OutArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">[strEmailSpravceRPA]</InOutArgument>
-                          <InOutArgument x:TypeArguments="x:String" x:Key="arg_SRMNazevProstredi">[strSRMLink]</InOutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">
+                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
+                          </OutArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">
+                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                          </OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_strErrorEmailText">
+                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strErrorEmailText" />
+                          </OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -480,7 +512,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Transition.To>
-                        <State x:Name="__ReferenceID3" DisplayName="Handler" sap:VirtualizedContainerService.HintSize="189,92" sap2010:WorkflowViewState.IdRef="State_10">
+                        <State x:Name="__ReferenceID3" DisplayName="Handler" sap:VirtualizedContainerService.HintSize="422,1051" sap2010:WorkflowViewState.IdRef="State_10">
                           <State.Entry>
                             <Sequence sap:VirtualizedContainerService.HintSize="376,637" sap2010:WorkflowViewState.IdRef="Sequence_28">
                               <sap:WorkflowViewStateService.ViewState>
@@ -521,17 +553,42 @@
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_handler workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Level2_workflow\L2_handler.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strProjectId">[strProjectId]</InOutArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">[strRootFolder]</InOutArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">[strEmailSpravceRPA]</InOutArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="ARG_intMaxRetries">[intMaxRetries]</InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="ARG_intNumRetries">[intNumRetries]</InArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorEmailText">[strErrorEmailText]</InOutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">
+                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
+                                  </OutArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">
+                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                                  </OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strErrorEmailText">
+                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strErrorEmailText" />
+                                  </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                             </Sequence>
