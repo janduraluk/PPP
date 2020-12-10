@@ -19,6 +19,7 @@
     <x:Property Name="in_strHodnotaZpusOdeslPl" Type="InArgument(x:String)" />
     <x:Property Name="in_strPrimarniOrganizaceReas" Type="InArgument(x:String)" />
     <x:Property Name="out_strHodnotaSmluvniUcet" Type="OutArgument(x:String)" />
+    <x:Property Name="in_DictionaryValuesXlsx" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <this:Level3_Component.in_intHodnotaSkupUcOkruhu>
     <InArgument x:TypeArguments="x:Int32" />
@@ -38,7 +39,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,4879</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,5014</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="51">
@@ -139,7 +140,7 @@
       <AssemblyReference>System.Memory</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_zalozitSmluvniUcet&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L2_proces2_zalozitSu&#xA;------- &#xA;© Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="703,4714" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_zalozitSmluvniUcet&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L2_proces2_zalozitSu&#xA;------- &#xA;© Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="703,4809" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; SAP - zalozit smluvni ucet" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -222,13 +223,14 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <Sequence DisplayName="Config" sap:VirtualizedContainerService.HintSize="661,252" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Config" sap:VirtualizedContainerService.HintSize="661,347" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="in_DictionaryValues(&quot;mistoSpotreby&quot;).ToString" />
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strTypSmlUcet]</OutArgument>
         </Assign.To>
@@ -236,7 +238,7 @@
           <InArgument x:TypeArguments="x:String">A1</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_8">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[strSapKodTransakce]</OutArgument>
         </Assign.To>
