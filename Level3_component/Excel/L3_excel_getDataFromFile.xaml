@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1010,8848</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1160,9595</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,9 +121,10 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: getDataFromXLS&#xA;DESCRIPTION: Načte jednotlivé položky daného řádku z XLS souboru a uloží je v podobě dictionary&#xA;PARENT LEVEL: L2_nacistVstupy&#xA;KEYWORDS: &#xA;author&#xA;ean&#xA;kontaktPPP&#xA;cisloZop&#xA;mistoSpotreby&#xA;umisteniPristroje&#xA;cisloOdberMistaDistr&#xA;oznaceniSmluvnihoUctu&#xA;reas&#xA;datumPrihlaseni&#xA;odectovaJednotka&#xA;typProvozuVyrobny&#xA;resitelKontaktu&#xA;poznamka&#xA;obchodnik&#xA;obchodnikEmail&#xA;emailPredmet&#xA;kontaktniTelefon&#xA;&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="789,8683" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: getDataFromXLS&#xA;DESCRIPTION: Načte jednotlivé položky daného řádku z XLS souboru a uloží je v podobě dictionary&#xA;PARENT LEVEL: L2_nacistVstupy&#xA;&#xA;KEYWORDS: &#xA;author&#xA;ean&#xA;kontaktPPP&#xA;cisloZop&#xA;mistoSpotreby&#xA;umisteniPristroje&#xA;cisloOdberMistaDistr&#xA;oznaceniSmluvnihoUctu&#xA;reas&#xA;datumPrihlaseni&#xA;odectovaJednotka&#xA;typProvozuVyrobny&#xA;resitelKontaktu&#xA;poznamka&#xA;obchodnik&#xA;obchodnikEmail&#xA;emailPredmet&#xA;kontaktniTelefon&#xD;&#xA;cisloOp (AA)&#xD;&#xA;hodnotaSmluvniUcet (AF)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="789,9390" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; getDataFromXLS" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -185,15 +186,15 @@
         </ui:CommentOut.Body>
       </ui:CommentOut>
     </Sequence>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="747,7322" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="747,8014" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="709,7095" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="709,7787" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="667,6772" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="667,7464" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,19 +208,19 @@
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary(of String, Object)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="625,6580" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="data\DataSet_vyplněný.xlsx">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="625,7272" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="data\DataSet_vyplněný.xlsx">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="591,6471" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="591,7163" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Nacteni hodnot do out_dictionayValue" sap:VirtualizedContainerService.HintSize="549,6280" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence DisplayName="Nacteni hodnot do out_dictionayValue" sap:VirtualizedContainerService.HintSize="549,6972" sap2010:WorkflowViewState.IdRef="Sequence_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -586,6 +587,46 @@
                           <Throw Exception="[New BusinessRuleException(&quot;KontaktniTelefon is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_18" />
                         </If.Else>
                       </If>
+                      <ui:ExcelReadCell Cell="[&quot;AA&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;cisloOp&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_19" SheetName="vstupniData">
+                        <ui:ExcelReadCell.Result>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
+                        </ui:ExcelReadCell.Result>
+                      </ui:ExcelReadCell>
+                      <If Condition="[genTmp.ToString &lt;&gt;&quot;&quot;]" DisplayName="Validace existence hodnoty" sap:VirtualizedContainerService.HintSize="507,207" sap2010:WorkflowViewState.IdRef="If_19">
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_26">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[out_dictionaryValues("cisloOp")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[genTmp]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                        <If.Else>
+                          <Throw Exception="[New BusinessRuleException(&quot;cisloOp is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_19" />
+                        </If.Else>
+                      </If>
+                      <ui:ExcelReadCell Cell="[&quot;AF&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;hodnotaSmluvniUcet&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_20" SheetName="vstupniData">
+                        <ui:ExcelReadCell.Result>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
+                        </ui:ExcelReadCell.Result>
+                      </ui:ExcelReadCell>
+                      <If Condition="[genTmp.ToString &lt;&gt;&quot;&quot;]" DisplayName="Validace existence hodnoty" sap:VirtualizedContainerService.HintSize="507,207" sap2010:WorkflowViewState.IdRef="If_20">
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_27">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[out_dictionaryValues("hodnotaSmluvniUcet")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[genTmp]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                        <If.Else>
+                          <Throw Exception="[New BusinessRuleException(&quot;HodnotaSmluvniUcet is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_20" />
+                        </If.Else>
+                      </If>
                     </Sequence>
                     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="549,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;author: &quot;&amp; out_DictionaryValues(&quot;author&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;ean: &quot;&amp; out_DictionaryValues(&quot;ean&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;kontaktPPP: &quot;&amp; out_DictionaryValues(&quot;kontaktPPP&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;cisloZOP: &quot;&amp; out_DictionaryValues(&quot;cisloZOP&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;mistoSpotreby: &quot;&amp; out_DictionaryValues(&quot;mistoSpotreby&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;umisteniPristroje: &quot;&amp; out_DictionaryValues(&quot;umisteniPristroje&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;cisloOdbernehoMistaDistr: &quot;&amp; out_DictionaryValues(&quot;cisloOdberMistaDistr&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;oznaceniSmluvnihoUctu: &quot;&amp; out_DictionaryValues(&quot;oznaceniSmluvnihoUctu&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;reas: &quot;&amp; out_DictionaryValues(&quot;reas&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;datumPrihlaseni: &quot;&amp; out_DictionaryValues(&quot;datumPrihlaseni&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;odectovaJednotka: &quot;&amp; out_DictionaryValues(&quot;odectovaJednotka&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;typProvozuVyrobny: &quot;&amp; out_DictionaryValues(&quot;typProvozuVyrobny&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;resitelKontaktu: &quot;&amp; out_DictionaryValues(&quot;resitelKontaktu&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;poznamka: &quot;&amp; out_DictionaryValues(&quot;poznamka&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;obchodnik: &quot;&amp; out_DictionaryValues(&quot;obchodnik&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;obchodnikEmail: &quot;&amp; out_DictionaryValues(&quot;obchodnikEmail&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;emailPredmet: &quot;&amp; out_DictionaryValues(&quot;emailPredmet&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;kontaktniTelefon: &quot;&amp; out_DictionaryValues(&quot;kontaktniTelefon&quot;).ToString &amp; vbcrlf]" TopMost="True" />
                   </Sequence>
@@ -616,7 +657,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
