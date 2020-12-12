@@ -153,7 +153,6 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -751,7 +750,7 @@
                 </ucas:ClickToolbarButton.Target>
               </ucas:ClickToolbarButton>
             </Sequence>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_writeDataToXLS" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToXLS.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_writeDataToFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToFile.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess" />
                 <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
