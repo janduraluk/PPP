@@ -44,7 +44,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,4833</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,1853</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -114,7 +114,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_importovatZaznamySop &#xA;DESCRIPTION: SAP transakce ZCS_MODUL_SOP_IMP&#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="540,4668" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_importovatZaznamySop &#xA;DESCRIPTION: SAP transakce ZCS_MODUL_SOP_IMP&#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="480,1688" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; SAP - importovat zaznamy SOP" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -129,7 +129,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="strNameToLog = in_strProcessCode + &quot; | &quot; + strComponentName + &quot;: &quot;" sap:VirtualizedContainerService.HintSize="498,102" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap2010:Annotation.AnnotationText="strNameToLog = in_strProcessCode + &quot; | &quot; + strComponentName + &quot;: &quot;" sap:VirtualizedContainerService.HintSize="438,102" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strNameToLog]</OutArgument>
       </Assign.To>
@@ -142,8 +142,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="498,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="498,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,275" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
@@ -169,7 +169,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="498,3994" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="438,1014" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -177,13 +177,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="460,3767" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,787" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Config" sap:VirtualizedContainerService.HintSize="418,252" sap2010:WorkflowViewState.IdRef="Sequence_29">
+          <Sequence DisplayName="Config" sap:VirtualizedContainerService.HintSize="334,252" sap2010:WorkflowViewState.IdRef="Sequence_29">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -207,11 +207,10 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence sap2010:Annotation.AnnotationText="Z vrstvy L2 je předáno VSTUPNÍ pole in_arrVstupySOPimp. Toto vstupní pole obsahuje (druh zprávy, datum od, datum do, počet generátorů, EAN)" DisplayName="Sequence - zadani vstupnich udaju ZCS_MODUL_SOP_IMP" sap:VirtualizedContainerService.HintSize="418,1402" sap2010:WorkflowViewState.IdRef="Sequence_19">
+          <Sequence DisplayName="vyhledani EANu" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -325,18 +324,18 @@
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
           </Sequence>
-          <Sequence DisplayName="vytezeni hodnot" sap:VirtualizedContainerService.HintSize="418,1710" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="vytezeni hodnot" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strHodnotaDatumNarozeni" />
               <Variable x:TypeArguments="x:String" Name="strHodnotaAdresa" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: 0 - jmenoPrijmeni" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: 0 - jmenoPrijmeni" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f37c589b-e80f-4ef5-bc76-24b1c36e9965" InformativeScreenshot="09418d21ae2da8dad00cfc210c81d16f" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' /&gt;&lt;sap id='usr/txtZCS_SOP-NAME' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -351,7 +350,7 @@
                 <OutArgument x:TypeArguments="x:String">[strHodnotaJmenoPrijmeni]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: 2 - datumNarozeni" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: 2 - datumNarozeni" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c1b5fda6-81a9-4acc-a67c-c61fc9998bbd" InformativeScreenshot="fde87e2ac9b5c1cba6e7940c0d7b9801" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' /&gt;&lt;sap id='usr/txtZCS_SOP-IC_BIRTH' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -366,7 +365,7 @@
                 <OutArgument x:TypeArguments="x:String">[strHodnotaDatumNarozeni]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(1)" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(1)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8e4a962b-e232-4dc2-9f9a-261be1e01450" InformativeScreenshot="669007d7ab60194714f769879f93bbf0" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' /&gt;&lt;sap id='usr/ctxtZCS_SOP-ZAK_STREET' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -381,7 +380,7 @@
                 <OutArgument x:TypeArguments="x:String">[arrHodnotyAdresa(1)]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(2)" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(2)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="acd4bc5c-f481-48e4-a7b1-9098a14fffef" InformativeScreenshot="cd0d678fce1f0050e79914de1104362c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' /&gt;&lt;sap id='usr/txtZCS_SOP-ZAK_HOUSE1' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -402,7 +401,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(3)" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(3)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_5">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="acd4bc5c-f481-48e4-a7b1-9098a14fffef" InformativeScreenshot="3be87925995fa71da5e2bc83363c5990" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' /&gt;&lt;sap id='usr/ctxtZCS_SOP-ZAK_CITY' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -417,7 +416,7 @@
                 <OutArgument x:TypeArguments="x:String">[arrHodnotyAdresa(3)]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(4)" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text: out_arrHodnotyAdresa(4)" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_6">
               <ui:GetValue.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="acd4bc5c-f481-48e4-a7b1-9098a14fffef" InformativeScreenshot="4097d9776d8ed790e64529687eb1e38e" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Vložení nového záznamu' /&gt;&lt;sap id='usr/txtZCS_SOP-ZAK_POSTCODE' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -432,7 +431,7 @@
                 <OutArgument x:TypeArguments="x:String">[arrHodnotyAdresa(4)]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strHodnotaAdresa]</OutArgument>
               </Assign.To>
@@ -440,12 +439,13 @@
                 <InArgument x:TypeArguments="x:String">[arrHodnotyAdresa.ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:Comment sap:VirtualizedContainerService.HintSize="376,74" sap2010:WorkflowViewState.IdRef="Comment_4" Text="vzdy zapsat pocet generatoru (viz in_strPocetGeneratoru)" />
-            <ui:Comment sap:VirtualizedContainerService.HintSize="376,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="ukonceni transakce?" />
-            <Sequence DisplayName="zapis hodnot do souboru" sap:VirtualizedContainerService.HintSize="376,433" sap2010:WorkflowViewState.IdRef="Sequence_30">
+            <ui:Comment sap:VirtualizedContainerService.HintSize="334,74" sap2010:WorkflowViewState.IdRef="Comment_4" Text="vzdy zapsat pocet generatoru (viz in_strPocetGeneratoru)" />
+            <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="ukonceni transakce?" />
+            <Sequence DisplayName="zapis hodnot do souboru" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_writeDataToFile: 0 - jmenoPrijmeni" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToFile.xaml">
@@ -582,7 +582,7 @@
               </ui:InvokeWorkflowFile>
             </Sequence>
           </Sequence>
-          <Assign sap:VirtualizedContainerService.HintSize="418,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
             </Assign.To>
@@ -590,11 +590,11 @@
               <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="418,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="464,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -633,6 +633,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="498,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
   </Sequence>
 </Activity>
