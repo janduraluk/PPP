@@ -41,7 +41,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,2809</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,2849</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,7 +102,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L2_proces-1&#xA;DESCRIPTION: Zalozit TKD&#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="896,2644" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -215,117 +214,43 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_importovatZaznamySop" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_importovatZaznamySop.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intMaxRetries" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSkupUcOkruhu" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUpravaTerminu" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypMereni" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhZpravySOP" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPocetGeneratoru" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusKontaktu" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusobDosPlat" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusOdeslPl" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAtribNalezUctu" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSdruzFakturace" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strCyklusZaloh" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDrMistSpot" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strOperand" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTrida" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAkce" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhkontaktu" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSmer" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strVychoziEmail" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPoleMikrozdroj" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusZpravy" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhSluzby" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypSmluvnihoUctu" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPlatnostDo" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strHodnotaEan">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_DictionaryValuesXlsx(&quot;ean&quot;).ToString" />
-                  </InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[in_intMaxRetries]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[in_strSkupUcOkruhu]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[in_strUpravaTerminu]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[in_strTypMereni]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[in_strDruhZpravySOP]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[in_strPocetGeneratoru]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[in_strStatusKontaktu]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[in_strZpusobDosPlat]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[in_strZpusOdeslPl]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[in_strAtribNalezUctu]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[in_strSdruzFakturace]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[in_strCyklusZaloh]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[in_strDrMistSpot]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[in_strOperand]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[in_strTrida]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[in_strAkce]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[in_strDruhkontaktu]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[in_strSmer]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[in_strVychoziEmail]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[in_strPoleMikrozdroj]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[in_strStatusZpravy]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[in_strDruhSluzby]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[in_strTypSmluvnihoUctu]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[in_strPlatnostDo]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strHodnotaEan">[in_DictionaryValuesXlsx("ean").ToString]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -353,119 +278,45 @@
                           <av:PointCollection x:Key="ConnectorLocation">370,385.02 370,416.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_vyhledatEan" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_vyhledatEan.xaml">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_vyhledatEan" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_vyhledatEan.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                          </OutArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strEAN">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_DictionaryValuesXlsx(&quot;ean&quot;).ToString" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intMaxRetries" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSkupUcOkruhu" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUpravaTerminu" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypMereni" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhZpravySOP" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPocetGeneratoru" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusKontaktu" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusobDosPlat" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusOdeslPl" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAtribNalezUctu" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSdruzFakturace" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strCyklusZaloh" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDrMistSpot" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strOperand" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTrida" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAkce" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhkontaktu" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSmer" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strVychoziEmail" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPoleMikrozdroj" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusZpravy" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhSluzby" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypSmluvnihoUctu" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
-                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPlatnostDo" />
-                          </InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strEAN">[in_DictionaryValuesXlsx("ean").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[in_intMaxRetries]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[in_strSkupUcOkruhu]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[in_strUpravaTerminu]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[in_strTypMereni]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[in_strDruhZpravySOP]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[in_strPocetGeneratoru]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[in_strStatusKontaktu]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[in_strZpusobDosPlat]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[in_strZpusOdeslPl]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[in_strAtribNalezUctu]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[in_strSdruzFakturace]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[in_strCyklusZaloh]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[in_strDrMistSpot]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[in_strOperand]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[in_strTrida]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[in_strAkce]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[in_strDruhkontaktu]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[in_strSmer]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[in_strVychoziEmail]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[in_strPoleMikrozdroj]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[in_strStatusZpravy]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[in_strDruhSluzby]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[in_strTypSmluvnihoUctu]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[in_strPlatnostDo]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -495,117 +346,45 @@
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_schvalitEan" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_schvalitEan.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                                  </OutArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                                  </OutArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                                  </InArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_strEAN" />
                                   <OutArgument x:TypeArguments="x:String" x:Key="out_strKontakt" />
                                   <OutArgument x:TypeArguments="x:String" x:Key="out_strOdberneMisto" />
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intMaxRetries" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSkupUcOkruhu" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUpravaTerminu" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypMereni" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhZpravySOP" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPocetGeneratoru" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusKontaktu" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusobDosPlat" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusOdeslPl" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAtribNalezUctu" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSdruzFakturace" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strCyklusZaloh" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDrMistSpot" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strOperand" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTrida" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAkce" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhkontaktu" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSmer" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strVychoziEmail" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPoleMikrozdroj" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusZpravy" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhSluzby" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypSmluvnihoUctu" />
-                                  </InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
-                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPlatnostDo" />
-                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[in_intMaxRetries]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[in_strSkupUcOkruhu]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[in_strUpravaTerminu]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[in_strTypMereni]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[in_strDruhZpravySOP]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[in_strPocetGeneratoru]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[in_strStatusKontaktu]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[in_strZpusobDosPlat]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[in_strZpusOdeslPl]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[in_strAtribNalezUctu]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[in_strSdruzFakturace]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[in_strCyklusZaloh]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[in_strDrMistSpot]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[in_strOperand]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[in_strTrida]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[in_strAkce]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[in_strDruhkontaktu]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[in_strSmer]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[in_strVychoziEmail]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[in_strPoleMikrozdroj]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[in_strStatusZpravy]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[in_strDruhSluzby]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[in_strTypSmluvnihoUctu]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[in_strPlatnostDo]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -635,117 +414,45 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_validovatEan" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_validovatEan.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                                          </OutArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                                          </InArgument>
-                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                                          </OutArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                                          </InArgument>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
                                           <InArgument x:TypeArguments="x:String" x:Key="in_strEAN" />
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_strKontakt" />
                                           <OutArgument x:TypeArguments="x:String" x:Key="out_strOdberneMisto" />
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intMaxRetries" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSkupUcOkruhu" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUpravaTerminu" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypMereni" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhZpravySOP" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPocetGeneratoru" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusKontaktu" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusobDosPlat" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusOdeslPl" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAtribNalezUctu" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSdruzFakturace" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strCyklusZaloh" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDrMistSpot" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strOperand" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTrida" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAkce" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhkontaktu" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSmer" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strVychoziEmail" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPoleMikrozdroj" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusZpravy" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhSluzby" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypSmluvnihoUctu" />
-                                          </InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
-                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPlatnostDo" />
-                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[in_intMaxRetries]</InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[in_strSkupUcOkruhu]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[in_strUpravaTerminu]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[in_strTypMereni]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[in_strDruhZpravySOP]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[in_strPocetGeneratoru]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[in_strStatusKontaktu]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[in_strZpusobDosPlat]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[in_strZpusOdeslPl]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[in_strAtribNalezUctu]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[in_strSdruzFakturace]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[in_strCyklusZaloh]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[in_strDrMistSpot]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[in_strOperand]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[in_strTrida]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[in_strAkce]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[in_strDruhkontaktu]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[in_strSmer]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[in_strVychoziEmail]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[in_strPoleMikrozdroj]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[in_strStatusZpravy]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[in_strDruhSluzby]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[in_strTypSmluvnihoUctu]</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[in_strPlatnostDo]</InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -775,117 +482,45 @@
                                               </sap:WorkflowViewStateService.ViewState>
                                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_zalozitKontaktOp" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_zalozitKontaktOp.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                                                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                                                  </OutArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                                                  </InArgument>
-                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                                                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                                                  </OutArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                                                  </InArgument>
+                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
                                                   <InArgument x:TypeArguments="x:String" x:Key="in_strEAN" />
                                                   <OutArgument x:TypeArguments="x:String" x:Key="out_strKontakt" />
                                                   <OutArgument x:TypeArguments="x:String" x:Key="out_strOdberneMisto" />
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intMaxRetries" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSkupUcOkruhu" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUpravaTerminu" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypMereni" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhZpravySOP" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPocetGeneratoru" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusKontaktu" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusobDosPlat" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusOdeslPl" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAtribNalezUctu" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSdruzFakturace" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strCyklusZaloh" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDrMistSpot" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strOperand" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTrida" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAkce" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhkontaktu" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSmer" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strVychoziEmail" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPoleMikrozdroj" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusZpravy" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhSluzby" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypSmluvnihoUctu" />
-                                                  </InArgument>
-                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
-                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPlatnostDo" />
-                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[in_intMaxRetries]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[in_strSkupUcOkruhu]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[in_strUpravaTerminu]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[in_strTypMereni]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[in_strDruhZpravySOP]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[in_strPocetGeneratoru]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[in_strStatusKontaktu]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[in_strZpusobDosPlat]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[in_strZpusOdeslPl]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[in_strAtribNalezUctu]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[in_strSdruzFakturace]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[in_strCyklusZaloh]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[in_strDrMistSpot]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[in_strOperand]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[in_strTrida]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[in_strAkce]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[in_strDruhkontaktu]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[in_strSmer]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[in_strVychoziEmail]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[in_strPoleMikrozdroj]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[in_strStatusZpravy]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[in_strDruhSluzby]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[in_strTypSmluvnihoUctu]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[in_strPlatnostDo]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -915,117 +550,45 @@
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_zpracovatKontaktOp" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_zpracovatKontaktOp.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                                                          </OutArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                                                          </InArgument>
-                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                                                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                                                          </OutArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                                                          </InArgument>
+                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_strKontakt" />
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_strResitel" />
                                                           <InArgument x:TypeArguments="x:String" x:Key="in_strPoznamka" />
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intMaxRetries" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSkupUcOkruhu" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUpravaTerminu" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypMereni" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhZpravySOP" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPocetGeneratoru" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusKontaktu" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusobDosPlat" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strZpusOdeslPl" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAtribNalezUctu" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSdruzFakturace" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strCyklusZaloh" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDrMistSpot" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strOperand" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTrida" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAkce" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhkontaktu" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSmer" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strVychoziEmail" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPoleMikrozdroj" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strStatusZpravy" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strDruhSluzby" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTypSmluvnihoUctu" />
-                                                          </InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
-                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPlatnostDo" />
-                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[in_intMaxRetries]</InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[in_strSkupUcOkruhu]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[in_strUpravaTerminu]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[in_strTypMereni]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[in_strDruhZpravySOP]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[in_strPocetGeneratoru]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[in_strStatusKontaktu]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[in_strZpusobDosPlat]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[in_strZpusOdeslPl]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[in_strAtribNalezUctu]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[in_strSdruzFakturace]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[in_strCyklusZaloh]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[in_strDrMistSpot]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[in_strOperand]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[in_strTrida]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[in_strAkce]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[in_strDruhkontaktu]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[in_strSmer]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[in_strVychoziEmail]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[in_strPoleMikrozdroj]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[in_strStatusZpravy]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[in_strDruhSluzby]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[in_strTypSmluvnihoUctu]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[in_strPlatnostDo]</InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
