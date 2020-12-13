@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1160,2729</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,2689</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,6 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L3_Excel_writeDataToXLS&#xA;DESCRIPTION: vytěžená data se předají do proměnné strValueToWrite. do argumentu in_intValueType se vyplní typ zapisované hodnoty dle Hlavičky níže. dojde k validaci hodnoty a pokud je hodnota NOT NULL, zapíše se do excelu na určené místo. Sloupce jsou určeny pořadím v strColumnArray, řádek se předa parametrem do proměnné intActuallRow&#xA;PARENT LEVEL:L2_?&#xA;&#xA;PARAMETERS:&#xA;0 - jmenoPrijmeni&#xA;1 - adresa&#xA;2 - datumNarozeni&#xA;3 - cisloOP&#xA;4 - hlavniJistic&#xA;5 - pi&#xA;6 - cisloVyrobnihoOdbernehoMista&#xA;7 - tkdKontakt&#xA;8 - hodnotaSmluvnihoUctu&#xA;9 - sazba&#xA;10 - stav procesu 1&#xA;11 - stav procesu2&#xA;12 - stav procesu3&#xA;13 - Výsledek zpracování" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="843,2524" sap2010:WorkflowViewState.IdRef="Sequence_4">
