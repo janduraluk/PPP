@@ -111,6 +111,11 @@
       <Variable x:TypeArguments="x:Int32" Name="intLastFilledRow" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="DictionaryValuesXlsx" />
       <Variable x:TypeArguments="x:Boolean" Name="boolSuccess" />
+      <Variable x:TypeArguments="x:String" Name="strStatusZpracovani" />
+      <Variable x:TypeArguments="x:String" Name="strExecutionMessageHolder" />
+      <Variable x:TypeArguments="x:String" Name="strL1StatusBlokNazev" />
+      <Variable x:TypeArguments="x:String" Name="strL1StatusBlokStatus" />
+      <Variable x:TypeArguments="x:Int32" Name="intExecutionMessageCounter" />
     </TryCatch.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -589,7 +594,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
                       <Transition.To>
-                        <State x:Name="__ReferenceID7" DisplayName="Nacist data" sap:VirtualizedContainerService.HintSize="1204,1841" sap2010:WorkflowViewState.IdRef="State_19">
+                        <State x:Name="__ReferenceID7" DisplayName="Nacist data" sap:VirtualizedContainerService.HintSize="189,89" sap2010:WorkflowViewState.IdRef="State_19">
                           <State.Entry>
                             <Sequence sap:VirtualizedContainerService.HintSize="1158,1454" sap2010:WorkflowViewState.IdRef="Sequence_103">
                               <Sequence.Variables>
@@ -774,15 +779,15 @@
                               <Transition.To>
                                 <State x:Name="__ReferenceID5" DisplayName="Ziskat dalsi polozku" sap:VirtualizedContainerService.HintSize="206,80" sap2010:WorkflowViewState.IdRef="State_17">
                                   <State.Entry>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="695,981" sap2010:WorkflowViewState.IdRef="Sequence_74">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_96" Level="Info" Message="&lt;L1&gt; START - Ziskej dalsi polozku" />
-                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_102">
+                                      <ui:LogMessage sap:VirtualizedContainerService.HintSize="653,91" sap2010:WorkflowViewState.IdRef="LogMessage_96" Level="Info" Message="&lt;L1&gt; START - Ziskej dalsi polozku" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_102">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[strExecutionMessage]</OutArgument>
                                         </Assign.To>
@@ -792,7 +797,7 @@
                                           </InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_103">
+                                      <Assign sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_103">
                                         <Assign.To>
                                           <OutArgument x:TypeArguments="x:String">[strExecutionStatus]</OutArgument>
                                         </Assign.To>
@@ -802,20 +807,84 @@
                                           </InArgument>
                                         </Assign.Value>
                                       </Assign>
-                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_ziskatDalsiPolozku" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Level2_workflow\L2_ziskatDalsiPolozku.xaml">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="653,91" sap2010:WorkflowViewState.IdRef="LogMessage_115" Level="Trace" Message="[&quot;Cislo radku je&quot;+IntCounter.ToString+&quot; | Posledni radek DataSet_vyplněný.xlsx je&quot;+intLastFilledRow.ToString]" />
+                                      <If Condition="[intRowCounter &lt; intLastFilledRow]" sap:VirtualizedContainerService.HintSize="653,300" sap2010:WorkflowViewState.IdRef="If_5">
+                                        <If.Then>
+                                          <Sequence DisplayName="dalsi polozka" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_118">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_140">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[strExecutionStatus]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">success</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Then>
+                                        <If.Else>
+                                          <Sequence DisplayName="neni dalsi polozka" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_141">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[strExecutionStatus]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">end</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_ziskatDalsiPolozku" sap:VirtualizedContainerService.HintSize="653,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Level2_workflow\L2_ziskatDalsiPolozku.xaml">
                                         <ui:InvokeWorkflowFile.Arguments>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[strRootFolder]</InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[intTimeoutL]</InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[intTimeoutM]</InArgument>
-                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[intTimeoutS]</InArgument>
-                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">[strExecutionStatus]</OutArgument>
-                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">[strExecutionMessage]</OutArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[strProcessCode]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[strUserName]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[strAppEnvironmentName]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[strEmailAdminRpa]</InArgument>
-                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[strRobotAutor]</InArgument>
-                                          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValuesXlsx">[DictionaryValuesXlsx]</OutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                                          </InArgument>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">
+                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
+                                          </OutArgument>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">
+                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                                          </OutArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                                          </InArgument>
+                                          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValuesXlsx">
+                                            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="DictionaryValuesXlsx" />
+                                          </OutArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowCounter">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntCounter" />
+                                          </InArgument>
                                         </ui:InvokeWorkflowFile.Arguments>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -875,7 +944,7 @@
                                                   </InArgument>
                                                 </Assign.Value>
                                               </Assign>
-                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_presonoutZpracovano" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Level2_workflow\L2_presonoutZpracovano.xaml">
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_presonoutZpracovano" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Level2_workflow\L2_presunoutZpracovano.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
                                                   <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
@@ -952,7 +1021,7 @@
                                       <Transition.To>
                                         <State x:Name="__ReferenceID6" DisplayName="proces1-zalozitTkd" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_16">
                                           <State.Entry>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="376,810" sap2010:WorkflowViewState.IdRef="Sequence_65">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -978,6 +1047,22 @@
                                                   <InArgument x:TypeArguments="x:String">
                                                     <Literal x:TypeArguments="x:String" Value="" />
                                                   </InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_142">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strL1StatusBlokNazev]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">proces1: </InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_143">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">start</InArgument>
                                                 </Assign.Value>
                                               </Assign>
                                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_proces1-zalozitTkd" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-1.xaml">
@@ -1021,6 +1106,14 @@
                                                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_DictionaryValuesXlsx">[DictionaryValuesXlsx]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
+                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_144">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">zpracováno</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
                                             </Sequence>
                                           </State.Entry>
                                           <sap:WorkflowViewStateService.ViewState>
@@ -1045,7 +1138,7 @@
                                               <Transition.To>
                                                 <State x:Name="__ReferenceID10" DisplayName="proces2-zalozitSu" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_22">
                                                   <State.Entry>
-                                                    <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                                                    <Sequence sap:VirtualizedContainerService.HintSize="376,968" sap2010:WorkflowViewState.IdRef="Sequence_111">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1073,45 +1166,183 @@
                                                           </InArgument>
                                                         </Assign.Value>
                                                       </Assign>
+                                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kvuli dotezeni doplnenych dat" DisplayName="L3_excel_getDataFromFile" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_49" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_getDataFromFile.xaml">
+                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
+                                                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
+                                                          </OutArgument>
+                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
+                                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                                                          </OutArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                                                          </InArgument>
+                                                          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValues">
+                                                            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="DictionaryValuesXlsx" />
+                                                          </OutArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intRow">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCounter" />
+                                                          </InArgument>
+                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:InvokeWorkflowFile>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_145">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[strL1StatusBlokNazev]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String" xml:space="preserve">proces2: </InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_146">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">start</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
                                                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_proces2-zalozitSu" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-2.xaml">
                                                         <ui:InvokeWorkflowFile.Arguments>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[strRootFolder]</InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[intTimeoutL]</InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[intTimeoutM]</InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[intTimeoutS]</InArgument>
-                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">[strExecutionStatus]</OutArgument>
-                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">[strExecutionMessage]</OutArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[strProcessCode]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[strUserName]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[strAppEnvironmentName]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[strEmailAdminRpa]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[strRobotAutor]</InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[intCounter]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">[strSkupUcOkruhu]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">[strUpravaTerminu]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">[strTypMereni]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">[strDruhZpravySOP]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">[strPocetGeneratoru]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">[strStatusKontaktu]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">[strZpusobDosPlat]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">[strZpusOdeslPl]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">[strAtribNalezUctu]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">[strSdruzFakturace]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">[strCyklusZaloh]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">[strDrMistSpot]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">[strOperand]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">[strTrida]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">[strAkce]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">[strDruhkontaktu]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">[strSmer]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">[strVychoziEmail]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">[strPoleMikrozdroj]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">[strStatusZpravy]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">[strDruhSluzby]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">[strTypSmluvnihoUctu]</InArgument>
-                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">[strPlatnostDo]</InArgument>
-                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">[intMaxRetries]</InArgument>
-                                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_DictionaryValuesXlsx">[DictionaryValuesXlsx]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                                                          </InArgument>
+                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strExecutionStatus">
+                                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionStatus" />
+                                                          </OutArgument>
+                                                          <OutArgument x:TypeArguments="x:String" x:Key="out_strFailureMessage">
+                                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                                                          </OutArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCounter" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSkupUcOkruhu">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSkupUcOkruhu" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strUpravaTerminu">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUpravaTerminu" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypMereni">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTypMereni" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhZpravySOP">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDruhZpravySOP" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPocetGeneratoru">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPocetGeneratoru" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusKontaktu">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strStatusKontaktu" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusobDosPlat">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strZpusobDosPlat" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strZpusOdeslPl">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strZpusOdeslPl" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAtribNalezUctu">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAtribNalezUctu" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSdruzFakturace">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSdruzFakturace" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strCyklusZaloh">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCyklusZaloh" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDrMistSpot">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDrMistSpot" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strOperand">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strOperand" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTrida">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTrida" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strAkce">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAkce" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhkontaktu">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDruhkontaktu" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strSmer">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSmer" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strVychoziEmail">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strVychoziEmail" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPoleMikrozdroj">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPoleMikrozdroj" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strStatusZpravy">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strStatusZpravy" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strDruhSluzby">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDruhSluzby" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strTypSmluvnihoUctu">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTypSmluvnihoUctu" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_strPlatnostDo">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPlatnostDo" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="x:Int32" x:Key="in_intMaxRetries">
+                                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intMaxRetries" />
+                                                          </InArgument>
+                                                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_DictionaryValuesXlsx">
+                                                            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="DictionaryValuesXlsx" />
+                                                          </InArgument>
                                                         </ui:InvokeWorkflowFile.Arguments>
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1120,6 +1351,14 @@
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
                                                       </ui:InvokeWorkflowFile>
+                                                      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_147">
+                                                        <Assign.To>
+                                                          <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                        </Assign.To>
+                                                        <Assign.Value>
+                                                          <InArgument x:TypeArguments="x:String">zpracováno</InArgument>
+                                                        </Assign.Value>
+                                                      </Assign>
                                                     </Sequence>
                                                   </State.Entry>
                                                   <sap:WorkflowViewStateService.ViewState>
@@ -1132,7 +1371,7 @@
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
                                                   <State.Transitions>
-                                                    <Transition DisplayName="Pokracovat" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_112">
+                                                    <Transition DisplayName="Pokracovat" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_112">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <av:PointCollection x:Key="ConnectorLocation">598.9,848 598.9,878 577.8,878 577.8,952</av:PointCollection>
@@ -1144,7 +1383,7 @@
                                                       <Transition.To>
                                                         <State x:Name="__ReferenceID9" DisplayName="proces3-opravaTkd" sap:VirtualizedContainerService.HintSize="178,96" sap2010:WorkflowViewState.IdRef="State_21">
                                                           <State.Entry>
-                                                            <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                                                            <Sequence sap:VirtualizedContainerService.HintSize="376,968" sap2010:WorkflowViewState.IdRef="Sequence_110">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1170,6 +1409,44 @@
                                                                   <InArgument x:TypeArguments="x:String">
                                                                     <Literal x:TypeArguments="x:String" Value="" />
                                                                   </InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Kvuli dotezeni doplnenych dat" DisplayName="L3_excel_getDataFromFile" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_50" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_getDataFromFile.xaml">
+                                                                <ui:InvokeWorkflowFile.Arguments>
+                                                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                                                                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[strExecutionMessage]</OutArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[intTimeoutM]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[intTimeoutS]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[intTimeoutL]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[strRootFolder]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[strProcessCode]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[strUserName]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[strAppEnvironmentName]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[strEmailAdminRpa]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[strRobotAutor]</InArgument>
+                                                                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValues">[DictionaryValuesXlsx]</OutArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRow">[intCounter]</InArgument>
+                                                                </ui:InvokeWorkflowFile.Arguments>
+                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                  </scg:Dictionary>
+                                                                </sap:WorkflowViewStateService.ViewState>
+                                                              </ui:InvokeWorkflowFile>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_148">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[strL1StatusBlokNazev]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String" xml:space="preserve">proces3: </InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_149">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">start</InArgument>
                                                                 </Assign.Value>
                                                               </Assign>
                                                               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_proces3-opravaTkd" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="Level2_workflow\L2_proces-3.xaml">
@@ -1213,6 +1490,14 @@
                                                                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_DictionaryValuesXlsx">[DictionaryValuesXlsx]</InArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                               </ui:InvokeWorkflowFile>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_150">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:String">zpracováno</InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
                                                             </Sequence>
                                                           </State.Entry>
                                                           <sap:WorkflowViewStateService.ViewState>
@@ -1235,22 +1520,22 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("applicationexception")]</Transition.Condition>
                                                               <Transition.To>
-                                                                <State x:Name="__ReferenceID4" DisplayName="Zapsat status" sap:VirtualizedContainerService.HintSize="206,80" sap2010:WorkflowViewState.IdRef="State_18">
+                                                                <State x:Name="__ReferenceID4" DisplayName="Zapsat status" sap:VirtualizedContainerService.HintSize="886,1924" sap2010:WorkflowViewState.IdRef="State_18">
                                                                   <State.Entry>
-                                                                    <Sequence sap:VirtualizedContainerService.HintSize="840,1090" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                                                    <Sequence sap:VirtualizedContainerService.HintSize="840,1510" sap2010:WorkflowViewState.IdRef="Sequence_86">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                       <ui:LogMessage sap:VirtualizedContainerService.HintSize="798,91" sap2010:WorkflowViewState.IdRef="LogMessage_98" Level="Info" Message="&lt;L1&gt; START - Zapsat status" />
-                                                                      <Sequence sap:VirtualizedContainerService.HintSize="798,867" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                                                      <Sequence sap:VirtualizedContainerService.HintSize="798,1287" sap2010:WorkflowViewState.IdRef="Sequence_85">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <If Condition="[IsNothing(strExecutionMessage)]" DisplayName="Error Counter" sap:VirtualizedContainerService.HintSize="756,548" sap2010:WorkflowViewState.IdRef="If_2">
+                                                                        <If Condition="[IsNothing(strExecutionMessage)]" DisplayName="Error Counter" sap:VirtualizedContainerService.HintSize="756,648" sap2010:WorkflowViewState.IdRef="If_2">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1258,7 +1543,7 @@
                                                                             </scg:Dictionary>
                                                                           </sap:WorkflowViewStateService.ViewState>
                                                                           <If.Else>
-                                                                            <If Condition="[strExecutionMessageHolder = strExecutionMessage]" DisplayName="If strExecutionMessageHolder = strExecutionMessage" sap:VirtualizedContainerService.HintSize="611,400" sap2010:WorkflowViewState.IdRef="If_1">
+                                                                            <If Condition="[strExecutionMessageHolder = strExecutionMessage]" DisplayName="If strExecutionMessageHolder = strExecutionMessage" sap:VirtualizedContainerService.HintSize="611,500" sap2010:WorkflowViewState.IdRef="If_1">
                                                                               <If.Then>
                                                                                 <Assign DisplayName="Assign intExecutionMessageCounter then" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_134">
                                                                                   <Assign.To>
@@ -1270,7 +1555,7 @@
                                                                                 </Assign>
                                                                               </If.Then>
                                                                               <If.Else>
-                                                                                <Sequence DisplayName="Else of strExecutionMessageHolder = strExecutionMessage" sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_113">
+                                                                                <Sequence DisplayName="Else of strExecutionMessageHolder = strExecutionMessage" sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_113">
                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1292,26 +1577,133 @@
                                                                                       <InArgument x:TypeArguments="x:String">[strExecutionMessage]</InArgument>
                                                                                     </Assign.Value>
                                                                                   </Assign>
+                                                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_151">
+                                                                                    <Assign.To>
+                                                                                      <OutArgument x:TypeArguments="x:String">[strL1StatusBlokStatus]</OutArgument>
+                                                                                    </Assign.To>
+                                                                                    <Assign.Value>
+                                                                                      <InArgument x:TypeArguments="x:String">[strExecutionMessage]</InArgument>
+                                                                                    </Assign.Value>
+                                                                                  </Assign>
                                                                                 </Sequence>
                                                                               </If.Else>
                                                                             </If>
                                                                           </If.Else>
                                                                         </If>
-                                                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_zapsatStatus workflow" sap:VirtualizedContainerService.HintSize="756,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="Level2_workflow\L2_zapsatStatus.xaml">
+                                                                        <Assign sap2010:Annotation.AnnotationText="11 - Robot status" sap:VirtualizedContainerService.HintSize="756,91" sap2010:WorkflowViewState.IdRef="Assign_152">
+                                                                          <Assign.To>
+                                                                            <OutArgument x:TypeArguments="x:String">[strStatusZpracovani]</OutArgument>
+                                                                          </Assign.To>
+                                                                          <Assign.Value>
+                                                                            <InArgument x:TypeArguments="x:String">[strL1StatusBlokNazev+strL1StatusBlokStatus]</InArgument>
+                                                                          </Assign.Value>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </Assign>
+                                                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="11 - Robot status" DisplayName="L3_excel_writeDataToFile" sap:VirtualizedContainerService.HintSize="756,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_55" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToFile.xaml">
                                                                           <ui:InvokeWorkflowFile.Arguments>
-                                                                            <InOutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</InOutArgument>
-                                                                            <InOutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</InOutArgument>
-                                                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InOutArgument>
-                                                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InOutArgument>
-                                                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InOutArgument>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">[strRootFolder]</InArgument>
-                                                                            <InOutArgument x:TypeArguments="x:Int32" x:Key="ARG_IntCounter">[IntCounter]</InOutArgument>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="ARG_strExecutionMessage">[strExecutionMessage]</InArgument>
-                                                                            <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strSapNazevProstredi">[strSapNazevProstredi]</InOutArgument>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="ARG_strProjektID">[strProjectId]</InArgument>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="ARG_strTechnikPD">[strTechnikPD]</InArgument>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="ARG_strSRMNazevProstredi">[strSRMLink]</InArgument>
+                                                                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
+                                                                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
+                                                                            </OutArgument>
+                                                                            <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
+                                                                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                                                                            </OutArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intValueType">
+                                                                              <Literal x:TypeArguments="x:Int32" Value="11" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strValueToWrite">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strStatusZpracovani" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intActualRow">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCounter" />
+                                                                            </InArgument>
                                                                           </ui:InvokeWorkflowFile.Arguments>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                        </ui:InvokeWorkflowFile>
+                                                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="12 - Robot datum" DisplayName="L3_excel_writeDataToFile" sap:VirtualizedContainerService.HintSize="756,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToFile.xaml">
+                                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
+                                                                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
+                                                                            </OutArgument>
+                                                                            <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
+                                                                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strExecutionMessage" />
+                                                                            </OutArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutM" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutS" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intTimeoutL" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRootFolder" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strProcessCode" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strUserName" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppEnvironmentName" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailAdminRpa" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strRobotAutor" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intValueType">
+                                                                              <Literal x:TypeArguments="x:Int32" Value="12" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_strValueToWrite">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="now.ToString(&quot;dd.MM.yyyy hh:mm&quot;)" />
+                                                                            </InArgument>
+                                                                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intActualRow">
+                                                                              <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="intCounter" />
+                                                                            </InArgument>
+                                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
                                                                         </ui:InvokeWorkflowFile>
                                                                         <Assign sap:VirtualizedContainerService.HintSize="756,60" sap2010:WorkflowViewState.IdRef="Assign_116">
                                                                           <Assign.To>

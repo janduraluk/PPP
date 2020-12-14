@@ -12,11 +12,12 @@
     <x:Property Name="in_strEmailAdminRpa" Type="InArgument(x:String)" />
     <x:Property Name="in_strRobotAutor" Type="InArgument(x:String)" />
     <x:Property Name="out_DictionaryValuesXlsx" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_intRowCounter" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1160,2367</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,2025</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -80,7 +81,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_ziskatDalsiPolozku&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="882,2162" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_ziskatDalsiPolozku&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="882,1860" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[ZISKAT DALSI POLOZKU] &lt;level 2&gt; " Name="strWorkflowName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -105,7 +106,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="840,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="840,353" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="840,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,275" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
@@ -124,6 +125,12 @@
           </Sequence>
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
     <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="840,1186" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
@@ -235,6 +242,9 @@
                   <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValues">
                     <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="out_DictionaryValuesXlsx" />
                   </OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRow">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intRowCounter" />
+                  </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
