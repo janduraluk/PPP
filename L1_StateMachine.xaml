@@ -594,7 +594,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
                       <Transition.To>
-                        <State x:Name="__ReferenceID7" DisplayName="Nacist data" sap:VirtualizedContainerService.HintSize="189,89" sap2010:WorkflowViewState.IdRef="State_19">
+                        <State x:Name="__ReferenceID7" DisplayName="Nacist data" sap:VirtualizedContainerService.HintSize="1204,1841" sap2010:WorkflowViewState.IdRef="State_19">
                           <State.Entry>
                             <Sequence sap:VirtualizedContainerService.HintSize="1158,1454" sap2010:WorkflowViewState.IdRef="Sequence_103">
                               <Sequence.Variables>
@@ -739,7 +739,7 @@
                                   </Sequence>
                                 </If.Else>
                               </If>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1116,91" sap2010:WorkflowViewState.IdRef="LogMessage_114" Level="Info" Message="[&quot;Pocet radku ke zpracovani: &quot;&amp;intLastFilledRow.ToString]" />
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1116,91" sap2010:WorkflowViewState.IdRef="LogMessage_114" Level="Trace" Message="[&quot;Pocet radku ke zpracovani: &quot;&amp;intLastFilledRow.ToString]" />
                             </Sequence>
                           </State.Entry>
                           <sap:WorkflowViewStateService.ViewState>
@@ -808,7 +808,7 @@
                                         </Assign.Value>
                                       </Assign>
                                       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="653,91" sap2010:WorkflowViewState.IdRef="LogMessage_115" Level="Trace" Message="[&quot;Cislo radku je&quot;+IntCounter.ToString+&quot; | Posledni radek DataSet_vyplněný.xlsx je&quot;+intLastFilledRow.ToString]" />
-                                      <If Condition="[intRowCounter &lt; intLastFilledRow]" sap:VirtualizedContainerService.HintSize="653,300" sap2010:WorkflowViewState.IdRef="If_5">
+                                      <If Condition="[IntCounter&lt;intLastFilledRow]" sap:VirtualizedContainerService.HintSize="653,300" sap2010:WorkflowViewState.IdRef="If_5">
                                         <If.Then>
                                           <Sequence DisplayName="dalsi polozka" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_118">
                                             <sap:WorkflowViewStateService.ViewState>
@@ -905,110 +905,6 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <State.Transitions>
-                                    <Transition DisplayName="Konec" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_115">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:PointCollection x:Key="ConnectorLocation">313,682 343,682 343,643.65 467,643.65</av:PointCollection>
-                                          <x:Int32 x:Key="SrcConnectionPointIndex">68</x:Int32>
-                                          <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("end")]</Transition.Condition>
-                                      <Transition.To>
-                                        <State x:Name="__ReferenceID8" DisplayName="Presunout vyresene" sap:VirtualizedContainerService.HintSize="186,73" sap2010:WorkflowViewState.IdRef="State_20">
-                                          <State.Entry>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_109">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_112" Level="Info" Message="&lt;L1&gt; START - Presunout vyresene" />
-                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_127">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[strExecutionMessage]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">
-                                                    <Literal x:TypeArguments="x:String" Value="" />
-                                                  </InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_128">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[strExecutionStatus]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">
-                                                    <Literal x:TypeArguments="x:String" Value="" />
-                                                  </InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_presonoutZpracovano" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Level2_workflow\L2_presunoutZpracovano.xaml">
-                                                <ui:InvokeWorkflowFile.Arguments>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
-                                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
-                                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">[strRootFolder]</InOutArgument>
-                                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
-                                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
-                                                  <OutArgument x:TypeArguments="x:String" x:Key="arg_strErrorEmailText">[strErrorEmailText]</OutArgument>
-                                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorFrontaTechnik2">[strErrorFrontaTechnik2]</InOutArgument>
-                                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorFrontaTechnik1">[strErrorFrontaTechnik1]</InOutArgument>
-                                                </ui:InvokeWorkflowFile.Arguments>
-                                              </ui:InvokeWorkflowFile>
-                                            </Sequence>
-                                          </State.Entry>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">467,603.5</av:Point>
-                                              <av:Size x:Key="ShapeSize">186,73</av:Size>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                              <x:Double x:Key="StateContainerWidth">152</x:Double>
-                                              <x:Double x:Key="StateContainerHeight">37.000000000000114</x:Double>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <State.Transitions>
-                                            <Transition DisplayName="Ukoncit" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_109">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:PointCollection x:Key="ConnectorLocation">578.6,603.5 578.6,573.5 593,573.5 593,495.5</av:PointCollection>
-                                                  <x:Int32 x:Key="SrcConnectionPointIndex">46</x:Int32>
-                                                  <x:Int32 x:Key="DestConnectionPointIndex">19</x:Int32>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Transition.To>
-                                                <x:Reference>__ReferenceID2</x:Reference>
-                                              </Transition.To>
-                                              <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
-                                            </Transition>
-                                            <Transition DisplayName="Chyba" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_117">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:PointCollection x:Key="ConnectorLocation">522.8,603.5 522.8,573.5 475.6,573.5 475.6,426</av:PointCollection>
-                                                  <x:Int32 x:Key="SrcConnectionPointIndex">22</x:Int32>
-                                                  <x:Int32 x:Key="DestConnectionPointIndex">71</x:Int32>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <Transition.To>
-                                                <x:Reference>__ReferenceID3</x:Reference>
-                                              </Transition.To>
-                                              <Transition.Action>
-                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_133">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Int32">[intNumRetries]</OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Int32">[intMaxRetries]</InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                              </Transition.Action>
-                                              <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("applicationexception")]</Transition.Condition>
-                                            </Transition>
-                                          </State.Transitions>
-                                        </State>
-                                      </Transition.To>
-                                    </Transition>
                                     <Transition DisplayName="Pokracovat" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_101">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1520,7 +1416,7 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                               <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("applicationexception")]</Transition.Condition>
                                                               <Transition.To>
-                                                                <State x:Name="__ReferenceID4" DisplayName="Zapsat status" sap:VirtualizedContainerService.HintSize="886,1924" sap2010:WorkflowViewState.IdRef="State_18">
+                                                                <State x:Name="__ReferenceID4" DisplayName="Zapsat status" sap:VirtualizedContainerService.HintSize="206,80" sap2010:WorkflowViewState.IdRef="State_18">
                                                                   <State.Entry>
                                                                     <Sequence sap:VirtualizedContainerService.HintSize="840,1510" sap2010:WorkflowViewState.IdRef="Sequence_86">
                                                                       <sap:WorkflowViewStateService.ViewState>
@@ -1877,8 +1773,8 @@
                                     <Transition DisplayName="Chyba" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_102">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:PointCollection x:Key="ConnectorLocation">313,642 428.35,642 428.35,426</av:PointCollection>
-                                          <x:Int32 x:Key="SrcConnectionPointIndex">28</x:Int32>
+                                          <av:PointCollection x:Key="ConnectorLocation">313,626 428.35,626 428.35,426</av:PointCollection>
+                                          <x:Int32 x:Key="SrcConnectionPointIndex">12</x:Int32>
                                           <x:Int32 x:Key="DestConnectionPointIndex">51</x:Int32>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -1886,6 +1782,110 @@
                                         <x:Reference>__ReferenceID3</x:Reference>
                                       </Transition.To>
                                       <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("applicationexception")]</Transition.Condition>
+                                    </Transition>
+                                    <Transition DisplayName="Konec" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_115">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:PointCollection x:Key="ConnectorLocation">313,682 343,682 343,661.9 467,661.9</av:PointCollection>
+                                          <x:Int32 x:Key="SrcConnectionPointIndex">68</x:Int32>
+                                          <x:Int32 x:Key="DestConnectionPointIndex">61</x:Int32>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("end")]</Transition.Condition>
+                                      <Transition.To>
+                                        <State x:Name="__ReferenceID8" DisplayName="Presunout vyresene" sap:VirtualizedContainerService.HintSize="186,73" sap2010:WorkflowViewState.IdRef="State_20">
+                                          <State.Entry>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="376,510" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_112" Level="Info" Message="&lt;L1&gt; START - Presunout vyresene" />
+                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_127">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strExecutionMessage]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_128">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strExecutionStatus]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">
+                                                    <Literal x:TypeArguments="x:String" Value="" />
+                                                  </InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L2_presonoutZpracovano" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_43" UnSafe="False" WorkflowFileName="Level2_workflow\L2_presunoutZpracovano.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
+                                                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
+                                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">[strRootFolder]</InOutArgument>
+                                                  <OutArgument x:TypeArguments="x:String" x:Key="StrExecutionStatus">[strExecutionStatus]</OutArgument>
+                                                  <OutArgument x:TypeArguments="x:String" x:Key="StrFailureMessage">[strExecutionMessage]</OutArgument>
+                                                  <OutArgument x:TypeArguments="x:String" x:Key="arg_strErrorEmailText">[strErrorEmailText]</OutArgument>
+                                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorFrontaTechnik2">[strErrorFrontaTechnik2]</InOutArgument>
+                                                  <InOutArgument x:TypeArguments="x:String" x:Key="ARG_strErrorFrontaTechnik1">[strErrorFrontaTechnik1]</InOutArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                              </ui:InvokeWorkflowFile>
+                                            </Sequence>
+                                          </State.Entry>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">467,603.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">186,73</av:Size>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              <x:Double x:Key="StateContainerWidth">152</x:Double>
+                                              <x:Double x:Key="StateContainerHeight">37.000000000000114</x:Double>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <State.Transitions>
+                                            <Transition DisplayName="Ukoncit" sap:VirtualizedContainerService.HintSize="430,505" sap2010:WorkflowViewState.IdRef="Transition_109">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:PointCollection x:Key="ConnectorLocation">578.6,603.5 578.6,573.5 593,573.5 593,495.5</av:PointCollection>
+                                                  <x:Int32 x:Key="SrcConnectionPointIndex">46</x:Int32>
+                                                  <x:Int32 x:Key="DestConnectionPointIndex">19</x:Int32>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Transition.To>
+                                                <x:Reference>__ReferenceID2</x:Reference>
+                                              </Transition.To>
+                                              <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("success")]</Transition.Condition>
+                                            </Transition>
+                                            <Transition DisplayName="Chyba" sap:VirtualizedContainerService.HintSize="450,505" sap2010:WorkflowViewState.IdRef="Transition_117">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:PointCollection x:Key="ConnectorLocation">522.8,603.5 522.8,573.5 475.6,573.5 475.6,426</av:PointCollection>
+                                                  <x:Int32 x:Key="SrcConnectionPointIndex">22</x:Int32>
+                                                  <x:Int32 x:Key="DestConnectionPointIndex">71</x:Int32>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Transition.To>
+                                                <x:Reference>__ReferenceID3</x:Reference>
+                                              </Transition.To>
+                                              <Transition.Action>
+                                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_133">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:Int32">[intNumRetries]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:Int32">[intMaxRetries]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Transition.Action>
+                                              <Transition.Condition>[strExecutionStatus.Trim.ToLower.Equals("applicationexception")]</Transition.Condition>
+                                            </Transition>
+                                          </State.Transitions>
+                                        </State>
+                                      </Transition.To>
                                     </Transition>
                                   </State.Transitions>
                                 </State>
