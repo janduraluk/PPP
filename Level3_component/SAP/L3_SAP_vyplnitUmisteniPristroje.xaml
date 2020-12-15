@@ -43,7 +43,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3279</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3520</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -96,6 +96,7 @@
       <x:String>UiPath.Core.Activities.SAP</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -142,17 +143,15 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_vyplnitUmisteniPristroje&#xA;DESCRIPTION: Doplneni a zmena umisteni pristroje - zadost (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,3074" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_vyplnitUmisteniPristroje&#xA;DESCRIPTION: Doplneni a zmena umisteni pristroje - zadost (TKD)&#xA;PARENT LEVEL: L2_proces-3&#xA;" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,3315" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strComponentName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">&lt;L3&gt; SAP - vyplnit umisteni pristroje</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; SAP - vyplnit umisteni pristroje" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
       <Variable x:TypeArguments="x:String" Name="strSapKodTransakce" />
+      <Variable x:TypeArguments="x:String" Name="strCisloVyrobnihoOdbernehoMista" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -223,9 +222,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="558,1913" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="558,2154" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="418,1686" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="418,1927" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,7 +245,7 @@
               </Assign.Value>
             </Assign>
           </Sequence>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="376,1171" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="376,1412" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -300,6 +299,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="334,74" sap2010:WorkflowViewState.IdRef="Comment_1" Text="POZOR: kde vytezime strCisloVyrobnihoOdbernehoMista" />
             <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Uložení (Ctrl+S)'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item="Uložení   (Ctrl+S)">
               <ucas:ClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="16">
@@ -352,6 +352,50 @@
                 </ui:Target>
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_writeDataToFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToFile.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess" />
+                <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strExceptionMessage" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intValueType">
+                  <Literal x:TypeArguments="x:Int32" Value="6" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strValueToWrite">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCisloVyrobnihoOdbernehoMista" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intActualRow">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
           <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
