@@ -12,11 +12,12 @@
     <x:Property Name="in_strEmailAdminRpa" Type="InArgument(x:String)" />
     <x:Property Name="in_strRobotAutor" Type="InArgument(x:String)" />
     <x:Property Name="out_DictionaryValues" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_intRow" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1160,9595</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1154,9888</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,14 +122,12 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: getDataFromXLS&#xA;DESCRIPTION: Načte jednotlivé položky daného řádku z XLS souboru a uloží je v podobě dictionary&#xA;PARENT LEVEL: L2_nacistVstupy&#xA;&#xA;KEYWORDS: &#xA;author&#xA;ean&#xA;kontaktPPP&#xA;cisloZop&#xA;mistoSpotreby&#xA;umisteniPristroje&#xA;cisloOdberMistaDistr&#xA;oznaceniSmluvnihoUctu&#xA;reas&#xA;datumPrihlaseni&#xA;odectovaJednotka&#xA;typProvozuVyrobny&#xA;resitelKontaktu&#xA;poznamka&#xA;obchodnik&#xA;obchodnikEmail&#xA;emailPredmet&#xA;kontaktniTelefon&#xD;&#xA;cisloOp (AA)&#xD;&#xA;hodnotaSmluvniUcet (AF)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="789,9390" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: getDataFromXLS&#xA;DESCRIPTION: Načte jednotlivé položky daného řádku z XLS souboru a uloží je v podobě dictionary&#xA;PARENT LEVEL: L2_nacistVstupy&#xA;&#xA;KEYWORDS: &#xA;author&#xA;ean&#xA;kontaktPPP&#xA;cisloZop&#xA;mistoSpotreby&#xA;umisteniPristroje&#xA;cisloOdberMistaDistr&#xA;oznaceniSmluvnihoUctu&#xA;reas&#xA;datumPrihlaseni&#xA;odectovaJednotka&#xA;typProvozuVyrobny&#xA;resitelKontaktu&#xA;poznamka&#xA;obchodnik&#xA;obchodnikEmail&#xA;emailPredmet&#xA;kontaktniTelefon&#xA;cisloOp (AA)&#xA;cisloVyrobnihoOdbernehoMista (AD)&#xA;hodnotaSmluvniUcet (AF)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="789,9683" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; getDataFromXLS" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
-      <Variable x:TypeArguments="x:Int32" Name="intActualRow" />
       <Variable x:TypeArguments="ui:GenericValue" Name="genTmp" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -151,50 +150,42 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="747,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="747,453" sap2010:WorkflowViewState.IdRef="Sequence_6">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Testovací hodnota řádku" sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Int32">[intActualRow]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Int32">2</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,230" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_9">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_25">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Object">[intActualRow]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Object">[in_intActualRow]</InArgument>
-              </Assign.Value>
-            </Assign>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-    </Sequence>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="747,8014" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="709,7787" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="747,353" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,275" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="667,7464" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="304,183" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Testovací hodnota řádku" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[in_intRow]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">2</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="747,8392" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="709,8165" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="667,7842" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -208,26 +199,26 @@
                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)">[new Dictionary(of String, Object)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="625,7272" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="data\DataSet_vyplněný.xlsx">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="625,7650" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="data\DataSet_vyplněný.xlsx">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="591,7163" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="591,7541" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Nacteni hodnot do out_dictionayValue" sap:VirtualizedContainerService.HintSize="549,6972" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <Sequence DisplayName="Nacteni hodnot do out_dictionayValue" sap:VirtualizedContainerService.HintSize="549,7318" sap2010:WorkflowViewState.IdRef="Sequence_10">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ExcelReadCell Cell="[&quot;B&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;author&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;B&quot;&amp;in_intRow.ToString]" DisplayName="Read Cell &quot;author&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -247,7 +238,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;Author is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;C&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;ean&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;C&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;ean&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -267,7 +258,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;EAN is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;D&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;kontaktPPP&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;D&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;kontaktPPP&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -287,7 +278,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;KontaktPPP is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;E&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;cisloZOP&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;E&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;cisloZOP&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -307,7 +298,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;CisloZOP is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;F&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;mistoSpotreby&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;F&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;mistoSpotreby&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -327,7 +318,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;MistoSpotreby is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;G&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;umisteniPristroje&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;G&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;umisteniPristroje&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -347,7 +338,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;UmisteniPristroje is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;H&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;cisloOdberMistaDistr&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;H&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;cisloOdberMistaDistr&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -367,7 +358,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;CisloOdbernehoMistaDistr is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_7" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;I&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;oznaceniSmluvnihoUctu&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;I&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;oznaceniSmluvnihoUctu&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -387,7 +378,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;OznaceniSmluvnihoUctu is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_8" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;J&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;reas&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_9" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;J&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;reas&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_9" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -407,7 +398,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;REAS is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_9" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;K&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;datumPrihlaseni&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_10" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;K&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;datumPrihlaseni&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_10" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -427,7 +418,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;DatumPrihlaseni is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_10" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;L&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;odectovaJednotka&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_11" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;L&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;odectovaJednotka&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_11" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -447,7 +438,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;OdectovaJednotka is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_11" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;M&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;typProvozuVyrobny&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_12" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;M&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;typProvozuVyrobny&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_12" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -467,7 +458,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;TypProvozuVyrobny is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;N&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;resitelKontaktu&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_13" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;N&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;resitelKontaktu&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_13" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -487,7 +478,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;ResitelKontaktu is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_13" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;O&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;poznamka&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_14" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;O&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;poznamka&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_14" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -507,7 +498,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;Poznamka is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_14" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;P&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;obchodnik&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_15" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;P&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;obchodnik&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_15" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -527,7 +518,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;Obchodnik is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_15" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;Q&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;obchodnikEmail&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_16" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;Q&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;obchodnikEmail&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_16" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -547,7 +538,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;ObchodnikEmail is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_16" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;R&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;emailPredmet&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_17" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;R&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;emailPredmet&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_17" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -567,7 +558,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;EmailPredmet is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_17" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;S&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;kontaktniTelefon&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_18" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;S&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;kontaktniTelefon&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_18" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -587,7 +578,7 @@
                           <Throw Exception="[New BusinessRuleException(&quot;KontaktniTelefon is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_18" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;AA&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;cisloOp&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_19" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;AA&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;cisloOp&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_19" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -607,7 +598,27 @@
                           <Throw Exception="[New BusinessRuleException(&quot;cisloOp is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_19" />
                         </If.Else>
                       </If>
-                      <ui:ExcelReadCell Cell="[&quot;AF&quot;&amp;intActualRow]" DisplayName="Read Cell &quot;hodnotaSmluvniUcet&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_20" SheetName="vstupniData">
+                      <ui:ExcelReadCell Cell="[&quot;AD&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;cisloVyrobnihoOdbernehoMista&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_21" SheetName="vstupniData">
+                        <ui:ExcelReadCell.Result>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
+                        </ui:ExcelReadCell.Result>
+                      </ui:ExcelReadCell>
+                      <If Condition="[genTmp.ToString &lt;&gt;&quot;&quot;]" DisplayName="Validace existence hodnoty" sap:VirtualizedContainerService.HintSize="507,207" sap2010:WorkflowViewState.IdRef="If_21">
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_28">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[out_dictionaryValues("cisloVyrobnihoOdbernehoMista")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[genTmp]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                        <If.Else>
+                          <Throw Exception="[New BusinessRuleException(&quot;cisloVyrobnihoOdbernehoMista is empty&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_21" />
+                        </If.Else>
+                      </If>
+                      <ui:ExcelReadCell Cell="[&quot;AF&quot;&amp;in_intRow]" DisplayName="Read Cell &quot;hodnotaSmluvniUcet&quot;" sap:VirtualizedContainerService.HintSize="507,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_20" SheetName="vstupniData">
                         <ui:ExcelReadCell.Result>
                           <OutArgument x:TypeArguments="ui:GenericValue">[genTmp]</OutArgument>
                         </ui:ExcelReadCell.Result>
@@ -628,7 +639,7 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="549,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;author: &quot;&amp; out_DictionaryValues(&quot;author&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;ean: &quot;&amp; out_DictionaryValues(&quot;ean&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;kontaktPPP: &quot;&amp; out_DictionaryValues(&quot;kontaktPPP&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;cisloZOP: &quot;&amp; out_DictionaryValues(&quot;cisloZOP&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;mistoSpotreby: &quot;&amp; out_DictionaryValues(&quot;mistoSpotreby&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;umisteniPristroje: &quot;&amp; out_DictionaryValues(&quot;umisteniPristroje&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;cisloOdbernehoMistaDistr: &quot;&amp; out_DictionaryValues(&quot;cisloOdberMistaDistr&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;oznaceniSmluvnihoUctu: &quot;&amp; out_DictionaryValues(&quot;oznaceniSmluvnihoUctu&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;reas: &quot;&amp; out_DictionaryValues(&quot;reas&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;datumPrihlaseni: &quot;&amp; out_DictionaryValues(&quot;datumPrihlaseni&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;odectovaJednotka: &quot;&amp; out_DictionaryValues(&quot;odectovaJednotka&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;typProvozuVyrobny: &quot;&amp; out_DictionaryValues(&quot;typProvozuVyrobny&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;resitelKontaktu: &quot;&amp; out_DictionaryValues(&quot;resitelKontaktu&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;poznamka: &quot;&amp; out_DictionaryValues(&quot;poznamka&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;obchodnik: &quot;&amp; out_DictionaryValues(&quot;obchodnik&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;obchodnikEmail: &quot;&amp; out_DictionaryValues(&quot;obchodnikEmail&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;emailPredmet: &quot;&amp; out_DictionaryValues(&quot;emailPredmet&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;kontaktniTelefon: &quot;&amp; out_DictionaryValues(&quot;kontaktniTelefon&quot;).ToString &amp; vbcrlf]" TopMost="True" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="549,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;author: &quot;&amp; out_DictionaryValues(&quot;author&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;ean: &quot;&amp; out_DictionaryValues(&quot;ean&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;kontaktPPP: &quot;&amp; out_DictionaryValues(&quot;kontaktPPP&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;cisloZOP: &quot;&amp; out_DictionaryValues(&quot;cisloZOP&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;mistoSpotreby: &quot;&amp; out_DictionaryValues(&quot;mistoSpotreby&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;umisteniPristroje: &quot;&amp; out_DictionaryValues(&quot;umisteniPristroje&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;cisloOdbernehoMistaDistr: &quot;&amp; out_DictionaryValues(&quot;cisloOdberMistaDistr&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;oznaceniSmluvnihoUctu: &quot;&amp; out_DictionaryValues(&quot;oznaceniSmluvnihoUctu&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;reas: &quot;&amp; out_DictionaryValues(&quot;reas&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;datumPrihlaseni: &quot;&amp; out_DictionaryValues(&quot;datumPrihlaseni&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;odectovaJednotka: &quot;&amp; out_DictionaryValues(&quot;odectovaJednotka&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;typProvozuVyrobny: &quot;&amp; out_DictionaryValues(&quot;typProvozuVyrobny&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;resitelKontaktu: &quot;&amp; out_DictionaryValues(&quot;resitelKontaktu&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;poznamka: &quot;&amp; out_DictionaryValues(&quot;poznamka&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;obchodnik: &quot;&amp; out_DictionaryValues(&quot;obchodnik&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;obchodnikEmail: &quot;&amp; out_DictionaryValues(&quot;obchodnikEmail&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;emailPredmet: &quot;&amp; out_DictionaryValues(&quot;emailPredmet&quot;).ToString &amp; vbcrlf &amp;&#xA;&quot;kontaktniTelefon: &quot;&amp; out_DictionaryValues(&quot;kontaktniTelefon&quot;).ToString &amp; vbcrlf]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
@@ -657,7 +668,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
