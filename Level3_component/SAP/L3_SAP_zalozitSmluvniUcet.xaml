@@ -51,7 +51,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1160,3465</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3465</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="102">
@@ -154,7 +154,6 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_zalozitSmluvniUcet&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L2_proces2_zalozitSu&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="498,3260" sap2010:WorkflowViewState.IdRef="Sequence_4">
@@ -754,19 +753,45 @@
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_writeDataToFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_writeDataToFile.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess" />
-                <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strExceptionMessage]</OutArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intValueType">6</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strValueToWrite">[out_strHodnotaSmluvniUcet]</InArgument>
-                <InArgument x:TypeArguments="x:Int32" x:Key="in_intActualRow">[in_intRowCounter]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
+                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strExceptionMessage" />
+                </OutArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intValueType">
+                  <Literal x:TypeArguments="x:Int32" Value="8" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strValueToWrite">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="out_strHodnotaSmluvniUcet" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:Int32" x:Key="in_intActualRow">
+                  <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intRowCounter" />
+                </InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
