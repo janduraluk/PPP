@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,8147</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1288,9057</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,7 +93,7 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: importZaznamuSOP&#xA;DESCRIPTION: SAP transakce ZCS_MODUL_SOP, založení TKD&#xA;VSTUPY: in_strEAN&#xA;VYSTUP: out_strOdberneMisto,  out_strKontakt&#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="1298,8028" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: importZaznamuSOP&#xA;DESCRIPTION: SAP transakce ZCS_MODUL_SOP, založení TKD&#xA;VSTUPY: in_strEAN&#xA;VYSTUP: out_strOdberneMisto,  out_strKontakt&#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="1298,8892" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; automatizacni komponenta" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -163,7 +163,7 @@
         <InArgument x:TypeArguments="x:String">["859182400511633082"]</InArgument>
       </Assign.Value>
     </Assign>
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="1256,6653" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="1256,7517" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -670,7 +670,7 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4410c8e6-a41b-4710-b2c9-491ceac3121f" InformativeScreenshot="daf49cfe769b5370c09bac9679f829d7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů: 1' /&gt;&lt;sap colName='SEL' id='usr/cntlGRID1/shellcont/shell' tableRow='0' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4410c8e6-a41b-4710-b2c9-491ceac3121f" InformativeScreenshot="daf49cfe769b5370c09bac9679f829d7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů:*' /&gt;&lt;sap colName='SEL' id='usr/cntlGRID1/shellcont/shell' tableRow='0' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
@@ -707,7 +707,7 @@
                     </scg:List>
                   </ucas:ClickToolbarButton.Items>
                   <ucas:ClickToolbarButton.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79ddd2e0-54ce-4ce6-84af-303021c2bf66" InformativeScreenshot="103eb401a47936b70369098fca7e947c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů: 1' /&gt;&lt;sap id='tbar[1]/btn[14]' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="79ddd2e0-54ce-4ce6-84af-303021c2bf66" InformativeScreenshot="103eb401a47936b70369098fca7e947c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů: *' /&gt;&lt;sap id='tbar[1]/btn[14]' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -749,7 +749,7 @@
                     </scg:List>
                   </ucas:ClickToolbarButton.Items>
                   <ucas:ClickToolbarButton.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="968a6581-cb2a-4be6-90ea-7fe185c94f84" InformativeScreenshot="3fa67d47403a9b4afe34269dff718aaf" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna požadavků na SoP - nalezeno záznamů: 1' /&gt;&lt;sap id='tbar[1]/btn[18]' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="968a6581-cb2a-4be6-90ea-7fe185c94f84" InformativeScreenshot="3fa67d47403a9b4afe34269dff718aaf" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna požadavků na SoP - nalezeno záznamů: *' /&gt;&lt;sap id='tbar[1]/btn[18]' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -783,7 +783,7 @@
                 </ui:Click>
                 <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'GridViewCell  102544685'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
                   <ui:GetValue.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0749c0a9-5012-4d0c-9da7-4f3bf39ae6b4" InformativeScreenshot="12f9ed9801d7eefa1ada681af74250ba" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů: 1' /&gt;&lt;sap colName='ANLAGE_VYR' id='usr/cntlGRID1/shellcont/shell' tableRow='0' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0749c0a9-5012-4d0c-9da7-4f3bf39ae6b4" InformativeScreenshot="12f9ed9801d7eefa1ada681af74250ba" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů: *' /&gt;&lt;sap colName='ANLAGE_VYR' id='usr/cntlGRID1/shellcont/shell' tableRow='0' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -944,7 +944,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="993,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1222,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -983,6 +983,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="1027,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="1256,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
   </Sequence>
 </Activity>
