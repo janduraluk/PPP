@@ -11,7 +11,6 @@
     <x:Property Name="in_strAppEnvironmentName" Type="InArgument(x:String)" />
     <x:Property Name="in_strEmailAdminRpa" Type="InArgument(x:String)" />
     <x:Property Name="in_strRobotAutor" Type="InArgument(x:String)" />
-    <x:Property Name="in_strResitel" Type="InArgument(x:String)" />
     <x:Property Name="in_intMaxRetries" Type="InArgument(x:Int32)" />
     <x:Property Name="in_intCounter" Type="InArgument(x:Int32)" />
     <x:Property Name="in_strSkupUcOkruhu" Type="InArgument(x:String)" />
@@ -46,7 +45,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3077</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3037</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -111,7 +110,6 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Word</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_zpracovatKontaktOp&#xA;DESCRIPTION: SAP transakce BCT1, změna kontaktu, vložit interní poznámku, změnit řešitele, změnit stav na Uzavřený – Vyřešený &#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="540,2872" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -448,7 +446,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
