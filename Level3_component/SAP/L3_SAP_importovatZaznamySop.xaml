@@ -44,7 +44,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3132</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3172</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -323,7 +323,7 @@
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
           </Sequence>
-          <Sequence DisplayName="vytezeni hodnot" sap:VirtualizedContainerService.HintSize="376,1597" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="vytezeni hodnot" sap:VirtualizedContainerService.HintSize="376,1701" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strHodnotaDatumNarozeni" />
               <Variable x:TypeArguments="x:String" Name="strHodnotaAdresa" />
@@ -462,7 +462,18 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="ukonceni transakce?" />
+            <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="CallTransaction_3" Transaction="/n">
+              <ucas:CallTransaction.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b9c068a8-bd01-4613-9d2b-0a0cfbdd6d1e" InformativeScreenshot="b3ac701693628366f0673f45378f44b0" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ucas:CallTransaction.Target>
+            </ucas:CallTransaction>
             <Sequence DisplayName="zapis hodnot do souboru" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_30">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
