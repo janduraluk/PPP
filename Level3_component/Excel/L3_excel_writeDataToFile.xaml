@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,2699</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140,2829</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,10 +121,9 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_Excel_writeDataToXLS&#xA;DESCRIPTION: vytěžená data se předají do proměnné strValueToWrite. do argumentu in_intValueType se vyplní typ zapisované hodnoty dle Hlavičky níže. dojde k validaci hodnoty a pokud je hodnota NOT NULL, zapíše se do excelu na určené místo. Sloupce jsou určeny pořadím v strColumnArray, řádek se předa parametrem do proměnné intActuallRow&#xA;PARENT LEVEL:L2_?&#xA;&#xA;PARAMETERS:&#xA;0 - jmenoPrijmeni&#xA;1 - adresa&#xA;2 - datumNarozeni&#xA;3 - cisloOP&#xA;4 - hlavniJistic&#xA;5 - pi&#xA;6 - cisloVyrobnihoOdbernehoMista&#xA;7 - tkdKontakt&#xA;8 - hodnotaSmluvnihoUctu&#xA;9 - sazba&#xA;10 - Robot status&#xD;&#xA;11 - Robot datum" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="843,2494" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_Excel_writeDataToXLS&#xA;DESCRIPTION: vytěžená data se předají do proměnné strValueToWrite. do argumentu in_intValueType se vyplní typ zapisované hodnoty dle Hlavičky níže. dojde k validaci hodnoty a pokud je hodnota NOT NULL, zapíše se do excelu na určené místo. Sloupce jsou určeny pořadím v strColumnArray, řádek se předa parametrem do proměnné intActuallRow&#xA;PARENT LEVEL:L2_?&#xA;&#xA;PARAMETERS:&#xA;0 - jmenoPrijmeni&#xA;1 - adresa&#xA;2 - datumNarozeni&#xA;3 - cisloOP&#xA;4 - hlavniJistic&#xA;5 - pi&#xA;6 - cisloVyrobnihoOdbernehoMista&#xA;7 - tkdKontakt&#xA;8 - hodnotaSmluvnihoUctu&#xA;9 - sazba&#xA;10 - Robot status&#xA;11 - Robot datum" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="843,2664" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; Excel_writeDataToXLS" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -158,38 +157,49 @@
         <InArgument x:TypeArguments="s:String[]">[{"X","Y","Z","AA","AB","AC","AD","AE","AF","AG","AH","AI"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="801,383" sap2010:WorkflowViewState.IdRef="Sequence_6">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Int32">[in_intValueType]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Int32">3</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_strValueToWrite]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">křemílek</InArgument>
-        </Assign.Value>
-      </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Int32">[in_intActualRow]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Int32">10</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="801,553" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,475" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="304,383" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[in_intValueType]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">3</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strValueToWrite]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">křemílek</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[in_intActualRow]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">10</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="801,1178" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence sap:VirtualizedContainerService.HintSize="763,951" sap2010:WorkflowViewState.IdRef="Sequence_2">
