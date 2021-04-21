@@ -41,7 +41,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1165,2040</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>959,2040</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,7 +102,6 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L2_archivacePolozek&#xA;DESCRIPTION: V tomto WF je pouzita pouze komponenta L3_excel_presunoutZpracovanePolozky. Komponenta ma za ukol otevreni souboru DataSet_vyplněný.xlsx a presunout z nej vyresene projekty a projekty s chybou do souboru PPP_archivZpracovanychPolozek.xlsx. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="876,1875" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -228,7 +227,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">360,152 360,196.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_presunoutZpracovanePolozky" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_presunoutZpracovanePolozky.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_presunoutZpracovanePolozky" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_presunoutZpracovanePolozky.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
                     <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
@@ -262,6 +261,9 @@
                   </InArgument>
                   <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
                     <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>

@@ -43,7 +43,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,2224</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140,2510</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -118,7 +118,7 @@
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_schvalitEan &#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="498,2019" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_schvalitEan &#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L2_proces-1&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="600,2345" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; SAP - schvalit EAN" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -129,7 +129,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap2010:Annotation.AnnotationText="strNameToLog = in_strProcessCode + &quot; | &quot; + strComponentName + &quot;: &quot;" sap:VirtualizedContainerService.HintSize="456,102" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap2010:Annotation.AnnotationText="strNameToLog = in_strProcessCode + &quot; | &quot; + strComponentName + &quot;: &quot;" sap:VirtualizedContainerService.HintSize="558,102" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strNameToLog]</OutArgument>
       </Assign.To>
@@ -142,8 +142,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="456,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="456,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="558,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="558,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,275" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
@@ -176,7 +176,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="456,1345" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="558,1671" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -184,22 +184,45 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="418,1118" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence sap:VirtualizedContainerService.HintSize="520,1444" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="376,795" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="478,1121" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'GridViewCell  shell'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_1">
-              <ui:Check.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5584e44b-5eeb-47ee-8efb-60d2318ffc8e" InformativeScreenshot="57167a70bfaea167908619282a25ba76" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů*' /&gt;&lt;sap colName='SEL' id='usr/cntlGRID1/shellcont/shell' tableRow='0' /&gt;">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:Check AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" Action="Check" DisplayName="Check 'GridViewCell  shell'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Check_1">
+                    <ui:Check.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5584e44b-5eeb-47ee-8efb-60d2318ffc8e" InformativeScreenshot="57167a70bfaea167908619282a25ba76" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Zobrazení požadavků na SoP - nalezeno záznamů*' /&gt;&lt;sap colName='SEL' id='usr/cntlGRID1/shellcont/shell' tableRow='0' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:Check.Target>
+                  </ui:Check>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="436,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f11" KeyModifiers="Ctrl" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="258c0e8a-7f8b-4f46-840b-572d976f481f">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -207,9 +230,9 @@
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
-              </ui:Check.Target>
-            </ui:Check>
-            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button Změna'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_10" Item="Změna zobrazení \/ editace   (Shift+F2)">
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button Změna'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_10" Item="Změna zobrazení \/ editace   (Shift+F2)">
               <ucas:ClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="16">
                   <x:String xml:space="preserve">Změna zobrazení \/ editace   (Shift+F2)</x:String>
@@ -238,7 +261,7 @@
                 </ui:Target>
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
-            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Zobr.porovnání'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_11" Item="Detail porovnání   (Ctrl+F7)">
+            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Zobr.porovnání'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_11" Item="Detail porovnání   (Ctrl+F7)">
               <ucas:ClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="32">
                   <x:String xml:space="preserve">Změna zobrazení \/ editace   (Shift+F2)</x:String>
@@ -280,7 +303,7 @@
                 </ui:Target>
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
-            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Schválit'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_12" Item="Schválí vybrané záznamy   (Enter)">
+            <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Button  Schválit'" sap:VirtualizedContainerService.HintSize="436,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_12" Item="Schválí vybrané záznamy   (Enter)">
               <ucas:ClickToolbarButton.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String xml:space="preserve">Schválí vybrané záznamy   (Enter)</x:String>
@@ -301,7 +324,7 @@
               </ucas:ClickToolbarButton.Target>
             </ucas:ClickToolbarButton>
           </Sequence>
-          <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+          <Assign sap:VirtualizedContainerService.HintSize="478,60" sap2010:WorkflowViewState.IdRef="Assign_13">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
             </Assign.To>
@@ -309,11 +332,11 @@
               <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="478,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="524,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -324,7 +347,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -352,6 +375,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="456,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="558,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
   </Sequence>
 </Activity>

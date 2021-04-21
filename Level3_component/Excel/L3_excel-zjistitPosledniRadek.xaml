@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1586,3428</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1586,3825</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="104">
@@ -124,10 +124,9 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_excel-zjistitPosledniRadek&#xA;DESCRIPTION: Na základě vyplnění sloupce &quot;A&quot; v souboru &quot;DataSet_vyplněný.xlsx&quot; najde číslo posledního řádku. Výstupem je out argument boolean(out_boolNextRowExist), který zda existuje poslední řádek a out argument (out_intLastFilledRow), který nese ven číslo posledního řádku.&#xA;PARENT LEVEL: L2_zpracovaniVstupnichDat&#xA;------- &#xA;© Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="1596,3223" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_excel-zjistitPosledniRadek&#xA;DESCRIPTION: Na základě vyplnění sloupce &quot;A&quot; v souboru &quot;DataSet_vyplněný.xlsx&quot; najde číslo posledního řádku. Výstupem je out argument boolean(out_boolNextRowExist), který zda existuje poslední řádek a out argument (out_intLastFilledRow), který nese ven číslo posledního řádku.&#xA;PARENT LEVEL: L2_zpracovaniVstupnichDat&#xA;------- &#xA;© Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="1596,3660" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; Excel - Zjistit posledni radek" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -157,25 +156,44 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="1554,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="1554,183" sap2010:WorkflowViewState.IdRef="Sequence_6">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Soubor" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_39">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:String">[in_strRootFile]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:String">DataSet_vyplněný.xlsx</InArgument>
-        </Assign.Value>
-      </Assign>
-    </Sequence>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1554,2415" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1554,453" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,375" sap2010:WorkflowViewState.IdRef="Sequence_23">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="304,283" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_59">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strRootFolder]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">data\</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Soubor" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strRootFile]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">DataSet_vyplněný.xlsx</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1554,2582" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1516,2187" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="1516,2355" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -365,7 +383,18 @@
               </Sequence>
             </DoWhile>
           </Sequence>
-          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="1474,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[out_intLastFilledRow.ToString]" TopMost="True" />
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1474,229" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut.Body>
+              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[out_intLastFilledRow.ToString]" TopMost="True" />
+              </Sequence>
+            </ui:CommentOut.Body>
+          </ui:CommentOut>
           <Assign sap:VirtualizedContainerService.HintSize="1474,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
@@ -374,11 +403,11 @@
               <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="1474,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="1474,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1520,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1520,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

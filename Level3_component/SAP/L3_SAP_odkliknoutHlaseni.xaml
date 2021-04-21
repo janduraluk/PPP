@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1157,2022</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>973,1982</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:UiElementExists DisplayName="Existuje systemove hlaseni?" Exists="[boolHlaseniExist]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="afd0a7dc6add825fbd98c855a851e2b9" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Systémová hlášení' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22942b09-4343-4353-8367-0488cd5ad487" InformativeScreenshot="afd0a7dc6add825fbd98c855a851e2b9" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Systémová hlášení' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
           <While sap:VirtualizedContainerService.HintSize="484,695" sap2010:WorkflowViewState.IdRef="While_1" Condition="[boolHlaseniExist=true]">
@@ -136,7 +136,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Odklikni" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" AlterIfDisabled="True" ClickType="CLICK_SINGLE" DisplayName="Odklikni" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -148,14 +148,18 @@
                   </ui:CursorPosition>
                 </ui:Click.CursorPosition>
                 <ui:Click.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9141f1b77466696dcec6314538bce93f" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Systémová hlášení' /&gt;&lt;sap id='tbar[0]/btn[12]' /&gt;" WaitForReady="INTERACTIVE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e5e99daf-50e5-4954-99e9-572549c0aac8" InformativeScreenshot="9141f1b77466696dcec6314538bce93f" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Systémová hlášení' /&gt;&lt;sap id='tbar[0]/btn[12]' /&gt;" WaitForReady="INTERACTIVE">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                  </ui:Target>
                 </ui:Click.Target>
               </ui:Click>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="SAP - okno odkliknuto: Systémová hlášení" />
               <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
               <ui:UiElementExists DisplayName="Existuje systemove hlaseni?" Exists="[boolHlaseniExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                 <ui:UiElementExists.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="afd0a7dc6add825fbd98c855a851e2b9" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Systémová hlášení' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="377ba55a-a934-4c64-a9f9-1d691356642f" InformativeScreenshot="afd0a7dc6add825fbd98c855a851e2b9" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Systémová hlášení' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
                 </ui:UiElementExists.Target>
               </ui:UiElementExists>
             </Sequence>
