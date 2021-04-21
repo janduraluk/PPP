@@ -1,0 +1,810 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Level3_Component" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_boolSuccess" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_strExceptionMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="in_intTimeoutM" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intTimeoutS" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intTimeoutL" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strRootFolder" Type="InArgument(x:String)" />
+    <x:Property Name="in_strProcessCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_strUserName" Type="InArgument(x:String)" />
+    <x:Property Name="in_strAppEnvironmentName" Type="InArgument(x:String)" />
+    <x:Property Name="in_strEmailAdminRpa" Type="InArgument(x:String)" />
+    <x:Property Name="in_strRobotAutor" Type="InArgument(x:String)" />
+    <x:Property Name="in_strKontaktPPP" Type="InArgument(x:String)" />
+    <x:Property Name="in_strVychoziEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_strEmailPredmet" Type="InArgument(x:String)" />
+    <x:Property Name="in_strObchodnikEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_strEmailTelo" Type="InArgument(x:String)" />
+    <x:Property Name="in_intMaxRetries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intCounter" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strSkupUcOkruhu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strUpravaTerminu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strTypMereni" Type="InArgument(x:String)" />
+    <x:Property Name="in_strDruhZpravySOP" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPocetGeneratoru" Type="InArgument(x:String)" />
+    <x:Property Name="in_strStatusKontaktu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strZpusobDosPlat" Type="InArgument(x:String)" />
+    <x:Property Name="in_strZpusOdeslPl" Type="InArgument(x:String)" />
+    <x:Property Name="in_strAtribNalezUctu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strSdruzFakturace" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCyklusZaloh" Type="InArgument(x:String)" />
+    <x:Property Name="in_strDrMistSpot" Type="InArgument(x:String)" />
+    <x:Property Name="in_strOperand" Type="InArgument(x:String)" />
+    <x:Property Name="in_strTrida" Type="InArgument(x:String)" />
+    <x:Property Name="in_strAkce" Type="InArgument(x:String)" />
+    <x:Property Name="in_strDruhkontaktu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strSmer" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPoleMikrozdroj" Type="InArgument(x:String)" />
+    <x:Property Name="in_strStatusZpravy" Type="InArgument(x:String)" />
+    <x:Property Name="in_strDruhSluzby" Type="InArgument(x:String)" />
+    <x:Property Name="in_strTypSmluvnihoUctu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPlatnostDo" Type="InArgument(x:String)" />
+    <x:Property Name="in_stroznaceniSmluvnihoUctu" Type="InArgument(x:String)" />
+    <x:Property Name="in_strCisloZop" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>909,8245</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Credentials.Activities</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.FTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.XPS.Activities</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.JSON.Activities</x:String>
+      <x:String>UiPath.REST.Activities</x:String>
+      <x:String>UiPath.SOAP.Activities</x:String>
+      <x:String>UiPath.XML.Activities</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.Orchestrator.Client</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Credentials.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Cryptography</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_SAP_GenerovatProtokol&#xA;DESCRIPTION: Otevře transakci BCT1, načte kontakt ze kterého se vygeneruje Protokol pro montéra. &#xA;&#xA;PARENT LEVEL: L2_proces-3" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="919,8080" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; SAP - GenerovatProtokol" Name="strComponentName" />
+      <Variable x:TypeArguments="x:String" Name="strNameToLog" />
+      <Variable x:TypeArguments="x:String" Name="strSapKodTransakce" />
+      <Variable x:TypeArguments="x:String" Name="strTextDoProtokolu" />
+      <Variable x:TypeArguments="x:String" Name="strSablonaProtokolu" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap2010:Annotation.AnnotationText="strNameToLog = in_strProcessCode + &quot; | &quot; + strComponentName + &quot;: &quot;" sap:VirtualizedContainerService.HintSize="877,102" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strNameToLog]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_strProcessCode + " | " + strComponentName + ": "]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="877,653" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,575" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="304,483" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strKontaktPPP]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">1105998382</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strSkupUcOkruhu]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">1200</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_stroznaceniSmluvnihoUctu]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">MZS</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[in_strCisloZop]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">4121744958</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,6819" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="839,6592" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <If Condition="[in_stroznaceniSmluvnihoUctu = &quot;MZS&quot;]" sap:VirtualizedContainerService.HintSize="797,6269" sap2010:WorkflowViewState.IdRef="If_1">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="418,6111" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[strNameToLog + &quot;Nutno generovat protokol -typ MZS&quot;]" />
+                <Sequence DisplayName="Config" sap:VirtualizedContainerService.HintSize="376,352" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strSapKodTransakce]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">BCT1</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strSablonaProtokolu]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">12-D40</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[strTextDoProtokolu]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Mikrozdroj s povolenými přetoky - MS</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+                <Sequence DisplayName="Do work" sap:VirtualizedContainerService.HintSize="376,5496" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="strPuvodniEmail" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[strSapKodTransakce]">
+                    <ucas:CallTransaction.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4a9533ae-669e-4938-b438-73e929c02136" InformativeScreenshot="cd8a101ef54d3e243d7f965bcaedc100" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  Uživatelské menu*' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:CallTransaction.Target>
+                  </ucas:CallTransaction>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Kontakt'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[in_strKontaktPPP+ &quot;[k(enter)]&quot;]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="059a46e4-45d5-4808-9691-7657ea361af5" InformativeScreenshot="7d56326e770001d93f0a2d9c2c177461" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Kontakt: Vstupní obrazovka' /&gt;&lt;sap id='usr/ctxtBCONTD-BPCONTACT' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Tab  Žádosti o připojení'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_1" Item=" Žádosti o připojení">
+                    <ucas:ClickToolbarButton.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="8">
+                        <x:String xml:space="preserve"> Atributy kontaktu</x:String>
+                        <x:String xml:space="preserve"> Pracovní příkazy</x:String>
+                        <x:String xml:space="preserve"> Žádosti o připojení</x:String>
+                        <x:String xml:space="preserve"> Doplňkové informace</x:String>
+                        <x:String xml:space="preserve"> Garance</x:String>
+                        <x:String xml:space="preserve"> Poplatky</x:String>
+                        <x:String xml:space="preserve"> TIS/GIS</x:String>
+                        <x:String xml:space="preserve"> Podnikové objekty</x:String>
+                      </scg:List>
+                    </ucas:ClickToolbarButton.Items>
+                    <ucas:ClickToolbarButton.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0826a8f0-2128-4c96-b08d-7e19ce4de042" InformativeScreenshot="626286b604d4edf445687a5e2740aac9" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Kontakt: *' /&gt;&lt;sap id='usr/tabsTSTRIP' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:ClickToolbarButton.Target>
+                  </ucas:ClickToolbarButton>
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe Změna'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition Position="BottomLeft">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAACkAAAAeCAYAAACxHzfjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALzSURBVFhHzZdPTxNBFMDnc3ClGMOJCx8BUDjopd8BgqBHblw4gWljTYwn5MAFoyY1BEwvXvFvLf23bbdbttb+ETR8Ap/v7XZnZ6ZDKTsQ3eSXzMx72/n1zXR2y6x6E0zo9k7hxctD+FT7Ce8/FLU5prCy7cLU1NxIUK7Kj05PktTlROMZ3GG34MGhC6xUO/EELrsoh3JV3FZbkuSx1AIwxvosQPLgEcR432cuJX/WAME9xWpjZEnKVXHcliQpxb1J5iGhtnmfQWwlI9+jgUuOgnozYTea0SSJJ/NYUWWsT3plIqz6sVX3BDKZzAA0HlSRoFyVmuNKklJ8/yGMo8Rjtc15CrNsApb2xTGVd8C+lexLJemiNuWqVOonkqQUf7uKYndhS21zDmExxmAmKY7JvF7GimaLNV4pHeJFfcoXsWxZUoqnfbFNtc1JwQxWcjEtjgn07+GSuks3roqWa43okgkUGBAP2ZxjML58QJL+cusucZzaAXRPQLFaVyTDWCimtHkflzrR76vQF4itwitssxyuuyigEghSno68ZUuSPJakKgVnIu5Fb08GfZ9Z3IviZ4lsYRV5br7SgIsIRHWxgFypJknqckzxHosmZIsVSVKXY4rxC8bXgiVJ6nJM8Z7dJmQLciV1Oaaw57tpMGX3TYZL3gTs7NdvMKHd6XqiNyrpuG18k4lOt3c2IPnnfPtaYQX8iZvQ7Z7+/5K65R6YaGcaD+Vp2FPHz5cgPjBOY8JBjnGWtxx8akSn2eoMlzy6B5P9yUSZvfuhhCSJ+fG1Dd4vrI3h+2QZ39kMcNzvQySpKmOwfqSrWBDXjQugtPfsNsGyGxdIbsD6bQbxHWpHl/Qq+QUPYxPKVUcrScs5yZctqiTFcUt8PrbAhGKlrpWkKoabP4CWXpW4SNIXpC/KPubKYEIB/4cM/eHwCa9SSV/Q3yp4BOkmvgr5sn3NkrIg8c8kwyPIh+9f70yVYyhp4WTRyZUqI0iaYfzDoffJm5Xchr88HXl4zsfHnQAAAABJRU5ErkJggg==" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="54c1beb8-664e-4b6f-b6da-099f5436dd8a" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Kontakt: *' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                  <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Tisk formuláře žádosti">
+                    <ucas:ClickToolbarButton.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="32">
+                        <x:String>Detaily</x:String>
+                        <x:String>Kontrola zadání</x:String>
+                        <x:String>Undo</x:String>
+                        <x:String>Vzestupné třídění</x:String>
+                        <x:String>Sestupné třídění</x:String>
+                        <x:String>Hledání..</x:String>
+                        <x:String>Nastavení filtru...</x:String>
+                        <x:String>Nastavení filtru.../Nastavení filtru...</x:String>
+                        <x:String>Nastavení filtru.../Výmaz filtru</x:String>
+                        <x:String>Tisk</x:String>
+                        <x:String>Views/Výstup sest.</x:String>
+                        <x:String>Views/Rastr</x:String>
+                        <x:String>Views/Excel Inplace</x:String>
+                        <x:String>Export/Kalkulační tabulka</x:String>
+                        <x:String>Export/Zpracování textu</x:String>
+                        <x:String>Export/Lokál.soubor</x:String>
+                        <x:String>Export/Odesl.</x:String>
+                        <x:String>Export/Office</x:String>
+                        <x:String>Export/Analýza ABC</x:String>
+                        <x:String>Export/HTML-Download</x:String>
+                        <x:String>Výběr layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Výběr layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Změna layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Uložení layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Správa layoutů</x:String>
+                        <x:String>Zobrazení grafiky</x:String>
+                        <x:String>Dokumentace uživatele</x:String>
+                        <x:String>Tisk formuláře žádosti</x:String>
+                      </scg:List>
+                    </ucas:ClickToolbarButton.Items>
+                    <ucas:ClickToolbarButton.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f1316131-cbc8-4583-83cb-19d23c09af02" InformativeScreenshot="3e221df2c918501d27b89568a9e5b084" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Změna Kontakt: *' /&gt;&lt;sap id='usr/tabsTSTRIP/tabpT_BLV/ssubSUBSR_TSTRIP:SAPLBPT1:9996/cntlZISUCS_SERV_REQUEST/shellcont/shell' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:ClickToolbarButton.Target>
+                  </ucas:ClickToolbarButton>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Účetní okruh'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_16" Text="[&quot;[k(del)]&quot;+in_strSkupUcOkruhu]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0e79da71-dae9-44b5-9e60-b16194ac1831" InformativeScreenshot="da03f5478b3fb5a8ccb5bc9909cf5c4c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tvorba dokumentů' /&gt;&lt;sap id='usr/subSUBSCREEN_VYBER_KRITERIA:SAPMZZD_DOKUMENTY:0200/ctxtT001-BUKRS' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Kontakt'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_17" Text="[in_strKontaktPPP]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c848caf-8140-4520-968a-d5e8902bab3f" InformativeScreenshot="1c0a04601fdb0e89e55b43b470cbff34" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tvorba dokumentů' /&gt;&lt;sap id='usr/subSUBSCREEN_VYBER_KRITERIA:SAPMZZD_DOKUMENTY:0200/ctxtBPCONTACT' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_30" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="bde63d00-28bf-40d5-949f-167d90785f3d">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField cisloZop'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_20" Text="[in_strCisloZop]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5c848caf-8140-4520-968a-d5e8902bab3f" InformativeScreenshot="1c0a04601fdb0e89e55b43b470cbff34" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tvorba dokumentů' /&gt;&lt;sap id='usr/subSUBSCREEN_VYBER_KRITERIA:SAPMZZD_DOKUMENTY:0200/ctxtCISLO_ZADOSTI' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_3" Item="Hledání..">
+                    <ucas:ClickToolbarButton.Items>
+                      <scg:List x:TypeArguments="x:String" Capacity="32">
+                        <x:String>Detaily</x:String>
+                        <x:String>Vzestupné třídění</x:String>
+                        <x:String>Sestupné třídění</x:String>
+                        <x:String>Hledání..</x:String>
+                        <x:String>Další hledání</x:String>
+                        <x:String>Nastavení filtru...</x:String>
+                        <x:String>Nastavení filtru.../Nastavení filtru...</x:String>
+                        <x:String>Nastavení filtru.../Výmaz filtru</x:String>
+                        <x:String>Tisk</x:String>
+                        <x:String>Views/Výstup sest.</x:String>
+                        <x:String>Views/Rastr</x:String>
+                        <x:String>Views/Excel Inplace</x:String>
+                        <x:String>Export/Kalkulační tabulka</x:String>
+                        <x:String>Export/Zpracování textu</x:String>
+                        <x:String>Export/Lokál.soubor</x:String>
+                        <x:String>Export/Odesl.</x:String>
+                        <x:String>Export/Office</x:String>
+                        <x:String>Export/Analýza ABC</x:String>
+                        <x:String>Export/HTML-Download</x:String>
+                        <x:String>Výběr layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Výběr layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Změna layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Uložení layoutu...</x:String>
+                        <x:String>Výběr layoutu.../Správa layoutů</x:String>
+                        <x:String>Zobrazení grafiky</x:String>
+                        <x:String>Dokumentace uživatele</x:String>
+                      </scg:List>
+                    </ucas:ClickToolbarButton.Items>
+                    <ucas:ClickToolbarButton.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0e2bd4bd-b4c3-4220-901e-be187285a05b" InformativeScreenshot="72014aec3c1acbffc1e534f9e74cb60a" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tvorba dokumentů' /&gt;&lt;sap id='usr/cntlCC_CONTAINER/shellcont/shell' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:ClickToolbarButton.Target>
+                  </ucas:ClickToolbarButton>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField ALV-Control:'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_18" Text="[strSablonaProtokolu]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c179aff5-b8e3-4b79-949d-2b6792b67b1c" InformativeScreenshot="caf494d95d30e2de8b6d3b3fcf1119ca" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Hledání' idx='*' /&gt;&lt;sap id='usr/txtGS_SEARCH-VALUE' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_31" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="0125ce0f-b9e8-4d8c-bc89-7cff67b0057b">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_32" Key="f12" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="73df2f62-96c9-4e9e-8b6b-9a20b28f232d">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'saplogon.exe Tvorba'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAasAAAANCAYAAAAXI0EqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYrSURBVHhe7Zo9blw5DMfnFCncBwic2gdImyYuPMgZAgRI6yoGFrlB+sBlfIN022bbIFvuHfYAi30r6oOP/IvSk+SxPZNV8YNHIiXy8YmiNJ7dP3/9tkwmo/z+x5+ef//+MplMJg/GLFaTe/G/Llbf3yznu4vlzn2+u9wt59efYt9u2b14s/xE/VOGnqv3mUbGHCWflpsX7p1evjNkGzx2DI4p5gf2BYrV2+Vq93L5mvW5F8WgXPDtVUhUwdVnQ4/4/NKYS9qq2JkcDXaxerfs4yau++TaqMl7ZAJKDiWPmwwljJelOQL7WzF2lNuLMJ/fyIK9/fV2kv68PlO+BM6Wm++2/uEhXzvsjWw8h9issvcm3u+orBP/rkYKFXGIGPRwb3tW7qb+UiwLsoIvfLCDvuyAR7kl4s7F6uvrZAyKhCtAVx/ec/vHh2fL7vmr5YfUSfhiJcbH4nUuxst+bev98vG5KG5UzF6/XcdMjhIsVn7R4aIl3MLdiwXqNwBenHGTT8VDLdKaDPAb1GrX+5J0QRaKDCbdgRjZMNC/B+eUitUaF7VuRmWPySFi0MM97BVzdzQ/S76QjupPxU7bpXcmi1rDzQrAgrQly25QZOPZ8vEb2oJ2zc7kaGi/WQFqMwH9ZhkgZNnmlI2jeRs2axrn5rnhRBZjlMzNHdv+FqeScRvrtGnS40/q83pSN2wwoS+S/DX117nDM8XNRR0EtsYApTGmnnhvsj0qU8BmS/jN9GLZm/3r+92Oc+xn3VZZyaeWWDqkXsmvIlbuDuZnfL5szajxUc/1Uw6sz0wx0P52F6uum5UnFSf6LG9PG8VpFquTYLRY1U7B2YIvyZAksxIbxjWftP24NYlyv0WCUZtk6W+aYwvwrUqPP9apl/3KN4OqPj9T0FkLa8uYKGNqfgEYG9kelSFkn28K4uBg9Huf/VzC/60YtL4vOa5kO7ZXwDbNybHsiDNj5C7GTra3ZN5e8KO0ZigmKd6rjvMDfO0sViSv/B/KLDBrgaKvGtevBDeKlSpyk2NlrFiFU5ZKMKVP8riR1mTcF/G6xukSZYTYCKpwwqU+8E3KUjsbU6f5VkWM+GPp+g0D4rg5d7htKF97/ElU/QJIV7x/ihW/u1FZBtlPutIX7I+f0f/a81i6TfMUbCNyvtROc+D80i/uQwxbaAOfryaz1oyDC5T7fHcp4p38hWJNdBSrUKjk/5/8LSslP922qjerULRYn4kFad6sTpL+YkUyY8PDhEvtmgxhWd2GOt1uQeNKCY+y1M7GVBB+mXKkx5/sJC1PtEaxqul7P2POyk1ka4ySRap+AdIuIceNygz45gK+pYOEXzOyEMr5umIgcgNl0DZtI2hbztETZ0b4l6A5ZZ9sb8pi/NF/9s3ZYx/Jv7Am6ZnRz8ZiFQpV8UaVsAqM+as/Am1Bexark6CvWFG/lSygrxKgJgOMRGFbalxIWlXMStA43AykDZRRG/srpA3Jkpn0+qNiRbFMBWrdGNTcJX2eG95h05gki1T9AjLdA8gsaPN0G2q2SfpnoNuB8M/3Nca5pmvJsjbYRmpz0OeSX9yHkA7GDfrUvBUZ+0I6mPdxHOmIQhbib6xNR0OxaixUhHk7Ko1FW/PXgKdIe7GyFmwCTnxx49iWAZCc/kQqE0f65NtbievghAttdcoFGbexv4T3AeO0QY8/VuyEnG8TLfpyburn2DWOUdT9UtRiNCozofV55vzFMcFX5V/2XO0xoJhvrp/UtmxnBL/TOvbrgfU74sxYuWvM05Kf8nmoH/LNH9RcUeKxacwlFejcTy5W60/XA/x1n78ZaRlhFqBYnDb1POXCGMbOW9UpgMXKJ6N4/3xr8ItVy4h1oYZiFvoxWWoyAS10kAd/XJ8hU8WshB+XbDtkEslklG3sNwlJ3nWrInr8yfThWaUsjSvpw9whdnHzaRyjKI1BvF5BPioroAoJ9GcbamucVb9DjsN5jHkz2xYit2ijz+Zk+/V4FHPXM5Cf8DxqzRhtOZeVF3Czmkz6sG9WvxDGBvKkHJs/vzy0efYVvcPxlLaPj1msJvfi5IuVOnki7tR3O1gctuZVp0nBQ/kzGcKf/o3b1mPwlLaPjy/Lf4kHjm0nJ7KMAAAAAElFTkSuQmCC" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ba3ef59d-55fc-475a-abf4-fc64504f0ce1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Tvorba dokumentů' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_33" Key="f2" KeyModifiers="Shift" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="73df2f62-96c9-4e9e-8b6b-9a20b28f232d">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:25" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_34" Key="a" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d2ea061e-73b1-4d24-a445-287b857501c5">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_35" Key="down" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="118f18a3-a936-4dc1-923d-07f6b723c416">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'upravit  Obsah stránky 3'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_19" Text="[strTextDoProtokolu]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2be30021-40a6-42b6-a956-0a36169dd825" InformativeScreenshot="1f046d881c440a80ec2a00d5fcc7b4af" Selector="&lt;wnd app='winword.exe' cls='OpusApp' title='*' /&gt;&lt;uia automationid='Body' name='Obsah stránky 3' role='upravit' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_36" Key="s" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="65d0486e-a601-4d24-894f-28d689e884b4">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'winword.exe Microsoft'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                    <ui:ClickImage.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:ClickImage.CursorPosition>
+                    <ui:ClickImage.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHAAAAAXCAYAAADTEcupAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIMSURBVGhD7Ze9bsIwEMf7ptkqxpCJGVRV5QkgS2FhI6oEPECbsUs2pKqV6qFbFp7g6vMHOYeYopLSOr2/dBLO+Yv72X/C1W63A45wQwEUQnAEGgrgdrsFVphigIGLAQYuBhi4GGDgYoCB6yIAyzyFwXgDr6Z9eQnIRj0Yb3w7KCFPY4iiSEcyg2f1XI4bmmcq9BwiG5JnVSRzPcpR+QTTwRg2b6bdsv4WQJHBqG+L155EdueHV+aQxhH0Z2RVsYKF6o8AE6CpRsl9D5N5874Z4LkqoSj8K4ts5MJzdApA3afp8il1DaD+vIS1taye/HLqsEt4ezuyduda277QCvQEFpjD8YW8RbJIy3UKsTPe9vUdCrTW/hFAXwNEO61bJ7XYZLLoHsC4BsgFY4uNuQGxPlJsBZtAMjbYo2vYeY4BxHFYXLvEgRCgPVQYNZhy7rp1lvkUYjxUBtg7wiTttvVLN7CyU6ftFBuB0eJhGGh1KHUQtE36vqxu4drOdfMAH2fdQMzhflwy+veWPOumhZ4K0FPcbwI8VM0BDuQHiDcN9+1ykfNN0TUYIGZUca0tOmoNoBTmqR1Llfk9TPTgZoByfh8UZaHEVv+XhapbR6xy3zZBX3jaAojC/vI31K5THRoESNaXkcwe5S0j/xlpTr3M4C2s8p14iWH9nBhg4GKAgYsBBi4GGLgYYNAC+ASDQJARcEC1XQAAAABJRU5ErkJggg==" />
+                    </ui:ClickImage.Image>
+                    <ui:ClickImage.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4508e66b-f492-4b89-8999-360bbae8a52c" Selector="&lt;wnd app='winword.exe' cls='HwndWrapper*' title='Microsoft Azure Information Protection' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ClickImage.Target>
+                  </ui:ClickImage>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_37" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c0df9a03-e2c9-4694-84c7-2a0efbdbc872">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_38" Key="f4" KeyModifiers="Alt" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="3496b336-f163-480b-8766-6209cd647c9b">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_8" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_39" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d0e3c1c5-645d-47dc-8a6d-0b55b303c7e5">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_9" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_40" Key="f3" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="92f94e68-a565-4d24-b43f-06bdbf7a17c8">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_10" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_41" Key="enter" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d0e3c1c5-645d-47dc-8a6d-0b55b303c7e5">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_11" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_42" Key="s" KeyModifiers="Ctrl">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="459e8666-cff5-4881-8325-169a974cd538">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_12" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_43" Key="f3" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c01fdf9b-8a01-4172-928f-9762f392205d">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_14" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_45" Key="f3" KeyModifiers="None" SpecialKey="True">
+                    <ui:SendHotkey.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c01fdf9b-8a01-4172-928f-9762f392205d">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:SendHotkey.Target>
+                  </ui:SendHotkey>
+                </Sequence>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[strNameToLog + &quot;Nebylo treba generovat Protokol -typ MZZ&quot;]" />
+            </If.Else>
+          </If>
+          <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[strNameToLog + &quot; failed: &quot; + exception.Message]" />
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_boolSuccess]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[out_strExceptionMessage]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[strComponentName + " failed: " + exception.Message]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="877,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[strNameToLog + &quot;End&quot;]" />
+  </Sequence>
+</Activity>

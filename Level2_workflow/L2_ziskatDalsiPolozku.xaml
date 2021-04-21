@@ -13,11 +13,12 @@
     <x:Property Name="in_strRobotAutor" Type="InArgument(x:String)" />
     <x:Property Name="out_DictionaryValuesXlsx" Type="OutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_intRowCounter" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_intDatamineType" Type="OutArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1154,2025</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140,2025</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -81,7 +82,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_ziskatDalsiPolozku&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="882,1860" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_ziskatDalsiPolozku&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="882,1960" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[ZISKAT DALSI POLOZKU] &lt;level 2&gt; " Name="strWorkflowName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -132,9 +133,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="840,1186" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="840,1286" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="802,959" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="802,1059" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,6 +147,14 @@
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">Success</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign sap:VirtualizedContainerService.HintSize="760,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[out_intDatamineType]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">1</InArgument>
             </Assign.Value>
           </Assign>
           <Flowchart sap:VirtualizedContainerService.HintSize="760,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -204,7 +213,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">360,165.5 360,196.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_getDataFromFile" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_getDataFromFile.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_getDataFromFile" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_getDataFromFile.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
                     <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
@@ -244,6 +253,9 @@
                   </OutArgument>
                   <InArgument x:TypeArguments="x:Int32" x:Key="in_intRow">
                     <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intRowCounter" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intDatamineType">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="out_intDatamineType" />
                   </InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>

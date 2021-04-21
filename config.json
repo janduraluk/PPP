@@ -1,5 +1,5 @@
 {
-	"strRootFolder": "C:\\DATA\\",
+	"strRootFolder": "DATA\\",
 	"intTimeoutS": 1000,
 	"intTimeoutM": 2000,
 	"intTimeoutL": 3000,
