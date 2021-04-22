@@ -39,7 +39,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1160,5593</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,5060</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenSAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -145,16 +145,11 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_configDataJson&#xA;DESCRIPTION: V komponente se deklaruji hlavni systemove promenne. Ziskani vychozich hodnot ze souboru config.json&#xA;PARENT LEVEL: L2_nacistVstupy&#xA;KEYWORDS:&#xA;out_strRootFolder&#xA;out_intTimeoutS&#xA;out_intTimeoutM&#xA;out_intTimeoutL&#xA;out_intMaxRetries&#xA;out_strDruhZpravySOP&#xA;out_strStatuszpravy&#xA;out_strPlatnostdo&#xA;out_strPocetGeneratoru&#xA;out_strStatusKontaktu&#xA;out_strTypsmluvnihouctu&#xA;out_strSkupUcOkruhu&#xA;out_strZpusobDosPlat&#xA;out_strZpusOdeslPl&#xA;out_strAtribNalezUctu&#xA;out_strSdruzFakturace&#xA;out_strCyklusZaloh&#xA;out_strDrMistSpot&#xA;out_strZpusobprovozuVZ&#xA;out_strTypmereni&#xA;out_strOperand&#xA;out_strTrida&#xA;out_strAkce&#xA;out_strDruhkontaktu&#xA;out_strSmer&#xA;out_strVychoziEmail&#xA;out_strUpravaTerminu&#xA;out_strPoleMikrozdroj&#xA;out_strDruhSluzby&#xA;out_strProcessCode&#xD;&#xA;out_strAppEnvironmentName&#xD;&#xA;out_strEmailAdminRpa&#xD;&#xA;&#xD;&#xA;REQUIRED: UiPath.WebAPI.Activities" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="498,5388" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L3_configDataJson&#xA;DESCRIPTION: V komponente se deklaruji hlavni systemove promenne. Ziskani vychozich hodnot ze souboru config.json&#xA;PARENT LEVEL: L2_nacistVstupy&#xA;KEYWORDS:&#xA;out_strRootFolder&#xA;out_intTimeoutS&#xA;out_intTimeoutM&#xA;out_intTimeoutL&#xA;out_intMaxRetries&#xA;out_strDruhZpravySOP&#xA;out_strStatuszpravy&#xA;out_strPlatnostdo&#xA;out_strPocetGeneratoru&#xA;out_strStatusKontaktu&#xA;out_strTypsmluvnihouctu&#xA;out_strSkupUcOkruhu&#xA;out_strZpusobDosPlat&#xA;out_strZpusOdeslPl&#xA;out_strAtribNalezUctu&#xA;out_strSdruzFakturace&#xA;out_strCyklusZaloh&#xA;out_strDrMistSpot&#xA;out_strZpusobprovozuVZ&#xA;out_strTypmereni&#xA;out_strOperand&#xA;out_strTrida&#xA;out_strAkce&#xA;out_strDruhkontaktu&#xA;out_strSmer&#xA;out_strVychoziEmail&#xA;out_strUpravaTerminu&#xA;out_strPoleMikrozdroj&#xA;out_strDruhSluzby&#xA;out_strProcessCode&#xA;out_strAppEnvironmentName&#xA;out_strEmailAdminRpa&#xA;&#xA;REQUIRED: UiPath.WebAPI.Activities" DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="498,4995" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strComponentName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">&lt;L3&gt; configDataJson</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="&lt;L3&gt; configDataJson" Name="strComponentName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
       <Variable x:TypeArguments="njl:JObject" Name="jConfig" />
     </Sequence.Variables>
@@ -178,26 +173,6 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="456,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="456,353" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,275" sap2010:WorkflowViewState.IdRef="Sequence_7">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="304,183" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4" />
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,3902" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence sap:VirtualizedContainerService.HintSize="418,3675" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -493,7 +468,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,383" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

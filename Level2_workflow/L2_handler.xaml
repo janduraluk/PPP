@@ -12,11 +12,13 @@
     <x:Property Name="in_strEmailAdminRpa" Type="InArgument(x:String)" />
     <x:Property Name="in_strRobotAutor" Type="InArgument(x:String)" />
     <x:Property Name="in_strErrorEmailText" Type="InArgument(x:String)" />
+    <x:Property Name="in_intNumRetries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_intMaxRetries" Type="InArgument(x:Int32)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1160,2454</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,2474</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -81,13 +83,9 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_handler&#xA;DESCRIPTION: Pokud nastane chyba kdykoliv behem pripravy robota k zpracovani projektu (workflow: L2_nacistVstupy, L2_spustitAplikace, L2_vytvoritFrontu, L2_nacistProjektFronta) nebo po jejich ukonceni (workflow: L2_presunoutZpracovano), tak je toto workflow aktivovano. Workflow zaridi nevypnuti robota, ale znovu opakovani celeho procesu. Pokud jde chyba z workflow L2_presunoutZpracovano, proces neni opakovan. Po vyprseni maximalniho mozneho pokusu opakovani se udela print screen obrazovky, ktery se ulozi do podslozky v domovskem adresari. Nasledne se kontaktuje spravce RPA pomoci weboveho emailu a cely proces se ukonci. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;© Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="1083,2289" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_handler&#xA;DESCRIPTION: Pokud nastane chyba kdykoliv behem pripravy robota k zpracovani projektu (workflow: L2_nacistVstupy, L2_spustitAplikace, L2_vytvoritFrontu, L2_nacistProjektFronta) nebo po jejich ukonceni (workflow: L2_presunoutZpracovano), tak je toto workflow aktivovano. Workflow zaridi nevypnuti robota, ale znovu opakovani celeho procesu. Pokud jde chyba z workflow L2_presunoutZpracovano, proces neni opakovan. Po vyprseni maximalniho mozneho pokusu opakovani se udela print screen obrazovky, ktery se ulozi do podslozky v domovskem adresari. Nasledne se kontaktuje spravce RPA pomoci weboveho emailu a cely proces se ukonci. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="1083,2409" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String" xml:space="preserve">[HANDLER 1] &lt;level 2&gt; </Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="[HANDLER 1] &lt;level 2&gt; " Name="strWorkflowName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -136,9 +134,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="1041,1570" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="1041,1690" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1003,1343" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="1003,1463" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,7 +150,7 @@
               <InArgument x:TypeArguments="x:String">Success</InArgument>
             </Assign.Value>
           </Assign>
-          <Flowchart sap:VirtualizedContainerService.HintSize="961,1020" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+          <Flowchart sap:VirtualizedContainerService.HintSize="961,1140" sap2010:WorkflowViewState.IdRef="Flowchart_1">
             <Flowchart.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolSuccess" />
               <Variable x:TypeArguments="x:Int32" Name="intTimeoutL" />
@@ -169,11 +167,11 @@
                 <av:Size x:Key="ShapeSize">60,75</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">460,77.5 460,136.5</av:PointCollection>
                 <x:Double x:Key="Width">927</x:Double>
-                <x:Double x:Key="Height">983.5</x:Double>
+                <x:Double x:Key="Height">1103.5</x:Double>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <Flowchart.StartNode>
-              <x:Reference>__ReferenceID11</x:Reference>
+              <x:Reference>__ReferenceID12</x:Reference>
             </Flowchart.StartNode>
             <FlowStep x:Name="__ReferenceID10">
               <sap:WorkflowViewStateService.ViewState>
@@ -195,7 +193,7 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">53,242.5</av:Point>
                   <av:Size x:Key="ShapeSize">334,55</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">220,297.5 220,327.5 460,327.5 460,364.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">220,297.5 220,327.5 270,327.5 270,367</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:Comment sap:VirtualizedContainerService.HintSize="334,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="posledni pokus">
@@ -206,227 +204,221 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:Comment>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID8">
+                <FlowStep x:Name="__ReferenceID11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">360,364.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">460,415.5 460,446.5</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">170,367</av:Point>
+                      <av:Size x:Key="ShapeSize">200,66</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">370,400 460,400 460,484.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_vytvoritScreen" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Level3_component\L3_vytvoritScreen.xaml">
-                    <ui:InvokeWorkflowFile.Arguments>
-                      <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">
-                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                      </OutArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">
-                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">
-                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                      </InArgument>
-                      <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">
-                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                      </InArgument>
-                      <OutArgument x:TypeArguments="x:Boolean" x:Key="ARG_boolSuccess">
-                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                      </OutArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">
-                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                      </InArgument>
-                    </ui:InvokeWorkflowFile.Arguments>
+                  <Sequence DisplayName="Text chyby do mailu" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                  </ui:InvokeWorkflowFile>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[in_strErrorEmailText]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">["Chyba zpracování položky: " &amp; out_strFailureMessage]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
                   <FlowStep.Next>
-                    <FlowDecision x:Name="__ReferenceID7" Condition="[boolSuccess = True]" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                    <FlowStep x:Name="__ReferenceID8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <av:Point x:Key="ShapeLocation">406.5,446.5</av:Point>
-                          <av:Size x:Key="ShapeSize">107,87</av:Size>
-                          <av:PointCollection x:Key="FalseConnector">513.5,490 620,490</av:PointCollection>
-                          <av:PointCollection x:Key="TrueConnector">406.5,490 376.5,490 376.5,564.5 460,564.5 460,594.5</av:PointCollection>
+                          <av:Point x:Key="ShapeLocation">360,484.5</av:Point>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">460,535.5 460,566.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <FlowDecision.True>
-                        <FlowStep x:Name="__ReferenceID5">
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_vytvoritScreen" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Level3_component\L3_vytvoritScreen.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">[in_intTimeoutS]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">[in_intTimeoutM]</InArgument>
+                          <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">[in_intTimeoutL]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="ARG_boolSuccess">[boolSuccess]</OutArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="ARG_strRootFolder">[in_strRootFolder]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <FlowStep.Next>
+                        <FlowDecision x:Name="__ReferenceID7" Condition="[boolSuccess = True]" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">360,594.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">460,645.5 460,676.5</av:PointCollection>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <av:Point x:Key="ShapeLocation">406.5,566.5</av:Point>
+                              <av:Size x:Key="ShapeSize">107,87</av:Size>
+                              <av:PointCollection x:Key="FalseConnector">513.5,610 620,610</av:PointCollection>
+                              <av:PointCollection x:Key="TrueConnector">406.5,610 376.5,610 376.5,684.5 460,684.5 460,714.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_ziskatEmailHeslo" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Level3_component\L3_ziskatEmailHeslo.xaml">
-                            <ui:InvokeWorkflowFile.Arguments>
-                              <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">
-                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                              </OutArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">
-                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">
-                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">
-                                <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                              </InArgument>
-                              <OutArgument x:TypeArguments="ss:SecureString" x:Key="ARG_strEmailHeslo">
-                                <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="strEmailHeslo" />
-                              </OutArgument>
-                              <OutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailLogin">
-                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strEmailLogin" />
-                              </OutArgument>
-                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                              </OutArgument>
-                            </ui:InvokeWorkflowFile.Arguments>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:InvokeWorkflowFile>
-                          <FlowStep.Next>
-                            <FlowDecision x:Name="__ReferenceID4" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
-                              <FlowDecision.Condition>
-                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSuccess = True" />
-                              </FlowDecision.Condition>
+                          <FlowDecision.True>
+                            <FlowStep x:Name="__ReferenceID5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  <av:Point x:Key="ShapeLocation">406.5,676.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">107,87</av:Size>
-                                  <av:PointCollection x:Key="FalseConnector">513.5,720 620,720</av:PointCollection>
-                                  <av:PointCollection x:Key="TrueConnector">406.5,720 376.5,720 376.5,784.5 460,784.5 460,814.5</av:PointCollection>
+                                  <av:Point x:Key="ShapeLocation">360,714.5</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">460,765.5 460,796.5</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <FlowDecision.True>
-                                <FlowStep x:Name="__ReferenceID2">
+                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_ziskatEmailHeslo" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Level3_component\L3_ziskatEmailHeslo.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">[in_intTimeoutS]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">[in_intTimeoutM]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">[in_intTimeoutL]</InArgument>
+                                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="ARG_strEmailHeslo">[strEmailHeslo]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailLogin">[strEmailLogin]</OutArgument>
+                                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID4" Condition="[boolSuccess = True]" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">360,814.5</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">460,865.5 460,896.5</av:PointCollection>
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">406.5,796.5</av:Point>
+                                      <av:Size x:Key="ShapeSize">107,87</av:Size>
+                                      <av:PointCollection x:Key="FalseConnector">513.5,840 620,840</av:PointCollection>
+                                      <av:PointCollection x:Key="TrueConnector">406.5,840 376.5,840 376.5,904.5 460,904.5 460,934.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_odeslatEmail" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Level3_component\L3_odeslatEmail.xaml">
-                                    <ui:InvokeWorkflowFile.Arguments>
-                                      <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">
-                                        <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                                      </OutArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">
-                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">
-                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">
-                                        <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                                      </InArgument>
-                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="ARG_boolEmailSuccess">
-                                        <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                                      </OutArgument>
-                                      <InArgument x:TypeArguments="ss:SecureString" x:Key="ARG_strEmailHeslo">
-                                        <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="strEmailHeslo" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="ARG_strEmailLogin">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailLogin" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="ARG_strErrorEmailText">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strErrorEmailText" />
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="ARG_strPredmetSpravy">
-                                        <Literal x:TypeArguments="x:String">RPA ERROR</Literal>
-                                      </InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">
-                                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                                      </InArgument>
-                                    </ui:InvokeWorkflowFile.Arguments>
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </ui:InvokeWorkflowFile>
-                                  <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID0" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
-                                      <FlowDecision.Condition>
-                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSuccess = True" />
-                                      </FlowDecision.Condition>
+                                  <FlowDecision.True>
+                                    <FlowStep x:Name="__ReferenceID2">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          <av:Point x:Key="ShapeLocation">406.5,896.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">107,87</av:Size>
-                                          <av:PointCollection x:Key="FalseConnector">513.5,940 600,940</av:PointCollection>
-                                          <av:PointCollection x:Key="TrueConnector">225,480 170,480 170,564.02</av:PointCollection>
+                                          <av:Point x:Key="ShapeLocation">360,934.5</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">460,985.5 460,1016.5</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <FlowDecision.False>
-                                        <FlowStep x:Name="__ReferenceID1">
+                                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_odeslatEmail" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Level3_component\L3_odeslatEmail.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">
+                                            <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
+                                          </OutArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">
+                                            <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
+                                          </InArgument>
+                                          <OutArgument x:TypeArguments="x:Boolean" x:Key="ARG_boolEmailSuccess">
+                                            <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
+                                          </OutArgument>
+                                          <InArgument x:TypeArguments="ss:SecureString" x:Key="ARG_strEmailHeslo">
+                                            <mva:VisualBasicValue x:TypeArguments="ss:SecureString" ExpressionText="strEmailHeslo" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="ARG_strEmailLogin">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="strEmailLogin" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="ARG_strErrorEmailText">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strErrorEmailText" />
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="ARG_strPredmetSpravy">
+                                            <Literal x:TypeArguments="x:String">RPA PPP - chyba zpracování</Literal>
+                                          </InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="ARG_strEmailSpravceRPA">
+                                            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
+                                          </InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InvokeWorkflowFile>
+                                      <FlowStep.Next>
+                                        <FlowDecision x:Name="__ReferenceID0" Condition="[boolSuccess = True]" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_4">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">600,929</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <av:Point x:Key="ShapeLocation">406.5,1016.5</av:Point>
+                                              <av:Size x:Key="ShapeSize">107,87</av:Size>
+                                              <av:PointCollection x:Key="FalseConnector">513.5,1060 600,1060</av:PointCollection>
+                                              <av:PointCollection x:Key="TrueConnector">225,480 170,480 170,564.02</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Throw DisplayName="Zachytit chybu" Exception="[New Exception(&quot;Failed To L3_odeslatEmail, Reason: &quot; &amp; out_strFailureMessage)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </Throw>
-                                        </FlowStep>
-                                      </FlowDecision.False>
-                                    </FlowDecision>
-                                  </FlowStep.Next>
-                                </FlowStep>
-                              </FlowDecision.True>
-                              <FlowDecision.False>
-                                <FlowStep x:Name="__ReferenceID3">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">620,709</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,22</av:Size>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <Throw DisplayName="Zachytit chybu" Exception="[New Exception(&quot;Failed To L3_ziskatEmailHeslo, Reason: &quot; &amp; out_strFailureMessage)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5">
-                                    <sap:WorkflowViewStateService.ViewState>
-                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                      </scg:Dictionary>
-                                    </sap:WorkflowViewStateService.ViewState>
-                                  </Throw>
-                                </FlowStep>
-                              </FlowDecision.False>
-                            </FlowDecision>
-                          </FlowStep.Next>
-                        </FlowStep>
-                      </FlowDecision.True>
-                      <FlowDecision.False>
-                        <FlowStep x:Name="__ReferenceID6">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">620,479</av:Point>
-                              <av:Size x:Key="ShapeSize">200,22</av:Size>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Throw DisplayName="Zachytit chybu" Exception="[New Exception(&quot;Failed To L3_vytvoritScreen, Reason: &quot; &amp; out_strFailureMessage)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Throw>
-                        </FlowStep>
-                      </FlowDecision.False>
-                    </FlowDecision>
+                                          <FlowDecision.False>
+                                            <FlowStep x:Name="__ReferenceID1">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <av:Point x:Key="ShapeLocation">600,1049</av:Point>
+                                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Throw DisplayName="Zachytit chybu" Exception="[New Exception(&quot;Failed To L3_odeslatEmail, Reason: &quot; &amp; out_strFailureMessage)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_4">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Throw>
+                                            </FlowStep>
+                                          </FlowDecision.False>
+                                        </FlowDecision>
+                                      </FlowStep.Next>
+                                    </FlowStep>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowStep x:Name="__ReferenceID3">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <av:Point x:Key="ShapeLocation">620,829</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Throw DisplayName="Zachytit chybu" Exception="[New Exception(&quot;Failed To L3_ziskatEmailHeslo, Reason: &quot; &amp; out_strFailureMessage)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_5">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </Throw>
+                                    </FlowStep>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowDecision.True>
+                          <FlowDecision.False>
+                            <FlowStep x:Name="__ReferenceID6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">620,599</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,22</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw DisplayName="Zachytit chybu" Exception="[New Exception(&quot;Failed To L3_vytvoritScreen, Reason: &quot; &amp; out_strFailureMessage)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_6">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Throw>
+                            </FlowStep>
+                          </FlowDecision.False>
+                        </FlowDecision>
+                      </FlowStep.Next>
+                    </FlowStep>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
@@ -440,10 +432,7 @@
             <x:Reference>__ReferenceID6</x:Reference>
             <x:Reference>__ReferenceID7</x:Reference>
             <x:Reference>__ReferenceID8</x:Reference>
-            <FlowDecision x:Name="__ReferenceID11" DisplayName="Posledni Pokus" sap:VirtualizedContainerService.HintSize="86,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7">
-              <FlowDecision.Condition>
-                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_intNumRetries = in_intMaxRetries" />
-              </FlowDecision.Condition>
+            <FlowDecision x:Name="__ReferenceID12" Condition="[in_intNumRetries = in_intMaxRetries]" DisplayName="Posledni Pokus" sap:VirtualizedContainerService.HintSize="86,87" sap2010:WorkflowViewState.IdRef="FlowDecision_7" True="{x:Reference __ReferenceID9}" False="{x:Reference __ReferenceID10}">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -453,13 +442,8 @@
                   <av:PointCollection x:Key="FalseConnector">503,180 593,180</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <FlowDecision.True>
-                <x:Reference>__ReferenceID9</x:Reference>
-              </FlowDecision.True>
-              <FlowDecision.False>
-                <x:Reference>__ReferenceID10</x:Reference>
-              </FlowDecision.False>
             </FlowDecision>
+            <x:Reference>__ReferenceID11</x:Reference>
           </Flowchart>
           <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="961,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
         </Sequence>
