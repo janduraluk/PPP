@@ -1,5 +1,5 @@
 {
-	"strRootFolder": "DATA\\",
+	"strRootFolder": "C:\\Data\\",
 	"intTimeoutS": 1000,
 	"intTimeoutM": 2000,
 	"intTimeoutL": 3000,
@@ -30,7 +30,7 @@
 	"strDruhSluzby": "06",
 	"strProcessCode": "RPA4",
 	"strAppEnvironmentName": "R4T (SSO)",
-	"strEmailAdminRpa": "lukas.jandura@cezdistribuce.cz"
+	"strEmailAdminRpa": "lukas.jandura@cezdistribuce.cz; vhlavacek@smartechorange.com"
 
 
 }

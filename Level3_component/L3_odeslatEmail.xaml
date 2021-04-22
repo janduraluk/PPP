@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3407</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3345</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -85,7 +85,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAZEV: L3_odeslatEmail&#xA;POPIS: Odeslat email pomoci webove verze Outlook (kvuli internimu tagovani emailu v aplikaci Outlook). Pred pouzitim teto komponenty musi predchazet komponenta L3_ziskatEmailHeslo, ktera ziska uzivatelske jmeno a heslo z Windows Credentials. &#xA;NADRAZENA UROVEN: L2_ukoncitAplikace, ..." DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="589,3342" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAZEV: L3_odeslatEmail&#xA;POPIS: Odeslat email pomoci webove verze Outlook (kvuli internimu tagovani emailu v aplikaci Outlook). Pred pouzitim teto komponenty musi predchazet komponenta L3_ziskatEmailHeslo, ktera ziska uzivatelske jmeno a heslo z Windows Credentials. &#xA;NADRAZENA UROVEN: L2_ukoncitAplikace, ..." DisplayName="&lt;Level 3&gt; Component" sap:VirtualizedContainerService.HintSize="589,3280" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="L3_odeslatEmail" Name="strComponentName" />
     </Sequence.Variables>
@@ -96,9 +96,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="547,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strComponentName + &quot;: Start&quot;]" />
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="547,2901" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="547,2839" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="509,2674" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="509,2612" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="ui:GenericValue" Name="intNahodneCislo" />
             <Variable x:TypeArguments="ui:Browser" Name="outlookBrowser" />
@@ -118,13 +118,13 @@
               </InArgument>
             </Assign.Value>
           </Assign>
-          <ui:OpenBrowser CommunicationMethod="{x:Null}" BrowserType="Edge" DisplayName="Open outlookBrowser" Hidden="False" sap:VirtualizedContainerService.HintSize="467,2189" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[outlookBrowser]" Url="https://webmail.cez.cz/owa/auth/logon.aspx?replaceCurrent=1&amp;url=https%3a%2f%2fwebmail.cez.cz%2fowa%2f%23authRedirect%3dtrue">
+          <ui:OpenBrowser CommunicationMethod="{x:Null}" BrowserType="Edge" DisplayName="Open outlookBrowser" Hidden="False" sap:VirtualizedContainerService.HintSize="467,2127" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" UiBrowser="[outlookBrowser]" Url="https://webmail.cez.cz/owa/auth/logon.aspx?replaceCurrent=1&amp;url=https%3a%2f%2fwebmail.cez.cz%2fowa%2f%23authRedirect%3dtrue">
             <ui:OpenBrowser.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="DO" sap:VirtualizedContainerService.HintSize="418,2088" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="DO" sap:VirtualizedContainerService.HintSize="418,2026" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,7 +188,7 @@
                       </ui:Click.Target>
                     </ui:Click>
                   </Sequence>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,1376" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Odeslat email" sap:VirtualizedContainerService.HintSize="376,1376" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -247,7 +247,7 @@
                         </ui:Target>
                       </ui:TypeInto.Target>
                     </ui:TypeInto>
-                    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
+                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition OffsetX="20" OffsetY="10" Position="TopLeft" />
@@ -263,7 +263,7 @@
                         </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
-                    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
+                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
                     <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayMS="1000" DisplayName="Type Into 'INPUT'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" Text="[ARG_strPredmetZpravy]">
                       <ui:TypeInto.Target>
                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="73bea276-d79e-416b-8090-ec9e56b07793" InformativeScreenshot="0fbf5d0155f31dcb03fa028fac55a59e" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' tag='INPUT' /&gt;">
@@ -276,7 +276,7 @@
                         </ui:Target>
                       </ui:TypeInto.Target>
                     </ui:TypeInto>
-                    <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
+                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
                     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
                       <ui:Click.CursorPosition>
                         <ui:CursorPosition Position="TopLeft">
@@ -334,7 +334,6 @@
                       </ui:Click.Target>
                     </ui:Click>
                   </Sequence>
-                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="376,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
                 </Sequence>
               </ActivityAction>
             </ui:OpenBrowser.Body>
