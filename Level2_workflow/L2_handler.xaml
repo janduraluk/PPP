@@ -83,6 +83,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L2_handler&#xA;DESCRIPTION: Pokud nastane chyba kdykoliv behem pripravy robota k zpracovani projektu (workflow: L2_nacistVstupy, L2_spustitAplikace, L2_vytvoritFrontu, L2_nacistProjektFronta) nebo po jejich ukonceni (workflow: L2_presunoutZpracovano), tak je toto workflow aktivovano. Workflow zaridi nevypnuti robota, ale znovu opakovani celeho procesu. Pokud jde chyba z workflow L2_presunoutZpracovano, proces neni opakovan. Po vyprseni maximalniho mozneho pokusu opakovani se udela print screen obrazovky, ktery se ulozi do podslozky v domovskem adresari. Nasledne se kontaktuje spravce RPA pomoci weboveho emailu a cely proces se ukonci. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="1083,2191" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -203,7 +204,7 @@
               </FlowDecision.False>
             </FlowDecision>
             <x:Reference>__ReferenceID0</x:Reference>
-            <FlowStep x:Name="__ReferenceID2">
+            <FlowStep x:Name="__ReferenceID3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">360,514.5</av:Point>
@@ -234,7 +235,7 @@
                 <x:Reference>__ReferenceID1</x:Reference>
               </FlowStep.Next>
             </FlowStep>
-            <FlowStep x:Name="__ReferenceID3">
+            <FlowStep x:Name="__ReferenceID2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">620,399</av:Point>
@@ -249,7 +250,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </Throw>
             </FlowStep>
-            <FlowDecision x:Name="__ReferenceID4" Condition="[boolSuccess = True]" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6" True="{x:Reference __ReferenceID2}" False="{x:Reference __ReferenceID3}">
+            <FlowDecision x:Name="__ReferenceID4" Condition="[boolSuccess = True]" DisplayName="boolSuccess = True" sap:VirtualizedContainerService.HintSize="107,87" sap2010:WorkflowViewState.IdRef="FlowDecision_6" True="{x:Reference __ReferenceID3}" False="{x:Reference __ReferenceID2}">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -295,7 +296,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">460,223 460,284.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Text chyby do mailu" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Text chyby do mailu" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -306,7 +307,7 @@
                     <OutArgument x:TypeArguments="x:String">[strErrorEmailText]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[New Exception("Chyba zpracování položky: " &amp; out_strFailureMessage).ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["Chyba zpracovani procesu - více info viz log"]</InArgument>
                   </Assign.Value>
                 </Assign>
               </Sequence>
