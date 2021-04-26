@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1157,1944</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,1844</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,7 +78,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAZEV: L2_spustitAplikace&#xA;POPIS: V tomto workflow probiha spusteni a zalogovani do aplikaci a systemu potrebnych pro zpracovani automatizovanym procesem.&#xA;NADRAZENA UROVEN: L1_StateMachine" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="997,1779" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="[SPUSTIT APLIKACE] &lt;level 2&gt; " Name="strWorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;SPUSTIT APLIKACE (level 2)&gt; </Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:Int32" Name="IntDefaultTimeoutS" />
       <Variable x:TypeArguments="x:Int32" Name="IntDefaultTimeoutM" />
       <Variable x:TypeArguments="x:Int32" Name="IntDefaultTimeoutL" />
@@ -203,27 +207,13 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_ziskatEmailHeslo" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Level3_component\L3_ziskatEmailHeslo.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrExecutionStatus" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntDefaultTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntDefaultTimeoutM" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntDefaultTimeoutL" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="ARG_strEmailHeslo">
-                    <mva:VisualBasicReference x:TypeArguments="ss:SecureString" ExpressionText="strEmailHeslo" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailLogin">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="strEmailLogin" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="strExceptionMessage">[StrExecutionStatus]</OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutS">[IntDefaultTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutM">[IntDefaultTimeoutM]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="intTimeoutL">[IntDefaultTimeoutL]</InArgument>
+                  <OutArgument x:TypeArguments="ss:SecureString" x:Key="ARG_strEmailHeslo">[strEmailHeslo]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="ARG_strEmailLogin">[strEmailLogin]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -232,10 +222,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID4" DisplayName="OK?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_13">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSuccess = True" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID4" Condition="[boolSuccess = True]" DisplayName="OK?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_13" True="{x:Reference __ReferenceID2}" False="{x:Reference __ReferenceID3}">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -245,12 +232,6 @@
                       <av:PointCollection x:Key="TrueConnector">265,230 240,230 240,284.5 300,284.5 300,314.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <FlowDecision.True>
-                    <x:Reference>__ReferenceID2</x:Reference>
-                  </FlowDecision.True>
-                  <FlowDecision.False>
-                    <x:Reference>__ReferenceID3</x:Reference>
-                  </FlowDecision.False>
                 </FlowDecision>
               </FlowStep.Next>
             </FlowStep>
@@ -307,24 +288,12 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_otevritAplikaci" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_otevritAplikaci.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntDefaultTimeoutL" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntDefaultTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntDefaultTimeoutM" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="StrExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrFailureMessage" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="arg_strSapNazevProstredi">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arg_strSapNazevProstredi" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntDefaultTimeoutL]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntDefaultTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntDefaultTimeoutM]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="StrExceptionMessage">[StrFailureMessage]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="arg_strSapNazevProstredi">[arg_strSapNazevProstredi]</InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -362,21 +331,11 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_odkliknoutSchranku" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_odkliknoutSchranku.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutL" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutM" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="StrExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrFailureMessage" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="StrExceptionMessage">[StrFailureMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -385,10 +344,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID9" DisplayName="OK?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSuccess = True" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID9" Condition="[boolSuccess = True]" DisplayName="OK?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -452,21 +408,11 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_SAP_odkliknoutHlaseni" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Level3_component\SAP\L3_SAP_odkliknoutHlaseni">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutL" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="IntTimeoutM" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="StrExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="StrFailureMessage" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutL">[IntTimeoutL]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutS">[IntTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="IntTimeoutM">[IntTimeoutM]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="StrExceptionMessage">[StrFailureMessage]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -475,10 +421,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID11" DisplayName="OK?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
-                  <FlowDecision.Condition>
-                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolSuccess = True" />
-                  </FlowDecision.Condition>
+                <FlowDecision x:Name="__ReferenceID11" Condition="[boolSuccess = True]" DisplayName="OK?" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowDecision_11" True="{x:Reference __ReferenceID10}">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -488,9 +431,6 @@
                       <av:PointCollection x:Key="FalseConnector">455,220 579,220</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <FlowDecision.True>
-                    <x:Reference>__ReferenceID10</x:Reference>
-                  </FlowDecision.True>
                   <FlowDecision.False>
                     <FlowStep x:Name="__ReferenceID15">
                       <sap:WorkflowViewStateService.ViewState>

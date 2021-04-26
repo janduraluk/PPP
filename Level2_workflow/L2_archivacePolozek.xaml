@@ -106,7 +106,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L2_archivacePolozek&#xA;DESCRIPTION: V tomto WF je pouzita pouze komponenta L3_excel_presunoutZpracovanePolozky. Komponenta ma za ukol otevreni souboru DataSet_vyplněný.xlsx a presunout z nej vyresene projekty a projekty s chybou do souboru PPP_archivZpracovanychPolozek.xlsx. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="876,1784" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="[ARCHIVACE POLOZEK] &lt;level 2&gt; " Name="strWorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;ARCHIVACE POLOZEK (level 2)&gt; </Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>

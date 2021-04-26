@@ -16,7 +16,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1256,2591</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1256,2451</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -78,7 +78,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAZEV: L2_zapsatStatus&#xA;POPIS: V tomtoworkflow se nachazi dve hlavni vetve. Pokud vsechno pred timto workflow probehlo uspesne, nic se zde neprovadi. Pokud v predchozim workflow nastala chyba je zde restartovana aplikace SAP. Po prihlaseni do aplikace se kontaktuje TechnikPD/Technik Pripravy danaho projektu. Zpracovani danrho projektu je nasledne ukonceno.&#xA;NADRAZENA UROVEN: L1_StateMachine" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="1266,2386" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="[ZAPSAT STATUS] &lt;level 2&gt; " Name="strWorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;ZAPSAT STATUS (level 2)&gt; </Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:Boolean" Name="boolExcelZapsatHodnotu_Success" />
       <Variable x:TypeArguments="x:Boolean" Name="boolCloseSapSuccess" />
       <Variable x:TypeArguments="x:Boolean" Name="boolSAPOdeslatZpravuSuccess" />

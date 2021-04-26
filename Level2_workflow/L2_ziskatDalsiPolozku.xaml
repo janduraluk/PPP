@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1140,2025</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,2025</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,12 +79,15 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="NAME: L2_ziskatDalsiPolozku&#xA;DESCRIPTION: ...&#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="882,1960" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="[ZISKAT DALSI POLOZKU] &lt;level 2&gt; " Name="strWorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;ZISKAT DALSI POLOZKU (level 2)&gt; </Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -215,48 +218,20 @@
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_getDataFromFile" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_getDataFromFile.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValues">
-                    <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="out_DictionaryValuesXlsx" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRow">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intRowCounter" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intDatamineType">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="out_intDatamineType" />
-                  </InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
+                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_DictionaryValues">[out_DictionaryValuesXlsx]</OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRow">[in_intRowCounter]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intDatamineType">[out_intDatamineType]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">

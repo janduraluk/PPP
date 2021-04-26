@@ -16,11 +16,12 @@
     <x:Property Name="in_strEmailHeslo" Type="InArgument(ss:SecureString)" />
     <x:Property Name="in_strEmailLogin" Type="InArgument(x:String)" />
     <x:Property Name="in_strErrorEmailText" Type="InArgument(x:String)" />
+    <x:Property Name="in_strFailMessage" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,2256</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,2387</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -83,12 +84,15 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_handler&#xA;DESCRIPTION: Pokud nastane chyba kdykoliv behem pripravy robota k zpracovani projektu (workflow: L2_nacistVstupy, L2_spustitAplikace, L2_vytvoritFrontu, L2_nacistProjektFronta) nebo po jejich ukonceni (workflow: L2_presunoutZpracovano), tak je toto workflow aktivovano. Workflow zaridi nevypnuti robota, ale znovu opakovani celeho procesu. Pokud jde chyba z workflow L2_presunoutZpracovano, proces neni opakovan. Po vyprseni maximalniho mozneho pokusu opakovani se udela print screen obrazovky, ktery se ulozi do podslozky v domovskem adresari. Nasledne se kontaktuje spravce RPA pomoci weboveho emailu a cely proces se ukonci. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="1083,2191" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_handler&#xA;DESCRIPTION: Pokud nastane chyba kdykoliv behem pripravy robota k zpracovani projektu (workflow: L2_nacistVstupy, L2_spustitAplikace, L2_vytvoritFrontu, L2_nacistProjektFronta) nebo po jejich ukonceni (workflow: L2_presunoutZpracovano), tak je toto workflow aktivovano. Workflow zaridi nevypnuti robota, ale znovu opakovani celeho procesu. Pokud jde chyba z workflow L2_presunoutZpracovano, proces neni opakovan. Po vyprseni maximalniho mozneho pokusu opakovani se udela print screen obrazovky, ktery se ulozi do podslozky v domovskem adresari. Nasledne se kontaktuje spravce RPA pomoci weboveho emailu a cely proces se ukonci. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="1083,2322" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="[HANDLER 1] &lt;level 2&gt; " Name="strWorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;HANDLER 1 (level 2)&gt; </Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
       <Variable x:TypeArguments="x:String" Name="strErrorEmailText" />
     </Sequence.Variables>
@@ -138,9 +142,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="1041,1472" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="1041,1603" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1003,1245" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="1003,1376" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -296,7 +300,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">460,223 460,284.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Text chyby do mailu" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Text chyby do mailu" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -307,7 +311,7 @@
                     <OutArgument x:TypeArguments="x:String">[strErrorEmailText]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">["Chyba zpracovani procesu - více info viz log (C:\Users\"+in_strUserName+"\AppData\Local\UiPath\Logs\"+Now.ToString("yyyy-MM-dd")+"_Execution)"]</InArgument>
+                    <InArgument x:TypeArguments="x:String" xml:space="preserve">["Ahoj, stala se chyba během zpracování procesu RPA4 - více info viz log (C:\Users\"+in_strUserName+"\AppData\Local\UiPath\Logs\"+Now.ToString("yyyy-MM-dd")+"_Execution). Identifikace chyby --&gt;  "+in_strFailMessage]</InArgument>
                   </Assign.Value>
                 </Assign>
               </Sequence>
@@ -317,6 +321,21 @@
             </FlowStep>
           </Flowchart>
           <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="961,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[strNameToLog + &quot;Success&quot;]" />
+          <Assign sap2010:Annotation.AnnotationText="odstraneni chybove hlasky pro maily" sap:VirtualizedContainerService.HintSize="961,91" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[in_strFailMessage]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>

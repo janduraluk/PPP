@@ -82,7 +82,11 @@
   <Sequence sap2010:Annotation.AnnotationText="NAME: L2_ukoncitAplikace&#xA;DESCRIPTION: V tomto workflow probiha ukonceni vsech aplikaca a systemu potrebnych pro zpracovani automatizovanym procesem. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;© Smartech orange s.r.o. (www.smartechorange.com)" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="882,1974" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
-      <Variable x:TypeArguments="x:String" Default="[UKONCIT APLIKACE] &lt;level 2&gt; " Name="strWorkflowName" />
+      <Variable x:TypeArguments="x:String" Name="strWorkflowName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" xml:space="preserve">&lt;UKONCIT APLIKACE (level 2)&gt; </Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">

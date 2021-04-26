@@ -136,7 +136,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TakeScreenshot>
-            <ui:SaveImage DisplayName="Save Image" FileName="[ARG_strRootFolder+&quot;screeny\chybne_zpracovani\&quot;+&quot;chyba_&quot;+now.ToString(&quot;yyyyMMdd&quot;)+&quot;_&quot;+intNahodneCislo.ToString+&quot;.jpg&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[screenObrazovky]" />
+            <ui:SaveImage DisplayName="Save Image" FileName="[&quot;data\05_screeny\chybne_zpracovani\&quot;+&quot;chyba_&quot;+now.ToString(&quot;yyyyMMdd&quot;)+&quot;_&quot;+intNahodneCislo.ToString+&quot;.jpg&quot;]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[screenObrazovky]" />
           </Sequence>
           <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
