@@ -41,7 +41,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>959,2040</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,1849</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -104,7 +104,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_archivacePolozek&#xA;DESCRIPTION: V tomto WF je pouzita pouze komponenta L3_excel_presunoutZpracovanePolozky. Komponenta ma za ukol otevreni souboru DataSet_vyplněný.xlsx a presunout z nej vyresene projekty a projekty s chybou do souboru PPP_archivZpracovanychPolozek.xlsx. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="876,1875" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="NAME: L2_archivacePolozek&#xA;DESCRIPTION: V tomto WF je pouzita pouze komponenta L3_excel_presunoutZpracovanePolozky. Komponenta ma za ukol otevreni souboru DataSet_vyplněný.xlsx a presunout z nej vyresene projekty a projekty s chybou do souboru PPP_archivZpracovanychPolozek.xlsx. &#xA;PARENT LEVEL: L1_StateMachine&#xA;------- &#xA;Template by www.smartechorange.com" DisplayName="&lt;Level 2&gt; Workflow" sap:VirtualizedContainerService.HintSize="876,1784" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[ARCHIVACE POLOZEK] &lt;level 2&gt; " Name="strWorkflowName" />
       <Variable x:TypeArguments="x:String" Name="strNameToLog" />
@@ -129,32 +129,6 @@
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
     <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="834,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strNameToLog + &quot;Start&quot;]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="834,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,275" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="Only for tests" DisplayName="!!! TEMP !!!" sap:VirtualizedContainerService.HintSize="304,183" sap2010:WorkflowViewState.IdRef="Sequence_5">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4" />
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
     <TryCatch DisplayName="Try catch" sap:VirtualizedContainerService.HintSize="834,1186" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence sap:VirtualizedContainerService.HintSize="796,959" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -227,44 +201,20 @@
                   <av:PointCollection x:Key="ConnectorLocation">360,152 360,196.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_presunoutZpracovanePolozky" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_presunoutZpracovanePolozky.xaml">
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="L3_excel_presunoutZpracovanePolozky" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Level3_component\Excel\L3_excel_presunoutZpracovanePolozky.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">
-                    <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolSuccess" />
-                  </OutArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_strFailureMessage" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutM" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutS" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intTimeoutL" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRootFolder" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProcessCode" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strUserName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAppEnvironmentName" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strEmailAdminRpa" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strRobotAutor" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">
-                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="in_intCounter" />
-                  </InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSuccess">[boolSuccess]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_strExceptionMessage">[out_strFailureMessage]</OutArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutM">[in_intTimeoutM]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutS">[in_intTimeoutS]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeoutL">[in_intTimeoutL]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRootFolder">[in_strRootFolder]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strProcessCode">[in_strProcessCode]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strUserName">[in_strUserName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strAppEnvironmentName">[in_strAppEnvironmentName]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strEmailAdminRpa">[in_strEmailAdminRpa]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strRobotAutor">[in_strRobotAutor]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intCounter">[in_intCounter]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">

@@ -1,5 +1,5 @@
 {
-	"strRootFolder": "C:\\Data\\",
+	"strRootFolder": "U:\\CEZDistribuce\\12_A00000\\12_A80000\\12_A84000\\12_A84200\\02_T√ùMY\\t√Ωm Mikrozdroje\\PPP_RPA\\",
 	"intTimeoutS": 1000,
 	"intTimeoutM": 2000,
 	"intTimeoutL": 3000,
@@ -8,7 +8,7 @@
 	"strStatusZpravy": "03",
 	"strPlatnostDo": "31.12.9999",
 	"strPocetGeneratoru": "1",
-	"strStatusKontaktu": "Uzav¯en˝-Vy¯eöen˝",
+	"strStatusKontaktu": "Uzav≈ôen√Ω-Vy≈ôe≈°en√Ω",
 	"strTypSmluvnihoUctu": "A1",
 	"strSkupUcOkruhu": "1200",
 	"strZpusobDosPlat": "D",
@@ -17,20 +17,20 @@
 	"strSdruzFakturace": "3",
 	"strCyklusZaloh": "00",
 	"strDrMistSpot": "4011",
-	"strZpusobProvozuVZ": "dle ß28 energetickÈho z·kona ",
+	"strZpusobProvozuVZ": "dle ¬ß28 energetick√©ho z√°kona ",
 	"strTypMereni": "B",
 	"strOperand": "SAZ.A.VAR.",
 	"strTrida": "5",
 	"strAkce": "6",
-	"strDruhkontaktu": "InternÌ ve skupinÏ",
-	"strSmer": "InternÌ",
+	"strDruhkontaktu": "Intern√≠ ve skupinƒõ",
+	"strSmer": "Intern√≠",
 	"strVychoziEmail": "qpbcsemail35",
-	"strUpravaTerminu": "14 - Vyû·d·no klientem",
+	"strUpravaTerminu": "14 - Vy≈æ√°d√°no klientem",
 	"strPoleMikrozdroj": "X",
 	"strDruhSluzby": "06",
 	"strProcessCode": "RPA4",
-	"strAppEnvironmentName": "R4T (SSO)",
-	"strEmailAdminRpa": "lukas.jandura@cezdistribuce.cz; vhlavacek@smartechorange.com"
+	"strAppEnvironmentName": "R4P (SSO)",
+	"strEmailAdminRpa": "lukas.jandura@cezdistribuce.cz; lukas.cejpek@cezdistribuce.cz; petr.hladil@cezdistribuce.cz"
 
 
 }
